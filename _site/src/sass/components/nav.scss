@@ -1,0 +1,52 @@
+.nav {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    font-family: $family-sans-serif;
+    margin-bottom: 50px;
+
+    @include tablet() {
+        align-items: flex-end;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+
+        & > a {
+            background-color: rgba($black, .05);
+            color: $white;
+            display: table;
+            padding: 2px 5px;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: rgba($black, .1);
+            }
+        }
+    }
+
+    &__subnav {
+        align-items: flex-start;
+        display: inline-flex;
+        flex-direction: column;
+
+        @include tablet() {
+            align-items: flex-end;
+        }
+
+        & > a {
+            color: $white;
+            display: table;
+            padding: 2px 5px;
+
+            &:hover {
+                &:before {
+                    content: '\203A';
+                    font-size: 16px;
+                    line-height: 14px;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}

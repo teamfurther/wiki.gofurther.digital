@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{% if page.title %}{{page.title}} | {{site.title}}{% else %}{{site.title}}{% endif %}</title>
+
+    <link rel="shortcut icon" type="image/png" href="{{ "/dist/img/favicon.png" | absolute_url }}" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="{{ '/dist/css/site.css' | absolute_url }}" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="{{ 'https://c4studio.ro' }}" target="_blank"><img src="{{ '/dist/img/logo.svg' | absolute_url }}" title="C4studio Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="{{ '/' | absolute_url }}">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="{{ '/development-workflow' | absolute_url }}">Development Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="{{ '/development-workflow/project-setup' | absolute_url }}">Project Set-up</a>
+                        <a href="{{ '/development-workflow/version-control' | absolute_url }}">Version Control</a>
+                        <a href="{{ '/development-workflow/laravel-best-practices' | absolute_url }}">Laravel Best Practices</a>
+                        <a href="{{ '/development-workflow/project-release' | absolute_url }}">Project Release</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="{{ '/code-style' | absolute_url }}">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="{{ '/code-style/php' | absolute_url }}">PHP</a>
+                        <a href="{{ '/code-style/css' | absolute_url }}">CSS</a>
+                        <a href="{{ '/code-style/javascript' | absolute_url }}">JavaScript</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; C4studio
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        {{ content }}
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="{{ '/dist/js/site.js' | absolute_url }}"></script>
+
+</body>
+
+</html>

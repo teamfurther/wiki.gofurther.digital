@@ -1,0 +1,11 @@
+.content {
+    padding: 150px 15px 15px;
+
+    @include tablet() {
+        padding: 30px 30px 30px 280px;
+    }
+
+    @include desktop() {
+        padding: 50px 50px 50px 400px;
+    }
+}

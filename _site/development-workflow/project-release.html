@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project Set-up | C4studio Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.c4studio.ro/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.c4studio.ro/dist/css/site.css" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://c4studio.ro" target="_blank"><img src="https://wiki.c4studio.ro/dist/img/logo.svg" title="C4studio Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/development-workflow">Development Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-setup">Project Set-up</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-release">Project Release</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/code-style/php">PHP</a>
+                        <a href="https://wiki.c4studio.ro/code-style/css">CSS</a>
+                        <a href="https://wiki.c4studio.ro/code-style/javascript">JavaScript</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; C4studio
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">Project Set-up</h1>
+
+    <p>When a project moves from development to production, we need to go through numerous steps to get it ready for real world usage. We keep these steps in a checklist:</p>
+
+<ul class="checklist">
+  <li>Did we check for <code class="highlighter-rouge">@TODO</code> occurences? <strong>If not, do it!</strong></li>
+  <li>Did we run <code class="highlighter-rouge">phpcs</code> and <code class="highlighter-rouge">phpmd</code>? <strong>If not, do it!</strong></li>
+  <li>Did we check all pages for n+1 problems <strong>If not, do it!</strong></li>
+  <li>Did we clean up code? (orphaned comments, debugging controls, etc.) <strong>If not, do it!</strong></li>
+  <li>Did we do functional testing? <strong>If not, do it!</strong></li>
+  <li>Did we do browser tests? <strong>If not, do it!</strong></li>
+  <li>Did we run page speed tests?
+    <ul>
+      <li><a href="https://webpagetest.org" target="_blank">https://webpagetest.org</a></li>
+      <li><a href="https://gtmetrix.com" target="_blank">https://gtmetrix.com</a></li>
+      <li><a href="https://developers.google.com/speed/pagespeed/insights" target="_blank">https://developers.google.com/speed/pagespeed/insights</a></li>
+    </ul>
+  </li>
+  <li>Do we have proper error handling. Custom pages for <em>404</em>, <em>500</em>, <em>503</em>, <em>Token Mismatch</em></li>
+  <li>Did we verify that all HTTP status codes are ok with <a href="https://github.com/spatie/http-status-check" target="_blank">https://github.com/spatie/http-status-check</a></li>
+  <li>Did we scan for mixed content with <a href="https://github.com/spatie/mixed-content-scanner-cli" target="_blank">https://github.com/spatie/mixed-content-scanner-cli</a></li>
+  <li>Do we have Bugsnag set-up for PHP &amp; JS, and integrated into Slack channel? <strong>If not, do it!</strong></li>
+  <li>Do we have Google Analytics set-up?</li>
+  <li>Did we remove <code class="highlighter-rouge">develop</code> branch? <strong>If not, remove it!</strong></li>
+  <li>Server
+    <ul>
+      <li>Does our deployment server use SSL certificates? <strong>If not, set it up!</strong></li>
+      <li>Does our server redirect <em>www</em> to <em>non-www</em> and to <em>https</em>? <strong>If not, set it up!</strong></li>
+      <li>Are backups set-up? <strong>If not, set it up!</strong></li>
+    </ul>
+  </li>
+  <li>Laravel specific
+    <ul>
+      <li>Is <code class="highlighter-rouge">artisan scheduler</code> set-up in crontab?</li>
+      <li>Is <code class="highlighter-rouge">APP_ENV</code> set to <code class="highlighter-rouge">production</code>? Is <code class="highlighter-rouge">APP_DEBUG</code> set to <code class="highlighter-rouge">false</code>? <strong>If not, do it!</strong></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.c4studio.ro/dist/js/site.js"></script>
+
+</body>
+
+</html>

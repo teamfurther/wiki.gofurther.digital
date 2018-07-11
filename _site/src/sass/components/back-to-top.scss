@@ -1,0 +1,28 @@
+.back-to-top {
+    background-color: $green;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    bottom: 0;
+    display: none;
+    height: 35px;
+    position: fixed;
+    right: 15px;
+    width: 35px;
+
+    @include desktop() {
+        display: block;
+    }
+
+    &:before {
+        color: $white;
+        content: '\203A';
+        display: block;
+        font-family: $family-sans-serif;
+        font-size: 38px;
+        left: 7px;
+        position: absolute;
+        top: -10px;
+        transform: rotate(-90deg);
+        transform-origin: center center;
+    }
+}

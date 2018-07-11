@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Laravel Best Practices | C4studio Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.c4studio.ro/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.c4studio.ro/dist/css/site.css" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://c4studio.ro" target="_blank"><img src="https://wiki.c4studio.ro/dist/img/logo.svg" title="C4studio Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/development-workflow">Development Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-setup">Project Set-up</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-release">Project Release</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/code-style/php">PHP</a>
+                        <a href="https://wiki.c4studio.ro/code-style/css">CSS</a>
+                        <a href="https://wiki.c4studio.ro/code-style/javascript">JavaScript</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; C4studio
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">Laravel Best Practices</h1>
+
+    <ul class="toc">
+  <li><a href="#controllers">Controllers</a></li>
+  <li><a href="#form-requests">Form Requests</a></li>
+  <li><a href="#service-classes">Service Classes</a></li>
+</ul>
+
+<h2 id="controllers">Controllers<a href="#controllers">#</a></h2>
+<p>Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy). Extract a new controller if you need other actions.</p>
+
+<p>In the following example, we could have <code class="highlighter-rouge">PostsController@favorite</code>, and <code class="highlighter-rouge">PostsController@unfavorite</code>, or we could extract it to a separate <code class="highlighter-rouge">FavoritePostsController</code>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostsController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">favorite</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">favorites</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$post</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">response</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">unfavorite</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">favorites</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">detach</span><span class="p">(</span><span class="nv">$post</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">response</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we fall back to default CRUD words, create and destroy.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FavoritePostsController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">favorites</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$post</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">response</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">destroy</span><span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">favorites</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">detach</span><span class="p">(</span><span class="nv">$post</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">response</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This is a loose guideline that doesn’t need to be enforced.</p>
+
+<h2 id="form-requests">Form Requests<a href="#form-requests">#</a></h2>
+<p>In most cases it is preferable to move validation in separate form request classes.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">PostRequest</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="p">{</span>    
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">PostRequest</span> <span class="k">extends</span> <span class="nx">Request</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">rules</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'required|unique:posts|max:255'</span><span class="p">,</span>
+            <span class="s1">'body'</span> <span class="o">=&gt;</span> <span class="s1">'required'</span><span class="p">,</span>
+            <span class="s1">'publish_at'</span> <span class="o">=&gt;</span> <span class="s1">'nullable|date'</span><span class="p">,</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+        <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'required|unique:posts|max:255'</span><span class="p">,</span>
+        <span class="s1">'body'</span> <span class="o">=&gt;</span> <span class="s1">'required'</span><span class="p">,</span>
+        <span class="s1">'publish_at'</span> <span class="o">=&gt;</span> <span class="s1">'nullable|date'</span><span class="p">,</span>
+    <span class="p">]);</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="service-classes">Service Classes<a href="#service-classes">#</a></h2>
+<p>A controller must only have the responsibility to return a response. Move business logic from controllers to service classes.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">articleService</span><span class="o">-&gt;</span><span class="na">handleUploadedImage</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">));</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">ArticleService</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handleUploadedImage</span><span class="p">(</span><span class="nv">$image</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_null</span><span class="p">(</span><span class="nv">$image</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$image</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">'images'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'temp'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">hasFile</span><span class="p">(</span><span class="s1">'image'</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">'images'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'temp'</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.c4studio.ro/dist/js/site.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+.article {
+    font-size: 14px;
+
+    @include desktop() {
+        font-size: 16px;
+    }
+
+    &__title {
+        font-family: $family-sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    h2,
+    h3,
+    h4 {
+        font-family: $family-sans-serif;
+        font-weight: 700;
+
+        & > a {
+            color: $grey-light;
+            margin-left: 10px;
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        margin-top: 100px;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    p {
+        margin-bottom: 30px;
+
+        &.is-text-large {
+            font-size: 20px;
+        }
+    }
+
+    pre {
+        margin-bottom: 30px;
+    }
+
+    ul {
+        margin: 0 0 30px 1em;
+
+        &.checklist {
+            margin-left: 1.5em;
+
+            & > li:before {
+                border: 1px solid $grey-light;
+                border-radius: 3px;
+                content: '';
+                height: 13px;
+                left: -1.5em;
+                top: 5px;
+                transform: none;
+                width: 13px;
+            }
+
+            strong {
+                font-weight: 400;
+                text-decoration: underline;
+            }
+        }
+
+        &.toc {
+            font-family: $family-sans-serif;
+            font-size: 14px;
+            margin-left: 1.5em;
+
+            li {
+                &:before {
+                    color: $grey-light;
+                    content: '#';
+                    font-size: 12px;
+                    font-weight: 400;
+                    left: -1.5em;
+                    top: 1px;
+                }
+
+                ul {
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        li {
+            margin-bottom: 5px;
+            position: relative;
+
+            &:before {
+                color: $grey;
+                content: '\2022';
+                left: -1em;
+                position: absolute;
+                top: 1px;
+            }
+
+            ul {
+                margin: 10px 0 15px 1em;
+            }
+        }
+    }
+}

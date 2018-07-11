@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Version Control | C4studio Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.c4studio.ro/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.c4studio.ro/dist/css/site.css" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://c4studio.ro" target="_blank"><img src="https://wiki.c4studio.ro/dist/img/logo.svg" title="C4studio Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/development-workflow">Development Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-setup">Project Set-up</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-release">Project Release</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/code-style/php">PHP</a>
+                        <a href="https://wiki.c4studio.ro/code-style/css">CSS</a>
+                        <a href="https://wiki.c4studio.ro/code-style/javascript">JavaScript</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; C4studio
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">Version Control</h1>
+
+    <p>All our projects use Git, mostly with a repository hosted on Bitbucket.</p>
+
+<ul class="toc">
+  <li><a href="#repo-naming-conventions">Repo Naming Conventions</a></li>
+  <li><a href="#branches">Branches</a></li>
+  <li><a href="#commits">Commits</a></li>
+</ul>
+
+<h2 id="repo-naming-conventions">Repo Naming Conventions<a href="#repo-naming-conventions">#</a></h2>
+
+<p>If the repo contains the source code of a site its name should be the main naked domain name of that site. It should be lowercased.</p>
+
+<ul>
+  <li>Bad: <code class="highlighter-rouge">https://www.c4studio.ro</code>, <code class="highlighter-rouge">www.c4studio.ro</code>, <code class="highlighter-rouge">C4studio.ro</code></li>
+  <li>Good: <code class="highlighter-rouge">c4studio.ro</code></li>
+</ul>
+
+<p>Sites that are hosted on a subdomain may use that subdomain in their name.</p>
+
+<ul>
+  <li>Bad: <code class="highlighter-rouge">c4studio.ro-wiki</code></li>
+  <li>Good: <code class="highlighter-rouge">wiki.c4studio.ro</code></li>
+</ul>
+
+<p>If the repo concerns something else, for example a package, its name should be kebab-cased.</p>
+
+<ul>
+  <li>Bad: <code class="highlighter-rouge">LaravelBackup</code>, <code class="highlighter-rouge">Chronos</code></li>
+  <li>Good: <code class="highlighter-rouge">laravel-backup</code>, <code class="highlighter-rouge">chronos</code></li>
+</ul>
+
+<h2 id="branches">Branches<a href="#branches">#</a></h2>
+
+<p>If you’re going to remember one thing in this guide, remember this: Once a project has gone live, the master branch must always be stable. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active; stale branches should get cleaned up accordingly.</p>
+
+<h3 id="projects-in-initial-development">Projects in initial development<a href="#projects-in-initial-development">#</a></h3>
+
+<p>Projects that aren’t live yet have at least two branches: <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">develop</code>. We do it this way to keep the commit log clean for the initial release.</p>
+
+<p>Avoid committing directly on the <code class="highlighter-rouge">master</code> branch, always commit through <code class="highlighter-rouge">develop</code>. Feature branches are optional, if you’d like to create a feature branch, make sure it’s branched from <code class="highlighter-rouge">develop</code>, not <code class="highlighter-rouge">master</code>.</p>
+
+<h3 id="live-projects">Live Projects<a href="#live-projects">#</a></h3>
+<p>Once a project goes live, the <code class="highlighter-rouge">develop</code> branch gets deleted. All future commits to <code class="highlighter-rouge">master</code> must be added through a feature branch. In most cases, it’s preferred to squash your commits on merge.</p>
+
+<p>On live projects with a staging environment, we should use a <code class="highlighter-rouge">staging</code> branch together with <code class="highlighter-rouge">master</code>. Feature branches should always branched from <code class="highlighter-rouge">master</code>, NEVER from <code class="highlighter-rouge">staging</code>. Feature branches should be first merged in to <code class="highlighter-rouge">staging</code>. After client approval, they should be merged back into <code class="highlighter-rouge">master</code> as well.</p>
+
+<p>If you want to deploy a feature branch to <code class="highlighter-rouge">master</code>, use <code class="highlighter-rouge">git merge &lt;branch&gt; --squash</code></p>
+
+<h3 id="branch-naming">Branch Naming<a href="#branch-naming">#</a></h3>
+<p>There’s no strict ruling on feature branch names, just make sure it’s clear enough to know what they’re for.</p>
+
+<p>Reserved branches may only contain lowercase letters and hyphens: <code class="highlighter-rouge">master</code>, <code class="highlighter-rouge">develop</code>, <code class="highlighter-rouge">staging</code></p>
+
+<p>Featured branches should be capitalised, and only contain lowercase letters and hyphens after first letter.</p>
+
+<ul>
+  <li>Bad: <code class="highlighter-rouge">feature-oauth-signup</code>, <code class="highlighter-rouge">Feature/mailchimp</code>, <code class="highlighter-rouge">Random-things</code></li>
+  <li>Good: <code class="highlighter-rouge">Feature-oauth-signup</code>, <code class="highlighter-rouge">Feature-mailchimp</code>, <code class="highlighter-rouge">Fix-deliverycosts</code> or <code class="highlighter-rouge">Updates-june-2018</code></li>
+</ul>
+
+<h3 id="cleaning-up-branches">Cleaning up branches<a href="#cleaning-up-branches">#</a></h3>
+<p>Merged remote branches should be deleted regularly with <code class="highlighter-rouge">git push origin :&lt;branch&gt;</code></p>
+
+<p>After a while, you’ll end up with a few stale branches in your local repository. Branches that don’t exist upstream can be cleaned up with <code class="highlighter-rouge">git remote prune origin</code>. If you want to ensure you’re not about to delete something important, add a <code class="highlighter-rouge">--dry-run</code> flag.</p>
+
+<h2 id="commits">Commits<a href="#commits">#</a></h2>
+<p>There’s not strict ruling on commits in projects in initial development, however, descriptive commit messages are recommended. After a project has gone live, descriptive commit messages are required. Always use present tense in commit messages.</p>
+
+<ul>
+  <li>Non-descriptive: <code class="highlighter-rouge">wip</code>, <code class="highlighter-rouge">commit</code>, <code class="highlighter-rouge">a lot</code>, <code class="highlighter-rouge">solid</code></li>
+  <li>Descriptive: <code class="highlighter-rouge">Update deps</code>, <code class="highlighter-rouge">Fix vat calculation in delivery costs</code></li>
+</ul>
+
+<p>Ideally, prefer granular commits.</p>
+
+<ul>
+  <li>Acceptable: <code class="highlighter-rouge">Cart fixes</code></li>
+  <li>Better: <code class="highlighter-rouge">Fix add to cart button</code>, <code class="highlighter-rouge">Fix cart count on home</code></li>
+</ul>
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.c4studio.ro/dist/js/site.js"></script>
+
+</body>
+
+</html>

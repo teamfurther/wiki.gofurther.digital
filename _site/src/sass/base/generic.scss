@@ -1,0 +1,127 @@
+html {
+    background-color: $white;
+    font-size: 14px;
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+    display: block;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: $family-serif;
+}
+
+code,
+pre {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto;
+    font-family: $family-monospace;
+}
+
+body {
+    color: $grey-text;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 100%;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+// Inline
+
+a {
+    color: $green;
+    cursor: pointer;
+    text-decoration: none;
+    transition: none;
+
+    &:hover {
+        color: darken($green, 5%);
+    }
+}
+
+code {
+    background-color: $grey-lighter;
+    color: $magenta;
+    font-size: 0.8em;
+    font-weight: normal;
+    padding: 0.25em 0.5em 0.25em;
+}
+
+hr {
+    background-color: $grey-light;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: 15px 0;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: baseline;
+}
+
+small {
+    font-size: 0.8em;
+}
+
+span {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+strong {
+    font-weight: 700;
+}
+
+// Block
+
+pre {
+    background-color: $grey-lighter;
+    color: $green;
+    font-size: 0.8em;
+    white-space: pre;
+    word-wrap: normal;
+
+    code {
+        background: none;
+        color: inherit;
+        display: block;
+        font-size: 1em;
+        overflow-x: auto;
+        padding: 15px;
+    }
+}
+
+table {
+    width: 100%;
+
+    td,
+    th {
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        font-weight: 700;
+    }
+}

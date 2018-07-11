@@ -1,0 +1,9 @@
+title: C4studio Wiki
+email: office@c4studio.ro
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://wiki.c4studio.ro" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+
+include: [_pages]

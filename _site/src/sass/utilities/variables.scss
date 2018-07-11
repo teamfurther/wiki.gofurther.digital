@@ -1,0 +1,31 @@
+// Colors
+$black: #222222;
+
+$grey-darker: #2c2d36;
+$grey-dark: #45464e;
+$grey: #999999;
+$grey-light: #d0d0d1;
+$grey-lighter: #f6f6f6;
+
+$grey-text: #696c6f;
+
+$white: #ffffff;
+
+$magenta: #d9005f;
+$green: #9eb01e;
+
+// Typography
+$family-sans-serif: "Montserrat", "Gotham", "Futura", Arial, sans-serif;
+$family-serif: "Lora", Georgia, serif;
+$family-monospace: monospace;
+
+// Responsiveness
+// 960, 1152, and 1344 have been chosen because
+// they are divisible by both 12 and 16
+$tablet: 769px;
+
+// 960px container + 40px
+$desktop: 1000px;
+
+// 1152px container + 40
+$widescreen: 1210px;
