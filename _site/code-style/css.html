@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CSS | C4studio Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.c4studio.ro/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.c4studio.ro/dist/css/site.css?v2" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://c4studio.ro" target="_blank"><img src="https://wiki.c4studio.ro/dist/img/logo.svg" title="C4studio Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/development-workflow">Development Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-setup">Project Set-up</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-release">Project Release</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/code-style/php">PHP</a>
+                        <a href="https://wiki.c4studio.ro/code-style/html">HTML</a>
+                        <a href="https://wiki.c4studio.ro/code-style/css">CSS</a>
+                        <a href="https://wiki.c4studio.ro/code-style/javascript">JavaScript</a>
+                        <a href="https://wiki.c4studio.ro/code-style/laravel-best-practices">Laravel Best Practices</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; C4studio
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">CSS</h1>
+
+    <ul class="toc">
+  <li><a href="#bevm">BEVM</a></li>
+  <li><a href="#dom-structure">DOM Structure</a></li>
+  <li><a href="#file-structure">File Structure</a></li>
+  <li><a href="#general-rules-and-guidelines">General Rules and Guidelines</a></li>
+  <li><a href="#formatting">Formatting</a></li>
+  <li><a href="#code-clean-up">Code Clean-up</a></li>
+</ul>
+
+<h2 id="bevm">BEVM<a href="#bevm">#</a></h2>
+<p>We use a CSS naming convention loosely based on <a href="https://getbem.com">BEM</a>.</p>
+
+<p>We only use classes for styling, with the following ingredients:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.component</span>                      <span class="c">/* Component */</span>   
+<span class="nc">.component__element</span>             <span class="c">/* Child */</span>
+<span class="nc">.component__element__element</span>    <span class="c">/* Grandchild */</span>
+
+<span class="nc">.items</span>                          <span class="c">/* Use plurals if possible */</span>
+<span class="nc">.item</span>                        
+
+<span class="nc">.has-modifier</span>                   <span class="c">/* Single property modifier, can be chained */</span>
+<span class="nc">.is-modifier</span>     
+
+<span class="nc">.component--variation</span>           <span class="c">/* Standalone variation of a component */</span>
+<span class="nc">.component__element--variation</span>  <span class="c">/* Standalone variation of an element */</span>
+
+<span class="nc">.js-hook</span>                        <span class="c">/* Script hook, not used for styling */</span>
+</code></pre></div></div>
+
+<h3 id="component-and-component__element">.component and .component__element<a href="#component-and-component__element">#</a></h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"member"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"member__name"</span><span class="nt">&gt;</span>John Doe<span class="nt">&lt;/h2&gt;</span>
+    ...
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>a single reusable component or pattern;</li>
+  <li>children are separated with <code class="highlighter-rouge">__</code>;</li>
+  <li>all lowercase, can contain <code class="highlighter-rouge">-</code> in name;</li>
+  <li>avoid more than 3 levels deep.</li>
+</ul>
+
+<p>Be descriptive with component elements. Consider <code class="highlighter-rouge">class="team__member"</code> instead of <code class="highlighter-rouge">class="team__item"</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"team"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"team__member"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>You can use plurals &amp; singulars for readability. Consider <code class="highlighter-rouge">class="member"</code> instead of <code class="highlighter-rouge">class="members__member"</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"members"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"member"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="has-modifier-is-modifier">.has-modifier, .is-modifier<a href="#has-modifier-is-modifier">#</a></h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn has-error is-active"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.btn</span> <span class="p">{</span>
+    <span class="k">&amp;</span><span class="nc">.has-error</span> <span class="p">{</span>
+        <span class="err">…</span>  
+    <span class="p">}</span>
+
+    <span class="k">&amp;</span><span class="nc">.is-active</span> <span class="p">{</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>a modifier changes only simple properties of a component, or adds a property;</li>
+  <li>multiple modifiers are possible. Each modifier is responsible for a property: <code class="highlighter-rouge">class="alert is-large is-rounded is-success"</code>. If you keep using these modifiers together, consider a <strong>variation</strong> (see below);</li>
+  <li>since modifiers have a single responsibility, the order in HTML or CSS shouldn’t matter. Consider using ordering the alphabetically.</li>
+</ul>
+
+<h3 id="global-has-modifier-is-modifier">Global .has-modifier, .is-modifier<a href="#global-has-modifier-is-modifier">#</a></h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"is-text-right"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"is-hidden"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"has-marginT30"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>reusable utility classes throughout the entire project;</li>
+  <li>each modifier class is responsible for a well-defined set of properties. It should be clear that these are not components.</li>
+</ul>
+
+<h3 id="component--variation">.component--variation <a href="#component--variation">#</a></h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--delete"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.btn</span> <span class="p">{</span>   
+    <span class="k">&amp;</span><span class="nt">--delete</span> <span class="p">{</span>   
+        <span class="cm">/* Overwrite properties from .btn */</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+        <span class="cm">/* Add own properties */</span> 
+        <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+        <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>a variation adds more than one properties at once to a class, and acts as a shorthand for multiple modifiers often used together;</li>
+  <li>even variations should be generic and reusable if possible: <code class="highlighter-rouge">class="team team--large"</code> is better than <code class="highlighter-rouge">class="team team--management"</code>.</li>
+</ul>
+
+<h3 id="js-hook">.js-hook<a href="#js-hook">#</a></h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"js-map …"</span> <span class="na">data-map-icon=</span><span class="s">"url.png"</span> <span class="na">data-map-lat=</span><span class="s">"4.56"</span> <span class="na">data-map-lon=</span><span class="s">"1.23"</span><span class="nt">&gt;</span>
+     ...
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="dom-structure">DOM Structure<a href="#dom-structure">#</a></h2>
+
+<ul>
+  <li>all styling is done by classes (except for HTML that is out of our control);</li>
+  <li>avoid <code class="highlighter-rouge">#id</code> ‘s for styling;</li>
+  <li>make elements easily reusable, moveable in a project, or between projects;</li>
+  <li>avoid multiple components on 1 DOM-element. Break them up.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid__col"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"news"</span><span class="nt">&gt;</span>
+        …
+    <span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/div&gt;</span>   
+
+// Bad 
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid__col news"</span><span class="nt">&gt;</span>
+    …
+<span class="nt">&lt;/div&gt;</span>    
+</code></pre></div></div>
+
+<p>Tags are interchangeable since styling is done by class.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// All the same
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"article"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"article"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"article"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>HTML tags that are out of control (eg. the output of an editor) are scoped by the component.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"article"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Editor output --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.article</span> <span class="p">{</span>
+    <span class="c">/* Tag instead of class here */</span>
+    <span class="err">&amp;</span> <span class="err">h2</span> <span class="err">{</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+
+    <span class="o">&amp;</span> <span class="nt">p</span> <span class="p">{</span>
+        <span class="err">…</span>
+    <span class="p">}</span>    
+<span class="err">}</span>    
+</code></pre></div></div>
+
+<h3 id="class-order">Class Order<a href="#class-order">#</a></h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"component__element has-modifier js-hook"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Visual class grouping can be done with <code class="highlighter-rouge">|</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"news__item is-active is-blue is-small | js-modal-trigger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="file-structure">File Structure<a href="#file-structure">#</a></h2>
+<p>We typically use 4 folders and a main <code class="highlighter-rouge">app.scss</code> or <code class="highlighter-rouge">site.scss</code> file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- base       : reset, basic html elements, global modifiers, mixins, variables
+|-- components : less reusable specific components
+|-- elements   : reusable elements
+|-- vendor     : custom files from 3rd party components like fancybox, select2 etc.
+`-- app.scss   : main file
+</code></pre></div></div>
+
+<h2 id="general-rules-and-guidelines">General Rules and Guidelines<a href="#general-rules-and-guidelines">#</a></h2>
+
+<h3 id="shorthand-notation">Shorthand Notation<a href="#shorthand-notation">#</a></h3>
+<p>CSS offers a variety of shorthand properties (like font) that should be used whenever possible, even in cases where only one value is explicitly set.</p>
+
+<p>Using shorthand properties is useful for code efficiency and understandability.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nc">.element</span> <span class="p">{</span>
+    <span class="nl">border-top</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">font</span><span class="p">:</span> <span class="m">1em</span> <span class="o">/</span> <span class="m">1</span><span class="mi">.5</span> <span class="n">georgia</span><span class="o">,</span> <span class="nb">serif</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">1em</span> <span class="m">2em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="nc">.element</span> <span class="p">{</span>
+    <span class="nl">border-top-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">georgia</span><span class="o">,</span> <span class="nb">serif</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="magic-numbers">Magic Numbers Are Evil<a href="#magic-numbers">#</a></h3>
+<p>Despite the super fun sounding name, magic numbers are a bad thing. It is a term for “unnamed numerical constant”. As in, just some number plunked into the code that is probably vital to things working correctly but are very difficult for anyone not intimately familiar with the code to understand what it is for.</p>
+
+<p>Magic numbers in CSS refer to values which “work” under some circumstances but are frail and prone to break when those circumstances change.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">37px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="formatting">Formatting<a href="#formatting">#</a></h2>
+
+<h3 id="indentation">Indentation<a href="#indentation">#</a></h3>
+<p>Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.element</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="capitalization">Capitalization<a href="#capitalization">#</a></h3>
+<p>Use only lowercase.</p>
+
+<p>All code has to be lowercase: This applies to CSS selectors, properties, and property values (with the exception of strings).</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nl">color</span><span class="p">:</span> <span class="mh">#E5E5E5</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="nl">color</span><span class="p">:</span> <span class="mh">#e5e5e5</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="trailing-whitespace">Trailing Whitespace<a href="#trailing-whitespace">#</a></h3>
+<p>Remove trailing white spaces.</p>
+
+<p>Trailing white spaces are unnecessary and can complicate diffs.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nl">content</span><span class="p">:</span> <span class="s1">'I am alright'</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="nl">content</span><span class="p">:</span> <span class="s1">'Diff will cry'</span><span class="p">;</span><span class="nt">_</span>
+</code></pre></div></div>
+
+<h3 id="quotes">Quotes<a href="#quotes">#</a></h3>
+<p>Use single (‘’) rather than double (“”) quotation marks for attribute selectors or property values. Do not use quotation marks in URI values.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">@import</span> <span class="sx">url(https://fonts.googleapis.com/css?family=Open+Sans)</span><span class="p">;</span>
+
+<span class="nt">html</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">'Open Sans'</span><span class="o">,</span> <span class="n">arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">@import</span> <span class="sx">url("https://fonts.googleapis.com/css?family=Open+Sans")</span><span class="p">;</span>
+
+<span class="nt">html</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Open Sans"</span><span class="o">,</span> <span class="n">arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Quote attribute values in selectors.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">"value"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nc">...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">value</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nc">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="general-formatting">General Formatting<a href="#general-formatting">#</a></h3>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Comment */</span>
+<span class="nc">.component</span> <span class="p">{</span>                      <span class="cm">/* Space before bracket */</span>                                   
+    <span class="k">@at-rule</span> <span class="err">…</span><span class="p">;</span>                   <span class="cm">/* @at-rules first */</span>
+         
+    <span class="na">a-property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>            <span class="cm">/* Props sorted alphabetically */</span>
+    <span class="na">b-property</span><span class="p">:</span> <span class="mh">#eebbcc</span><span class="p">;</span>          <span class="cm">/* We prefer the use of 6 character hexadecimal notation */</span> 
+    <span class="na">c-property</span><span class="p">:</span> <span class="mi">.45em</span><span class="p">;</span>            <span class="cm">/* No leading zero's */</span>
+    <span class="na">d-property</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>            	  <span class="cm">/* Omit unit specification after “0” values */</span>
+    
+    <span class="k">@include</span> <span class="nd">tablet</span><span class="p">()</span> <span class="p">{</span>           <span class="cm">/* We use a mobile first approach. You should include mobile properties first, then overwrite them with tablet, desktop and so on */</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+
+    <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>                     <span class="cm">/* Pseudo class */</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+    
+    <span class="k">&amp;</span><span class="nd">:before</span><span class="o">,</span>
+    <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>                     <span class="cm">/* Pseudo-element, each on a line */</span>
+        <span class="err">…</span>                       
+    <span class="p">}</span>
+    
+    <span class="k">&amp;</span><span class="nc">.has-modifier</span> <span class="p">{</span>
+        <span class="err">…</span>                           
+    <span class="p">}</span>
+     
+    <span class="k">&amp;</span><span class="nc">.is-modifier</span> <span class="p">{</span>
+        <span class="err">…</span>                        
+    <span class="p">}</span>
+
+    <span class="k">&amp;</span><span class="nt">--variation</span> <span class="p">{</span>                <span class="cm">/* A component with few extra modifications often used together */</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/* Try to avoid */</span>      
+    <span class="nt">h1</span> <span class="p">{</span>                          <span class="cm">/* Avoid unless you have no control over the HTML inside the `.component` */</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+    
+    <span class="k">&amp;</span><span class="nt">__element</span> <span class="p">{</span>                  <span class="cm">/* Use `&amp;__element` so that generated CSS is flat */</span>
+        <span class="err">…</span>
+    <span class="p">}</span>     
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="code-clean-up">Code Clean-up<a href="#code-clean-up">#</a></h2>
+<p>Do not leave commented out CSS code in place.</p>
+
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.c4studio.ro/dist/js/site.js?v2"></script>
+
+</body>
+
+</html>

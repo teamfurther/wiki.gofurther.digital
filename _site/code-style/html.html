@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HTML | C4studio Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.c4studio.ro/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.c4studio.ro/dist/css/site.css?v2" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://c4studio.ro" target="_blank"><img src="https://wiki.c4studio.ro/dist/img/logo.svg" title="C4studio Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/development-workflow">Development Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-setup">Project Set-up</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.c4studio.ro/development-workflow/project-release">Project Release</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/code-style/php">PHP</a>
+                        <a href="https://wiki.c4studio.ro/code-style/html">HTML</a>
+                        <a href="https://wiki.c4studio.ro/code-style/css">CSS</a>
+                        <a href="https://wiki.c4studio.ro/code-style/javascript">JavaScript</a>
+                        <a href="https://wiki.c4studio.ro/code-style/laravel-best-practices">Laravel Best Practices</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; C4studio
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">HTML</h1>
+
+    <ul class="toc">
+  <li><a href="#general-rules-and-guidelines">General Rules and Guidelines</a></li>
+  <li><a href="#formatting">Formatting</a></li>
+  <li><a href="#code-clean-up">Code Clean-up</a></li>
+</ul>
+
+<h2 id="general-rules-and-guidelines">General Rules and Guidelines<a href="#general-rules-and-guidelines">#</a></h2>
+
+<h3 id="doctype">Doctype<a href="#doctype">#</a></h3>
+<p>Enforce standards mode and more consistent rendering in every browser possible with this simple doctype at the beginning of every HTML page.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="html-validity">HTML Validity<a href="#html-validity">#</a></h3>
+<p>Use valid HTML where possible.</p>
+
+<p>Using valid HTML is a measurable baseline quality attribute that contributes to learning about technical requirements and constraints, and that ensures proper HTML usage.</p>
+
+<h3 id="language-attributes">Language Attributes<a href="#language-attributes">#</a></h3>
+<p>From the HTML5 spec: Authors are encouraged to specify a lang attribute on the root html element, giving the document’s language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en-gb"</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="character-encoding">Character Encoding<a href="#character-encoding">#</a></h3>
+<p>Quickly and easily ensure proper rendering of your content by declaring an explicit character encoding. When doing so, you may avoid using character entities in your HTML, provided their encoding matches that of the document (generally UTF-8).</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="css-and-js-includes">CSS and JS includes<a href="#css-and-js-includes">#</a></h3>
+<p>Per HTML5 spec, typically there is no need to specify a type when including CSS and JavaScript files as text/css and text/javascript are their respective defaults.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+// Bad
+<span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="separation-of-concerns">Separation of Concerns<a href="#separation-of-concerns">#</a></h3>
+<p>Separate structure from presentation from behavior.</p>
+
+<p>Strictly keep structure (markup), presentation (styling), and behavior (scripting) apart, and try to keep the interaction between the three to an absolute minimum.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">"highlighted-text"</span><span class="nt">&gt;</span>I'm cool.<span class="nt">&lt;/strong&gt;</span>
+
+// Bad
+<span class="nt">&lt;strong</span> <span class="na">style=</span><span class="s">"background-color: #fff00; font-size: 20px;&gt;I'm frowned upon.&lt;/strong&gt;
+</span></code></pre></div></div>
+
+<h3 id="semantics">Semantics<a href="#semantics">#</a></h3>
+<p>Use elements for what they have been created for. For example, use heading elements for headings, p elements for paragraphs, a elements for anchors, etc.</p>
+
+<p>Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;strong&gt;</span>Good semantics<span class="nt">&lt;/strong&gt;</span>
+
+// Bad
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bold"</span><span class="nt">&gt;</span>Bad semantics<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<h3 id="js-generated-markup">JS Generated Markup<a href="#js-generated-markup">#</a></h3>
+<p>Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible.</p>
+
+<h2 id="formatting">Formatting<a href="#formatting">#</a></h2>
+
+<h3 id="indentation">Indentation<a href="#indentation">#</a></h3>
+<p>Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/open-source"</span><span class="nt">&gt;</span>
+    Open Source
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h3 id="capitalization">Capitalization<a href="#capitalization">#</a></h3>
+<p>Use only lowercase.</p>
+
+<p>All code has to be lowercase: This applies to HTML element names, attributes and attribute values (unless text/CDATA).</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"davinci.jpg"</span> <span class="na">alt=</span><span class="s">"Portrait of Leondardo Da Vinci"</span> <span class="nt">/&gt;</span>
+
+// Bad
+<span class="nt">&lt;IMG</span> <span class="na">SRC=</span><span class="s">"davinci.jpg"</span> <span class="na">ALL=</span><span class="s">"Portrait of Leondardo Da Vinci"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="trailing-whitespace">Trailing Whitespace<a href="#trailing-whitespace">#</a></h3>
+<p>Remove trailing white spaces.</p>
+
+<p>Trailing white spaces are unnecessary and can complicate diffs.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;p&gt;</span>I'm alright<span class="nt">&lt;/p&gt;</span>
+
+// Bad
+<span class="nt">&lt;p&gt;</span>Diff will cry<span class="nt">&lt;/p&gt;</span>_
+</code></pre></div></div>
+
+<h3 id="quotes">Quotes<a href="#quotes">#</a></h3>
+<p>Always use double quotes, never single quotes on attributes.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">href=</span><span class="s">"https://c4studio.ro"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>C4studio<span class="nt">&lt;/a&gt;</span>
+
+// Bad
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">'btn'</span> <span class="na">href=</span><span class="s">'https://c4studio.ro'</span> <span class="na">target=</span><span class="s">'_blank'</span><span class="nt">&gt;</span>C4studio<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h3 id="self-closing-tags">Self-closing Tags<a href="#self-closing-tags">#</a></h3>
+<p>Always include trailing slashes in self-closing elements. Trailing slashes were only required in the old XHTML spec, HTML5 spec says they’re optional. But we find them to help us more quickly identify elements that don’t need a closing tag.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"davinci.jpg"</span> <span class="na">alt=</span><span class="s">"Portrait of Leondardo Da Vinci"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+
+// Bad
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">placeholder=</span><span class="s">"Your email"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="optional-closing-tags">Optional Closing Tags<a href="#optional-closing-tags">#</a></h3>
+<p>Don’t omit optional closing tags (e.g. <code class="highlighter-rouge">&lt;/li&gt;</code> or <code class="highlighter-rouge">&lt;/body&gt;</code>).</p>
+
+<h3 id="general-formatting">General Formatting<a href="#general-formatting">#</a></h3>
+<p>Use a new line for every block, list, or table element, and indent every such child element.</p>
+
+<p>Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list, or table element on a new line.</p>
+
+<p>Also, indent them if they are child elements of a block, list, or table element.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;blockquote&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;em&gt;</span>Space<span class="nt">&lt;/em&gt;</span>, the final frontier.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/blockquote&gt;</span>
+
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Moe<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Larry<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Curly<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Income<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Taxes<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>$ 5.00<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>$ 4.50<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<h3 id="mark-end-of-large-elements">Mark End of Large Elements<a href="#mark-end-of-large-elements">#</a></h3>
+<p>You should always mark the end of a DOM element with a lots of content by placing a comment after the closing tag.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+<span class="c">&lt;!-- ... --&gt;</span>
+<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- .content --&gt;</span>
+</code></pre></div></div>
+
+<h3 id="attribute-order">Attribute Order<a href="#attribute-order">#</a></h3>
+<p>HTML attributes should come in this particular order for easier reading of code. Classes make for great reusable components, so they come first. Ids are more specific and should be used sparingly (e.g., for in-page bookmarks), so they come second.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">”firstname"</span> <span class="na">name=</span><span class="s">"firstname"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="boolean-attributes">Boolean Attributes<a href="#boolean-attributes">#</a></h3>
+<p>A boolean attribute is one that needs no declared value. XHTML required you to declare a value, but HTML5 has no such requirement:</p>
+
+<p>The presence of a boolean attribute on an element represents the true value, and the absence of the attribute represents the false value. If the attribute is present, its value must either be the empty string or […] the attribute’s canonical name, with no leading or trailing whitespace.</p>
+
+<p><strong>In short, don’t add a value.</strong></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">checked</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;select&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">selected</span><span class="nt">&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+</code></pre></div></div>
+
+<h2 id="code-clean-up">Code Clean-up<a href="#code-clean-up">#</a></h2>
+<p>Do not leave commented out HTML code in place.</p>
+
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.c4studio.ro/dist/js/site.js?v2"></script>
+
+</body>
+
+</html>

@@ -287,7 +287,7 @@ Always name your form requests by the singular name of your resource, suffixed w
 
 e.g. `PostRequest`
 
-In some cases, you need separate form requests for the `create()` and `update()` controller methods. In these cases put the method name between the name of your resource and the `Request` suffix
+In some cases, you need separate form requests for the `create()` and `update()` controller methods. In these cases put the method name between the name of your resource and the `Request` suffix.
 
 e.g. `PostCreateRequest` or `PostUpdateRequest`
 
@@ -398,7 +398,7 @@ Indent using four spaces.
 
 Always add spaces after control structures.
 
-```
+```html
 @if ($condition)
     Something
 @endif
@@ -406,7 +406,7 @@ Always add spaces after control structures.
 
 Translations must be rendered with the `__` function. We prefer using this over `@lang` in Blade views because `__` can be used in both Blade views and regular PHP code. Here's an example:
 
-```
+```html
 <h2>{{ __('newsletter.form.title') }}</h2>
 
 {!! __('newsletter.form.description') !!}

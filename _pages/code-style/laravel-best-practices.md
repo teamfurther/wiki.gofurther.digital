@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Laravel Best Practices"
-permalink: 'development-workflow/laravel-best-practices'
+permalink: 'code-style/laravel-best-practices'
 ---
 
 - [Controllers](#controllers)

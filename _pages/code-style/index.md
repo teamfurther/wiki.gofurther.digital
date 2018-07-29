@@ -12,4 +12,4 @@ Why all this fuss and bother over how we write code?
 - it encourages the you to pay attention to the little details
 - it helps to foster an environment of "accountability for your own code"
 
-<small>Based on <a href="https://guidelines.spatie.be" target="_blank">guidelines.spatie.be</a>. Amazing work <a href="https://twitter.com/spatie_be" target="_blank">@spatie_be</a>!
+<small>Based on <a href="https://guidelines.spatie.be" target="_blank">guidelines.spatie.be</a> and <a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">google.github.io/styleguide/htmlcssguide.html</a>.
