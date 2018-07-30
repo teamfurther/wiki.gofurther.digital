@@ -4,6 +4,7 @@ title: "CSS"
 permalink: 'code-style/css'
 ---
 
+- [Preprocessing](#preprocessing)
 - [BEVM](#bevm)
 - [DOM Structure](#dom-structure)
 - [File Structure](#file-structure)
@@ -12,8 +13,11 @@ permalink: 'code-style/css'
 - [Code Clean-up](#code-clean-up)
 {: .toc}
 
+## Preprocessing[#](#preprocessing)
+We use SCSS to write our CSS code, and use [Laravel Mix](https://github.com/JeffreyWay/laravel-mix){:target="_blank"} to process it, but these principles are applicable to any pre- or postprocessors out there.
+
 ## BEVM[#](#bevm)
-We use a CSS naming convention loosely based on [BEM](https://getbem.com).
+We use a CSS naming convention loosely based on [BEM](https://getbem.com){:target="_blank"}.
 
 We only use classes for styling, with the following ingredients:
 

@@ -30,6 +30,15 @@
                     <a href="https://wiki.c4studio.ro/">Home</a>
                 </div>
                 <div class="nav__item">
+                    <a href="https://wiki.c4studio.ro/life">Life at C4studio</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.c4studio.ro/life/onboarding">Onboarding</a>
+                        <a href="https://wiki.c4studio.ro/life/perks">Perks</a>
+                        <a href="https://wiki.c4studio.ro/life/stand-up-meetings">Stand-up Meetings</a>
+                        <a href="https://wiki.c4studio.ro/life/time-tracking">Time-tracking</a>
+                    </div>
+                </div>
+                <div class="nav__item">
                     <a href="https://wiki.c4studio.ro/development-workflow">Development Workflow</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.c4studio.ro/development-workflow/project-setup">Project Set-up</a>
@@ -66,6 +75,7 @@
     <h1 class="article__title">CSS</h1>
 
     <ul class="toc">
+  <li><a href="#preprocessing">Preprocessing</a></li>
   <li><a href="#bevm">BEVM</a></li>
   <li><a href="#dom-structure">DOM Structure</a></li>
   <li><a href="#file-structure">File Structure</a></li>
@@ -74,8 +84,11 @@
   <li><a href="#code-clean-up">Code Clean-up</a></li>
 </ul>
 
+<h2 id="preprocessing">Preprocessing<a href="#preprocessing">#</a></h2>
+<p>We use SCSS to write our CSS code, and use <a href="https://github.com/JeffreyWay/laravel-mix" target="_blank">Laravel Mix</a> to process it, but these principles are applicable to any pre- or postprocessors out there.</p>
+
 <h2 id="bevm">BEVM<a href="#bevm">#</a></h2>
-<p>We use a CSS naming convention loosely based on <a href="https://getbem.com">BEM</a>.</p>
+<p>We use a CSS naming convention loosely based on <a href="https://getbem.com" target="_blank">BEM</a>.</p>
 
 <p>We only use classes for styling, with the following ingredients:</p>
 
