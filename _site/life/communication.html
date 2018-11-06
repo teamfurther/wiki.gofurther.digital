@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Knowledge Center | C4studio Wiki</title>
+    <title>Communication | C4studio Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.c4studio.ro/dist/img/favicon.png" />
 
@@ -74,15 +74,57 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Knowledge Center</h1>
+    <h1 class="article__title">Communication</h1>
 
-    <p class="is-text-large">These are our company wiki pages. This is where we store internal documentation about processes and workflows. The contents of this site exist for ourselves —more importantly, our future selves— and for giving future colleagues a reference to our way of doing things and their quirks.</p>
+    <p>All communication within the C4studio team is done via Slack. Skype or other chat services might be used when communicating with clients or contractors, but migrating them over to Slack is encouraged.</p>
 
-<p>The purpose is to:</p>
+<ul class="toc">
+  <li><a href="#public-channels">Public channels</a></li>
+  <li><a href="#project-channels">Project Channels</a></li>
+  <li><a href="#third-party">Third-party Integrations</a></li>
+</ul>
+
+<h2 id="public-channels">Public channels<a href="#public-channels">#</a></h2>
+
+<p><code class="highlighter-rouge">#general</code> - use for company-wide announcements and work-based matters only.</p>
+
+<p><small class="note">All Slack members are part of this channel, including some clients, so take care what you post.</small></p>
+
+<p><code class="highlighter-rouge">#watercooler</code> - use for non-work banter and water cooler conversations.</p>
+
+<p>As a general rule, if you don’t know if you should post to <code class="highlighter-rouge">#general</code> or <code class="highlighter-rouge">#watercooler</code>, just use <code class="highlighter-rouge">#watercooler</code>.</p>
+
+<h2 id="project-channels">Project Channels<a href="#project-channels">#</a></h2>
+
 <ul>
-  <li>help faster onboarding of new team members</li>
-  <li>reduce time spent on searching for information</li>
-  <li>ensure that knowledge doesn’t leave with people</li>
+  <li>By default all projects, should have a private channel</li>
+  <li>All team members should be part of channel</li>
+  <li>Old team members should be removed from channel</li>
+  <li>Project questions specifically addressed to one team member, should be set via DM instead</li>
+</ul>
+
+<h2 id="third-party">Third-party Integrations<a href="#third-party">#</a></h2>
+
+<h3 id="jira">Jira</h3>
+<p>All Jira projects should be connected with project’s Slack channel.</p>
+
+<p>To avoid message noise, connection should be configured to only send notification when an assignee has been updated. To do this, follow these steps:</p>
+<ol>
+  <li>Type <code class="highlighter-rouge">/jira</code> in Slack channel</li>
+  <li>Click Manage subscription</li>
+  <li>Click Edit next to project name</li>
+  <li>Uncheck all boxes except “Assignee updated”</li>
+</ol>
+
+<h3 id="bugsnag">Bugsnag</h3>
+<p>All Bugsnag projects should be connected with project’s Slack channel. Notifications should be sent when:</p>
+
+<ul>
+  <li>A new error is received</li>
+  <li>An error occurs frequently (10, 100, 1000, 2000… etc times)</li>
+  <li>An error is automatically reopened</li>
+  <li>A project error rate increases significantly</li>
+  <li>When project environment is <code class="highlighter-rouge">staging</code> or <code class="highlighter-rouge">production</code>.</li>
 </ul>
 
 </div>
