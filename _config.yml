@@ -1,7 +1,7 @@
-title: C4studio Wiki
-email: office@c4studio.ro
+title: Further Wiki
+email: hello@gofurther.digital
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://wiki.c4studio.ro" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://wiki.gofurther.digital" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown

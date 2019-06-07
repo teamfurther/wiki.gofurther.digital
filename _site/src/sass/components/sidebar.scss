@@ -28,7 +28,7 @@
     }
 
     &:after {
-        background-color: rgba($green, .9);
+        background-color: rgba($cobalt, .85);
         content: '';
         display: block;
         height: inherit;
@@ -86,7 +86,7 @@
         }
 
         & > span {
-            background-color: $green;
+            background-color: $cobalt;
             content: '';
             display: block;
             height: 3px;

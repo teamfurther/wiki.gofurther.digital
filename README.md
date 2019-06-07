@@ -1,6 +1,6 @@
-# C4studio Wiki
+# Further Wiki
 
-*C4studio Wiki is a Jekyll Template used on https://wiki.c4studio.ro
+*Further Wiki is a Jekyll Template used on https://wiki.gofurther.digital
 
 ## License
 

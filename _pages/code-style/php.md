@@ -46,7 +46,7 @@ class Url
      *
      * @param string $url
      *
-     * @return \C4studio\Url\Url
+     * @return \Further\Url\Url
      */
     public static function fromString(string $url): Url
     {
@@ -62,7 +62,7 @@ Always use fully qualified class names in Docblocks.
 /**
  * @param string $url
  *
- * @return \C4studio\Url\Url
+ * @return \Further\Url\Url
  */
 
 // Bad
@@ -79,7 +79,7 @@ Docblocks for class properties are required, as there's currently no other way t
 // Good
 class Foo
 {
-    /** @var \C4studio\Url\Url */
+    /** @var \Further\Url\Url */
     protected $url;
 
     /** @var string */
@@ -111,10 +111,10 @@ If a variable has multiple types, the most common occurring type should be first
 
 ```php
 // Good
-/** @var \C4studio\Goo\Bar|null */
+/** @var \Further\Goo\Bar|null */
 
 // Bad
-/** @var null|\C4studio\Goo\Bar */
+/** @var null|\Further\Goo\Bar */
 ```
 
 ### Comments[#](#comments)
@@ -324,7 +324,7 @@ e.g. `AccountActivatedNotification` or `NewEventNotication`
 ## Routing[#](#routing)
 Public-facing urls must use kebab-case.
 
-`https://c4studio.ro/open-source`, `https://c4studio.ro/solutions/time-tracking`
+`https://gofurther.digital/open-source`, `https://gofurther.digital/solutions/time-tracking`
 
 Route names must use camelCase. You are also encouraged to use namespaces.
 

@@ -3,7 +3,7 @@ layout: page
 title: "Communication"
 permalink: 'life/communication'
 ---
-All communication within the C4studio team is done via Slack. Skype or other chat services might be used when communicating with clients or contractors, but migrating them over to Slack is encouraged.
+All communication within the Further team is done via Slack. Skype or other chat services might be used when communicating with clients or contractors, but migrating them over to Slack is encouraged.
 
 - [Public channels](#public-channels)
 - [Project Channels](#project-channels)

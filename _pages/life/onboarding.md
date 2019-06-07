@@ -3,10 +3,12 @@ layout: page
 title: "Onboarding"
 permalink: 'life/onboarding'
 ---
-This page provides a roadmap and checklists for new employees at C4studio.
+This page provides a roadmap and checklists for new employees at Further.
 
 - [Preboarding](#preboarding)
 - [Tools](#tools)
+- [Holidays](#holidays)
+- [Payday](#payday)
 {: .toc}
 
 ## Preboarding[#](#pre-onboarding)
@@ -18,20 +20,21 @@ This page provides a roadmap and checklists for new employees at C4studio.
 ## Tools[#](#tools)
 
 ### Communication
-- @c4studio.ro email account
+- @gofurther.digital email account
     - ask office manager to create it for you;
     - set up email signature [(resources)](http://bit.ly/2K7FsR6){:target="_blank"}.
 - Slack [&#x2197;](https://slack.com){:target="_blank"}
     - desktop app is recommended if you use multiple workspaces, otherwise web app is fine;
-    - mobile is recommended;
-    - signup [&#x2197;](https://c4studio.slack.com/signup){:target="_blank"}.
+    - mobile app is recommended;
+    - signup [&#x2197;](https://goteamfurther.slack.com/signup){:target="_blank"}.
 - Google Hangouts
     - used for group calls, video calls, call with screen-share;
     - initiate from Slack channel with ```/hangout```.
 - Skype [&#x2197;](https://skype.com/en/get-skype/){:target="_blank"} 
-    - only necessary if you are in contact with clients.
+    - only necessary if you are in contact with clients/contractors.
 - Google Drive [&#x2197;](drive.google.com){:target="_blank"}
-- Calendar [&#x2197;](https://calendar.c4studio.ro){:target="_blank"}
+- Calendar
+    - can be accessed by logging into your Google Suite account with your email address
 {: .checklist}
 
 ### Time Tracking
@@ -42,12 +45,12 @@ This page provides a roadmap and checklists for new employees at C4studio.
 
 ### Project Management
 - Jira [&#x2197;](https://id.atlassian.com/signup){:target="_blank"} 
-    - ask office manager to add you to the C4studio team.
+    - ask office manager to add you to the Further team.
 {: .checklist}
 
 ### Version Control
 - Bitbucket [&#x2197;](https://bitbucket.org/account/signup/){:target="_blank"} 
-    - ask lead developer to add you to the C4studio team.
+    - ask lead developer to add you to the Further team.
 {: .checklist}
 
 ### Development
@@ -73,3 +76,11 @@ This page provides a roadmap and checklists for new employees at C4studio.
 - Vue.js DevTools [&#x2197;](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd){:target="_blank"}
 - Wappalyzer [&#x2197;](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg){:target="_blank"}
 {: .checklist}
+
+## Holidays[#](#holidays)
+Here at Further, we have opted for an open vacation policy, which basically means that you can take time off whenever you need it (granted that you are aware of your responsibilities when it comes to other team members’ work). Feeling “out of it” or generally unmotivated is enough of a reason to take a day or two. It helps you recharge in a period when you would not be productive anyways.
+
+There's only one rule: if you're taking more than 2 days, make sure you announce it as early as possible (preferable 3-4 weeks earlier) and you set yourself as unavailable for that period in the shared calendar.
+
+## Payday[#](#payday)
+Payday for a set month is generally done between the 15th and 20th of the next month.

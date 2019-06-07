@@ -14,13 +14,13 @@ All our projects use Git, mostly with a repository hosted on Bitbucket.
 
 If the repo contains the source code of a site its name should be the main naked domain name of that site. It should be lowercased.
 
-- Bad: `https://www.c4studio.ro`, `www.c4studio.ro`, `C4studio.ro`
-- Good: `c4studio.ro`
+- Bad: `https://www.gofurther.digital`, `www.gofurther.digital`, `gofurther.digital`
+- Good: `gofurther.digital`
 
 Sites that are hosted on a subdomain may use that subdomain in their name.
 
-- Bad: `c4studio.ro-wiki`
-- Good: `wiki.c4studio.ro`
+- Bad: `gofurther.digital-wiki`
+- Good: `wiki.gofurther.digital`
 
 If the repo concerns something else, for example a package, its name should be kebab-cased.
 

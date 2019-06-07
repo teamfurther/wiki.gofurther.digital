@@ -44,19 +44,19 @@ body {
 // Inline
 
 a {
-    color: $green;
+    color: $pearl;
     cursor: pointer;
     text-decoration: none;
     transition: none;
 
     &:hover {
-        color: darken($green, 5%);
+        color: darken($pearl, 5%);
     }
 }
 
 code {
     background-color: $grey-lighter;
-    color: $magenta;
+    color: $raspberry;
     font-size: 0.8em;
     font-weight: normal;
     padding: 0.25em 0.5em 0.25em;
@@ -97,7 +97,7 @@ strong {
 
 pre {
     background-color: $grey-lighter;
-    color: $green;
+    color: $pearl;
     font-size: 0.8em;
     white-space: pre;
     word-wrap: normal;

@@ -122,10 +122,10 @@ Always use double quotes, never single quotes on attributes.
 
 ```html
 // Good
-<a class="btn" href="https://c4studio.ro" target="_blank">C4studio</a>
+<a class="btn" href="https://gofurther.digital" target="_blank">Further</a>
 
 // Bad
-<a class='btn' href='https://c4studio.ro' target='_blank'>C4studio</a>
+<a class='btn' href='https://gofurther.digital' target='_blank'>Further</a>
 ```
 
 ### Self-closing Tags[#](#self-closing-tags)

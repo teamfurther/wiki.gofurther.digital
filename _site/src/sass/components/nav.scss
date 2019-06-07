@@ -13,15 +13,18 @@
         margin-bottom: 30px;
 
         & > a {
-            background-color: rgba($black, .05);
+            background-color: rgba($black, .25);
             color: $white;
             display: table;
-            margin-left: auto;
             padding: 2px 5px;
             text-transform: uppercase;
 
+            @include desktop() {
+                margin-left: auto;
+            }
+
             &:hover {
-                background-color: rgba($black, .1);
+                background-color: rgba($black, .35);
             }
         }
     }

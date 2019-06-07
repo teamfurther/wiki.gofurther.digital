@@ -37,13 +37,18 @@ MINIPROJECTS
 
 Some types of task do not have Jira issues (PM, QA, etc.) or projects do not have a Jira board. In these cases, use one of the following descriptions (make sure you use proper case):
 
+- ```API```
 - ```Backend```
+- ```Bugfix```
+- ```Code review```
 - ```DevOps```
 - ```Estimates```
 - ```Frontend```
-- ```PM``` (meetings, admin tasks, etc.)
+- ```PM``` (meetings, admin tasks, planning, retrospective etc.)
+- ```Project setup```
 - ```QA```
 - ```Research```
+- ```Specs```
 - ```Support```
 
 If a project develops new modules, and entries have to be differentiated by module, a separate Toggl project should be created. E.g.:
@@ -67,6 +72,8 @@ Corvinus CMS
 Use one of the following descriptions (make sure you use proper case):
 
 - ```1-on-1 meeting```
+- ```Account management```
+- ```Admin```
 - ```Emails```
 - ```Finances```
 - ```GTD``` (anything that doesn't fit in other descriptions)
