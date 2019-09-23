@@ -22,7 +22,7 @@ button,
 input,
 select,
 textarea {
-    font-family: $family-serif;
+    font-family: $family-body;
 }
 
 code,
@@ -57,9 +57,10 @@ a {
 code {
     background-color: $grey-lighter;
     color: $raspberry;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: normal;
     padding: 0.25em 0.5em 0.25em;
+    white-space: pre;
 }
 
 hr {
@@ -98,7 +99,7 @@ strong {
 pre {
     background-color: $grey-lighter;
     color: $pearl;
-    font-size: 0.8em;
+    font-size: 0.9em;
     white-space: pre;
     word-wrap: normal;
 

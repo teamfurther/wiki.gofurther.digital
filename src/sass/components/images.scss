@@ -1,0 +1,13 @@
+.thumb {
+    margin: 15px 0 45px;
+    width: 320px;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    & + .thumb {
+        margin-top: -30px;
+    }
+}

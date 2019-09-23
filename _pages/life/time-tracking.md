@@ -73,12 +73,13 @@ Use one of the following descriptions (make sure you use proper case):
 
 - ```1-on-1 meeting```
 - ```Account management```
-- ```Admin```
-- ```Emails```
+- ```Admin``` (contracts, other administrative tasks)
+- ```Emails``` (including phones calls)
 - ```Finances```
 - ```GTD``` (anything that doesn't fit in other descriptions)
 - ```HR``` (posting job adverts, creating tests, filtering candidates, interviews, onboarding)
 - ```Learning```
+- ```Marketing``` (handling social media, creating content, presentations)
 - ```Networking```
 - ```PM``` (meetings)
 - ```QA``` (for small tasks, when it's more time starting/stopping Toggl for a specific project than the task itself)

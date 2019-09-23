@@ -2,7 +2,8 @@
     align-items: flex-start;
     display: inline-flex;
     flex-direction: column;
-    font-family: $family-sans-serif;
+    font-family: $family-highlight;
+    font-size: 16px;
     margin-bottom: 50px;
 
     @include tablet() {

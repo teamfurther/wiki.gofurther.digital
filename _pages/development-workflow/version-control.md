@@ -14,7 +14,7 @@ All our projects use Git, mostly with a repository hosted on Bitbucket.
 
 If the repo contains the source code of a site its name should be the main naked domain name of that site. It should be lowercased.
 
-- Bad: `https://www.gofurther.digital`, `www.gofurther.digital`, `gofurther.digital`
+- Bad: `https://www.gofurther.digital`, `www.gofurther.digital`, `goFurther.digital`
 - Good: `gofurther.digital`
 
 Sites that are hosted on a subdomain may use that subdomain in their name.

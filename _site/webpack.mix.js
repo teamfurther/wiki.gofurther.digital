@@ -20,6 +20,7 @@ mix.sass('src/sass/site.scss', 'dist/css').options({
 }).sourceMaps();
 
 mix.copyDirectory('src/img', 'dist/img', false);
+mix.copyDirectory('src/media', 'dist/media', false);
 
 // Only do cache-busting in production
 if (mix.inProduction()) {

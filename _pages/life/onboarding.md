@@ -38,7 +38,7 @@ This page provides a roadmap and checklists for new employees at Further.
 {: .checklist}
 
 ### Time Tracking
-- Toggl 
+- Toggl [&#x2197;](https://toggl.com){:target="_blank"}
     - ask office manager to send you an invite.
     - read our guide on how we track time [&#x2197;](/life/time-tracking).
 {: .checklist}

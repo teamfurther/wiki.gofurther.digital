@@ -1,6 +1,4 @@
 {
-    "/dist/js/site.js": "/dist/js/site.js?id=4278b5c12374704fec4e",
-    "/dist/css/site.css": "/dist/css/site.css?id=f876ee3565509087cc2a",
-    "/dist/js/site.js.map": "/dist/js/site.js.map?id=f944d57a6a50f05eba98",
-    "/dist/css/site.css.map": "/dist/css/site.css.map?id=c57f2bf59b9b6745d603"
+    "/dist/js/site.js": "/dist/js/site.js",
+    "/dist/css/site.css": "/dist/css/site.css"
 }
