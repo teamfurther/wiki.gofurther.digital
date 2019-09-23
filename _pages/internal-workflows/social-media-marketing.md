@@ -81,8 +81,12 @@ Subjects might include: productivity tips, time management, project management o
 Always hashtag post: 
 - ```EN```: #mondaytips
 - ```HU```: #hétfőitipp
-    
-[topics-monday]
+
+<div class="thumb">
+    <a href="/dist/media/social-media-marketing-topics-monday.png" target="_blank">
+        <img src="/dist/media/social-media-marketing-topics-monday.png" alt="" />
+    </a>
+</div>
     
 ```Examples```: [http://bit.ly/2kolxa0](http://bit.ly/2kolxa0){:target="_blank"}, [http://bit.ly/2lVwkJe](http://bit.ly/2lVwkJe){:target="_blank"}  
 ```Channels```: Facebook, Instagram post  
@@ -92,14 +96,34 @@ Always hashtag post:
 The aim of this topic is the share video content we created.
 
 Always upload video to Facebook, never share Youtube video.
-[topics-tuesday1]
+
+<div class="thumb">
+    <a href="/dist/media/social-media-marketing-topics-tuesday1.png" target="_blank">
+        <img src="/dist/media/social-media-marketing-topics-tuesday1.png" alt="" />
+    </a>
+</div>
 
 Video should use targeting to reach the audience who speaks the language of the video.
-[topics-tuesday2]
-[topics-tuesday3]
+
+<div class="thumb">
+    <a href="/dist/media/social-media-marketing-topics-tuesday2.png" target="_blank">
+        <img src="/dist/media/social-media-marketing-topics-topics-tuesday2.png" alt="" />
+    </a>
+</div>
+
+<div class="thumb">
+    <a href="/dist/media/social-media-marketing-topics-tuesday3.png" target="_blank">
+        <img src="/dist/media/social-media-marketing-topics-tuesday3.png" alt="" />
+    </a>
+</div>
 
 Video should always have a custom thumbnail image.
-[topics-tuesday4]
+
+<div class="thumb">
+    <a href="/dist/media/social-media-marketing-topics-tuesday4.png" target="_blank">
+        <img src="/dist/media/social-media-marketing-topics-tuesday4.png" alt="" />
+    </a>
+</div>
 
 ```Examples```: [http://bit.ly/2kLvmPe](http://bit.ly/2kLvmPe){:target="_blank"}  
 ```Channels```: Facebook, Instagram IGTV <small>(1-2 days after posting to Facebook)</small>, LinkedIn  
@@ -128,7 +152,11 @@ Always hashtag post:
 - ```EN```: #gofurther, #furtherdigitalsolutions, #teamfurther + hashtags related to post (in EN)
 - ```HU```: #gofurther, #furtherdigitalsolutions, #teamfurther + hashtags related to post (in HU)
 
-[topics-friday]
+<div class="thumb">
+    <a href="/dist/media/social-media-marketing-topics-friday.png" target="_blank">
+        <img src="/dist/media/social-media-marketing-topics-friday.png" alt="" />
+    </a>
+</div>
 
 ```Examples```: [http://bit.ly/2mcmpPl](http://bit.ly/2mcmpPl){:target="_blank"}, [http://bit.ly/2lSungq](http://bit.ly/2lSungq){:target="_blank"}  
 ```Channels```: Facebook, Instagram post  
@@ -145,7 +173,11 @@ The aim of this topic is to share external content.
 
 Subjects might include: IT, software, business, etc.
 
-[topics-sunday]
+<div class="thumb">
+    <a href="/dist/media/social-media-marketing-topics-sunday.png" target="_blank">
+        <img src="/dist/media/social-media-marketing-topics-sunday.png" alt="" />
+    </a>
+</div>
 
 ```Examples```: [http://bit.ly/2mksZDL](http://bit.ly/2mksZDL){:target="_blank"}  
 ```Channels```: Facebook  
