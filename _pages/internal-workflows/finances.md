@@ -3,6 +3,8 @@ layout: page
 title: "Finances"
 permalink: 'internal-workflows/finances'
 ---
+<small class="owner">Owner: Management</small>
+
 This page describes how 
 
 The following page describes the business functions required to plan and execute our social media marketing strategy.
@@ -16,13 +18,13 @@ The following page describes the business functions required to plan and execute
 ## Monthly reporting[#](#monthly-reporting)
 We report unpaid billable hours and outstanding sums to our clients on a monthly basis. Later on, these reports will serve as the basis for invoicing and financial stats.
 
-Use Toggl's reports menu to generate a report of billable hours from the previous month. Proceed by updating the billable hours in the outstandings spreadsheet's ```List``` sheet, client by client. When updating a row, make sure you assign the values to the correct client/project/item. If not corresponding row exists, create one.
+Use Toggl's reports menu to generate a report of billable hours from the previous month. Proceed by updating the billable hours in the outstandings spreadsheet's `List` sheet, client by client. When updating a row, make sure you assign the values to the correct client/project/item. If not corresponding row exists, create one.
 
 When working in the spreadsheet, make sure you colour code the rows / cells you edited, so other collaborators know which values were edited by which team member.
 
-The ```Clients``` sheet in the outstandings spreadsheet contains the rates, related tasks and instructions for each specific client.
+The `Clients` sheet in the outstandings spreadsheet contains the rates, related tasks and instructions for each specific client.
 
-__(!)__ After finishing monthly reports, notify managing partner to sign-off on reports.
+<small class="note">After finishing monthly reports, notify managing partner to sign-off on reports.</small>
 
 ### Resources[#](#monthly-reporting-resources)
 - Outstandings spreadsheet [&#x2197;](http://bit.ly/2mfWwOw){:target="_blank"}
@@ -31,7 +33,7 @@ __(!)__ After finishing monthly reports, notify managing partner to sign-off on 
 - `every first Monday of the month`
 
 ## Invoicing[#](#invoicing)
-After getting approval on the monthly reports, invoices shall be created. Some clients need to sign-off on reports before invoicing, while other can be invoiced directly. You can find this information in the ```Clients``` sheet of the outstandings spreadsheet.
+After getting approval on the monthly reports, invoices shall be created. Some clients need to sign-off on reports before invoicing, while other can be invoiced directly. You can find this information in the `Clients` sheet of the outstandings spreadsheet.
 
 We use different invoice templates based on the type of the client:
 - Romania-based clients [&#x2197;](http://bit.ly/2kHkFgQ){:target="_blank"}
@@ -39,13 +41,13 @@ We use different invoice templates based on the type of the client:
 - EU clients without valid VAT number [&#x2197;](http://bit.ly/2kHkFgQ){:target="_blank"}
 - Non-EU clients [&#x2197;](http://bit.ly/2l8PjQa){:target="_blank"}
 
-All created invoice shall be uploaded in Google Docs and PDF formats to the [```_emitted```](http://bit.ly/2kFtYhh) folder on Google Drive. Upon sending invoice to client, invoice shall be moved to the [```_sent```](http://bit.ly/2kWScDU) folder.
+All created invoice shall be uploaded in Google Docs and PDF formats to the [`_emitted`](http://bit.ly/2kFtYhh) folder on Google Drive. Upon sending invoice to client, invoice shall be moved to the [`_sent`](http://bit.ly/2kWScDU) folder.
 
 ### Resources[#](#invoicing-resources)
 - Personalized invoice templates [&#x2197;](http://bit.ly/2mfiEZq){:target="_blank"}
 - VAT number lookup and validation [&#x2197;](http://ec.europa.eu/taxation_customs/vies/vatResponse.html){:target="_blank"}
-- ```_emitted``` invoices [&#x2197;](http://bit.ly/2kFtYhh){:target="_blank"}
-- ```_sent``` invoices [&#x2197;](http://bit.ly/2kWScDU){:target="_blank"}
+- `_emitted` invoices [&#x2197;](http://bit.ly/2kFtYhh){:target="_blank"}
+- `_sent` invoices [&#x2197;](http://bit.ly/2kWScDU){:target="_blank"}
 
 ### Timeline[#](#invoicing-timeline)
 - `every first Tuesday of the month`
@@ -70,11 +72,11 @@ After invoicing is done, all financial documents for the previous month should b
 - `first Friday after invoicing`
 
 ## Updating outstandings[#](#updating-outstandings)
-The ```List``` sheet in the outstandings spreadsheet shall be updated every month, by removing the rows corresponding to the invoices that have been paid by clients. If row has been only partially paid, only update the ```Paid``` column.
+The `List` sheet in the outstandings spreadsheet shall be updated every month, by removing the rows corresponding to the invoices that have been paid by clients. If row has been only partially paid, only update the `Paid` column.
 
-After updating the ```List``` sheet, make sure you also update the ```Income``` sheets. These sheets are used as a basis for our internal financial reports.
+After updating the `List` sheet, make sure you also update the `Income` sheets. These sheets are used as a basis for our internal financial reports.
 
-All paid invoices should be moved under the corresponding year subfolder in the [```Invoices```](http://bit.ly/2kFVTO4) folder.
+All paid invoices should be moved under the corresponding year subfolder in the [`Invoices`](http://bit.ly/2kFVTO4) folder.
 
 ### Resources[#](#updating-outstandings-resources)
 - Outstandings spreadsheet [&#x2197;](http://bit.ly/2mfWwOw){:target="_blank"}

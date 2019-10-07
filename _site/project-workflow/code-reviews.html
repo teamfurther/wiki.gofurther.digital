@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Set-up | Further Wiki</title>
+    <title>Code Reviews | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png?v2" />
 
@@ -41,11 +41,13 @@
                     </div>
                 </div>
                 <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/development-workflow">Development Workflow</a>
+                    <a href="https://wiki.gofurther.digital/project-workflow">Project Workflow</a>
                     <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/development-workflow/project-setup">Project Set-up</a>
-                        <a href="https://wiki.gofurther.digital/development-workflow/version-control">Version Control</a>
-                        <a href="https://wiki.gofurther.digital/development-workflow/project-release">Project Release</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug reports</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -81,43 +83,62 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Project Set-up</h1>
+    <h1 class="article__title">Code Reviews</h1>
 
-    <p>When a project moves from development to production, we need to go through numerous steps to get it ready for real world usage. We keep these steps in a checklist:</p>
+    <p><small class="owner">Owner: Project Lead</small></p>
 
+<p>Project lead is responsible for weekly code reviews, including final code review before deployment. To help with code reviews, we created a checklist. Use this template <a href="http://bit.ly/30Z3fLP" target="_blank">↗</a> to do code reviews.</p>
+
+<p>Remember, these are rough guidelines you should adapt to each project.</p>
+
+<h3 id="checklist">Checklist<a href="#code-reviews-checklist">#</a></h3>
 <ul class="checklist">
   <li>Did we check for <code class="highlighter-rouge">@TODO</code> occurences? <strong>If not, do it!</strong></li>
   <li>Did we run <code class="highlighter-rouge">phpcs</code> and <code class="highlighter-rouge">phpmd</code>? <strong>If not, do it!</strong></li>
-  <li>Did we check all pages for n+1 problems <strong>If not, do it!</strong></li>
+  <li>Did we run <code class="highlighter-rouge">phpstan</code>? <strong>If not, do it!</strong></li>
+  <li>Did we run <code class="highlighter-rouge">phpinsights</code>? <strong>If not, do it!</strong></li>
+  <li>Is code conforming to <a href="/code-style">code style</a>? <strong>If not, do it!</strong></li>
+  <li>Did we check all pages for n+1 problems? <strong>If not, do it!</strong></li>
   <li>Did we clean up code? (orphaned comments, debugging controls, etc.) <strong>If not, do it!</strong></li>
   <li>Did we do functional testing? <strong>If not, do it!</strong></li>
   <li>Did we do browser tests? <strong>If not, do it!</strong></li>
+  <li>Did we do stress tests for performance and scalability? <strong>If not, do it!</strong></li>
+  <li>Are class diagrams / data models / API docs up-to-date?</li>
   <li>Did we run page speed tests?
     <ul>
-      <li><a href="https://webpagetest.org" target="_blank">https://webpagetest.org</a></li>
       <li><a href="https://gtmetrix.com" target="_blank">https://gtmetrix.com</a></li>
-      <li><a href="https://developers.google.com/speed/pagespeed/insights" target="_blank">https://developers.google.com/speed/pagespeed/insights</a></li>
+      <li><a href="https://tools.pingdom.com" target="_blank">https://tools.pingdom.com</a></li>
+      <li><a href="https://webpagetest.org" target="_blank">https://webpagetest.org</a></li>
     </ul>
   </li>
   <li>Do we have proper error handling. Custom pages for <em>404</em>, <em>500</em>, <em>503</em>, <em>Token Mismatch</em></li>
   <li>Did we verify that all HTTP status codes are ok with <a href="https://github.com/spatie/http-status-check" target="_blank">https://github.com/spatie/http-status-check</a></li>
   <li>Did we scan for mixed content with <a href="https://github.com/spatie/mixed-content-scanner-cli" target="_blank">https://github.com/spatie/mixed-content-scanner-cli</a></li>
   <li>Do we have Bugsnag set-up for PHP &amp; JS, and integrated into Slack channel? <strong>If not, do it!</strong></li>
-  <li>Do we have Google Analytics set-up?</li>
-  <li>Did we remove <code class="highlighter-rouge">develop</code> branch? <strong>If not, remove it!</strong></li>
+  <li>Did we replace <code class="highlighter-rouge">develop</code> branch with <code class="highlighter-rouge">staging</code>? <strong>If not, do it!</strong></li>
+  <li>Is IPS up-to-date?</li>
   <li>Server
     <ul>
       <li>Does our deployment server use SSL certificates? <strong>If not, set it up!</strong></li>
       <li>Does our server redirect <em>www</em> to <em>non-www</em> and to <em>https</em>? <strong>If not, set it up!</strong></li>
+      <li>Do we have Docker local environment set-up to match server config? <strong>If not, do it!</strong></li>
+      <li>Do we have CI/CD set-up? <strong>If not, do it!</strong></li>
+      <li>Do we have separate <code class="highlighter-rouge">production</code> and <code class="highlighter-rouge">staging</code> environments set-up? <strong>If not, do it!</strong></li>
       <li>Are backups set-up? <strong>If not, set it up!</strong></li>
     </ul>
   </li>
   <li>Laravel specific
     <ul>
+      <li>Do we have Laravel Telescope configured? <strong>If not, do it!</strong></li>
       <li>Is <code class="highlighter-rouge">artisan scheduler</code> set-up in crontab?</li>
       <li>Is <code class="highlighter-rouge">APP_ENV</code> set to <code class="highlighter-rouge">production</code>? Is <code class="highlighter-rouge">APP_DEBUG</code> set to <code class="highlighter-rouge">false</code>? <strong>If not, do it!</strong></li>
     </ul>
   </li>
+</ul>
+
+<h3 id="resources">Resources<a href="#code-reviews-resources">#</a></h3>
+<ul>
+  <li>Code review template <a href="http://bit.ly/30Z3fLP" target="_blank">↗</a></li>
 </ul>
 
 </div>

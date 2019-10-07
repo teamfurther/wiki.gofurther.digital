@@ -12,13 +12,13 @@ All communication within the Further team is done via Slack. Skype or other chat
 
 ## Public channels[#](#public-channels)
 
-```#general``` - use for company-wide announcements and work-based matters only.
+`#general` - use for company-wide announcements and work-based matters only.
 
-<small class="note">All Slack members are part of this channel, including some clients, so take care what you post.</small>
+<small class="note">All Slack members are part of this channel, so take care what you post.</small>
 
-```#watercooler``` - use for non-work banter and water cooler conversations.
+`#watercooler` - use for non-work banter and water cooler conversations.
 
-As a general rule, if you don't know if you should post to ```#general``` or ```#watercooler```, just use ```#watercooler```.
+As a general rule, if you don't know if you should post to `#general` or `#watercooler`, just use `#watercooler`.
 
 ## Project Channels[#](#project-channels)
 
@@ -33,7 +33,7 @@ As a general rule, if you don't know if you should post to ```#general``` or ```
 All Jira projects should be connected with project's Slack channel.
 
 To avoid message noise, connection should be configured to only send notification when an assignee has been updated. To do this, follow these steps:
-1. Type ```/jira``` in Slack channel
+1. Type `/jira` in Slack channel
 1. Click Manage subscription
 1. Click Edit next to project name
 1. Uncheck all boxes except "Assignee updated"
@@ -45,4 +45,4 @@ All Bugsnag projects should be connected with project's Slack channel. Notificat
 - An error occurs frequently (10, 100, 1000, 2000... etc times)
 - An error is automatically reopened
 - A project error rate increases significantly
-- When project environment is ```staging``` or ```production```.
+- When project environment is `staging` or `production`.

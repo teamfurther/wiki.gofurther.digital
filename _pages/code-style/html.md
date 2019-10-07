@@ -3,6 +3,7 @@ layout: page
 title: "HTML"
 permalink: 'code-style/html'
 ---
+<small class="owner">Owner: Development</small>
 
 - [General Rules and Guidelines](#general-rules-and-guidelines)
 - [Formatting](#formatting)

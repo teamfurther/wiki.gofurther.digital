@@ -1,8 +1,10 @@
 ---
 layout: page
 title: "Version Control"
-permalink: 'development-workflow/version-control'
+permalink: 'project-workflow/version-control'
 ---
+<small class="owner">Owner: Development</small>
+
 All our projects use Git, mostly with a repository hosted on Bitbucket.
 
 - [Repo Naming Conventions](#repo-naming-conventions)

@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Set-up | Further Wiki</title>
+    <title>Bug report | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png?v2" />
 
@@ -41,11 +41,13 @@
                     </div>
                 </div>
                 <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/development-workflow">Development Workflow</a>
+                    <a href="https://wiki.gofurther.digital/project-workflow">Project Workflow</a>
                     <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/development-workflow/project-setup">Project Set-up</a>
-                        <a href="https://wiki.gofurther.digital/development-workflow/version-control">Version Control</a>
-                        <a href="https://wiki.gofurther.digital/development-workflow/project-release">Project Release</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug reports</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -81,22 +83,31 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Project Set-up</h1>
+    <h1 class="article__title">Bug report</h1>
 
-    <p>When development begings on a new project, we need to go through numerous steps to ensure our work is efficient, timelines can be met, and product quality assured. We keep these steps in a checklist:</p>
+    <p><small class="owner">Owner: PM</small></p>
 
+<p>To make it easier for developers to find the root cause of bugs, they should be provided by a detailed bug report. Below you can find a guide of what details we should ask to be included in bug report by client.</p>
+
+<p>Remember, these are rough guidelines you should adapt to each situation.</p>
+
+<h3 id="general">General<a href="#bug-reports-general">#</a></h3>
+<ul>
+  <li>Date and time</li>
+  <li>URL</li>
+  <li>Browser <small>type &amp; version</small></li>
+  <li>Operating System <small>type &amp; version</small></li>
+  <li>Description</li>
+  <li>Steps to reproduce</li>
+  <li>Expected result</li>
+  <li>Actual result</li>
+  <li>Screenshot</li>
+  <li>Screencast <small>(in case screenshot is not enough)</small></li>
+</ul>
+
+<h3 id="bug-involving-files">Bug involving files<a href="#bug-reports-files">#</a></h3>
 <ul class="checklist">
-  <li>Do we have a backlog of user stories?</li>
-  <li>Do we have sprint planning for first sprint?</li>
-  <li>Do we have a Risk Assessment Matrix? <strong>If not, create one!</strong></li>
-  <li>Do we have a Toggl project set-up?</li>
-  <li>Do we have a Slack channel set-up?</li>
-  <li>Do we have a GIT repo set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have a server set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have Docker local environment set-up to match server config? <strong>If not, do it!</strong></li>
-  <li>Do we have CI/CD set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have Laravel Debugbar configured? <strong>If not, do it!</strong></li>
-  <li>Do we have an IPS set-up? <strong>If not, do it!</strong></li>
+  <li>Attach actual file</li>
 </ul>
 
 </div>

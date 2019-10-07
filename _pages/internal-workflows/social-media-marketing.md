@@ -3,6 +3,8 @@ layout: page
 title: "Social Media Marketing"
 permalink: 'internal-workflows/social-media-marketing'
 ---
+<small class="owner">Owner: Marketing</small>
+
 Social media marketing is one of our most important internal business capabilities, vital to raise our brand awareness, trust, and employer reputation, and ultimately to generate more leads.
 
 The following page describes the business functions required to plan and execute our social media marketing strategy.
@@ -30,7 +32,7 @@ On the X axis (lettered) you can find the different [social media channels](#soc
 On the Y axis (numbered) you can find the calendar days in the months, accompanied by the different [topics](#topics).
 
 It is not obligatory to post in all 7 topics each week, but it is advisable to post at least 5x / week.
-Some topics like ```Tip day``` or ```Created content``` should be posted each week. 
+Some topics like `Tip day` or `Created content` should be posted each week. 
 
 ### Resources[#](#grid-planning-resources)
 - Grid plan spreadsheet [&#x2197;](http://bit.ly/2k0sqhl){:target="_blank"}
@@ -79,8 +81,8 @@ On tip days we show how we use different tools and techniques, and how these can
 Subjects might include: productivity tips, time management, project management or remote work.
 
 Always hashtag post: 
-- ```EN```: #mondaytips
-- ```HU```: #hétfőitipp
+- `EN`: #mondaytips
+- `HU`: #hétfőitipp
 
 <div class="thumb">
     <a href="/dist/media/social-media-marketing-topics-monday.png" target="_blank">
@@ -88,9 +90,9 @@ Always hashtag post:
     </a>
 </div>
     
-```Examples```: [http://bit.ly/2kolxa0](http://bit.ly/2kolxa0){:target="_blank"}, [http://bit.ly/2lVwkJe](http://bit.ly/2lVwkJe){:target="_blank"}  
-```Channels```: Facebook, Instagram post  
-```Languages```: EN (Facebook, Instagram post), HU (Facebook)
+`Examples`: [http://bit.ly/2kolxa0](http://bit.ly/2kolxa0){:target="_blank"}, [http://bit.ly/2lVwkJe](http://bit.ly/2lVwkJe){:target="_blank"}  
+`Channels`: Facebook, Instagram post  
+`Languages`: EN (Facebook, Instagram post), HU (Facebook)
 
 ### Tuesday: Created content (video)[#](#topics-tuesday)
 The aim of this topic is the share video content we created.
@@ -125,32 +127,32 @@ Video should always have a custom thumbnail image.
     </a>
 </div>
 
-```Examples```: [http://bit.ly/2kLvmPe](http://bit.ly/2kLvmPe){:target="_blank"}  
-```Channels```: Facebook, Instagram IGTV <small>(1-2 days after posting to Facebook)</small>, LinkedIn  
-```Languages```: EN <small>(Facebook, Instagram IGTV, LinkedIn)</small>, HU <small>(Facebook, Instagram IGTV, LinkedIn)</small>
+`Examples`: [http://bit.ly/2kLvmPe](http://bit.ly/2kLvmPe){:target="_blank"}  
+`Channels`: Facebook, Instagram IGTV <small>(1-2 days after posting to Facebook)</small>, LinkedIn  
+`Languages`: EN <small>(Facebook, Instagram IGTV, LinkedIn)</small>, HU <small>(Facebook, Instagram IGTV, LinkedIn)</small>
 
 ### Wednesday: News[#](#topics-wednesday)
 The aim of this topic is to share news about the company.
 
 Subjects might include: current projects, events we took part in (meetups, conferences), events we organized or other company related news.
 
-```Examples```: [http://bit.ly/2kiBEWn](http://bit.ly/2kiBEWn){:target="_blank"}, [http://bit.ly/2lQlpjW](http://bit.ly/2lQlpjW){:target="_blank"}  
-```Channels```: Facebook, Instagram post <small>(in case of events, 1 post / event)</small>, Instagram story <small>(in case of projects, 1 story / project; in case of events, multiple stories / event)</small>, LinkedIn <small>(in case of events we organize)</small>  
-```Languages```: EN <small>(Facebook, Instagram, LinkedIn)</small>, HU <small>(Facebook)</small>
+`Examples`: [http://bit.ly/2kiBEWn](http://bit.ly/2kiBEWn){:target="_blank"}, [http://bit.ly/2lQlpjW](http://bit.ly/2lQlpjW){:target="_blank"}  
+`Channels`: Facebook, Instagram post <small>(in case of events, 1 post / event)</small>, Instagram story <small>(in case of projects, 1 story / project; in case of events, multiple stories / event)</small>, LinkedIn <small>(in case of events we organize)</small>  
+`Languages`: EN <small>(Facebook, Instagram, LinkedIn)</small>, HU <small>(Facebook)</small>
 
 ### Thursday: Created content (repeated)[#](#topics-thursday)
 The aim of this topic is to re-share content we created in the past (blog posts, videos). Do not re-share Facebook posts or pictures.
 
-```Channels```: Facebook  
-```Languages```: EN, HU
+`Channels`: Facebook  
+`Languages`: EN, HU
 
 ### Friday: Personal content[#](#topics-friday)
 The aim of this topic is to share personal stories about who we are, how we work or working remotely.
 Content shared on this day should be friendly, approachable and not connected to professional work in any way. 
 
 Always hashtag post: 
-- ```EN```: #gofurther, #furtherdigitalsolutions, #teamfurther + hashtags related to post (in EN)
-- ```HU```: #gofurther, #furtherdigitalsolutions, #teamfurther + hashtags related to post (in HU)
+- `EN`: #gofurther, #furtherdigitalsolutions, #teamfurther + hashtags related to post (in EN)
+- `HU`: #gofurther, #furtherdigitalsolutions, #teamfurther + hashtags related to post (in HU)
 
 <div class="thumb">
     <a href="/dist/media/social-media-marketing-topics-friday.png" target="_blank">
@@ -158,15 +160,15 @@ Always hashtag post:
     </a>
 </div>
 
-```Examples```: [http://bit.ly/2mcmpPl](http://bit.ly/2mcmpPl){:target="_blank"}, [http://bit.ly/2lSungq](http://bit.ly/2lSungq){:target="_blank"}  
-```Channels```: Facebook, Instagram post  
-```Languages```: EN <small>(Facebook, Instagram)</small>, HU <small>(Facebook)</small>
+`Examples`: [http://bit.ly/2mcmpPl](http://bit.ly/2mcmpPl){:target="_blank"}, [http://bit.ly/2lSungq](http://bit.ly/2lSungq){:target="_blank"}  
+`Channels`: Facebook, Instagram post  
+`Languages`: EN <small>(Facebook, Instagram)</small>, HU <small>(Facebook)</small>
 
 ### Saturday: Created content[#](#topics-saturday)
 The aim of this topic is to share content we created (blog posts, videos).
 
-```Channels```: Facebook  
-```Languages```: EN, HU
+`Channels`: Facebook  
+`Languages`: EN, HU
 
 ### Sunday: Curated content[#](#topics-sunday)
 The aim of this topic is to share external content.
@@ -179,9 +181,9 @@ Subjects might include: IT, software, business, etc.
     </a>
 </div>
 
-```Examples```: [http://bit.ly/2mksZDL](http://bit.ly/2mksZDL){:target="_blank"}  
-```Channels```: Facebook  
-```Languages```: EN <small>(if external post is in English)</small>, HU <small>(if external post is in English or Hungarian)</small>
+`Examples`: [http://bit.ly/2mksZDL](http://bit.ly/2mksZDL){:target="_blank"}  
+`Channels`: Facebook  
+`Languages`: EN <small>(if external post is in English)</small>, HU <small>(if external post is in English or Hungarian)</small>
  
 
 ## Posting on Facebook[#](#posting-on-facebook)
