@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Tracking | Further Wiki</title>
+    <title>Incident Management | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="http://localhost:4040/dist/img/favicon.png?v2" />
 
@@ -91,60 +91,45 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Project Tracking</h1>
+    <h1 class="article__title">Incident Management</h1>
 
-    <p>We use Jira for issue tracking and agile project management.</p>
+    <p><small class="owner">Owner: ALL</small></p>
 
-<ul class="toc">
-  <li><a href="#structure">Structure</a></li>
-  <li><a href="#workflow">Workflow</a></li>
-</ul>
+<h3 id="objective">Objective<a href="#incident-management-objective">#</a></h3>
+<p>To prevent any event that has the potential to affect the confidentiality, integrity or availability of information belonging to Further Digital Solutions (C4WEB STUDIO SRL), in any format, or IT systems in which this information is held.</p>
 
-<h2 id="structure">Structure<a href="#structure">#</a></h2>
-
+<p>Examples of information security incidents can include but are not limited to:</p>
 <ul>
-  <li>By default every project should have a Jira project attached with a Kanban board</li>
-  <li>By default every development, devops, support, etc. should have a Jira issue</li>
-  <li>Issues/user stories in the backlog should have a dedicated space away from the board</li>
-  <li>In most cases a board should have the following columns:
-    <ul>
-      <li><code class="highlighter-rouge">Selected for development / To do</code> - issues/user stories on which work can start will be dragged here by PM/PO</li>
-      <li><code class="highlighter-rouge">In progress</code></li>
-      <li><code class="highlighter-rouge">QA</code></li>
-      <li><code class="highlighter-rouge">Done</code></li>
-    </ul>
-  </li>
-  <li>All issues on the board, should have an assignee</li>
-  <li>Priorities should not be set on issues, instead Kanban board should be walked from right to left, and top to bottom (see workflow)</li>
+  <li>Accidental or deliberate disclosure of information to unauthorised individuals e.g. an email containing unencrypted high risk personal information sent to unintended recipients</li>
+  <li>Loss or theft of paper or electronic records, or equipment such as tablets, laptops and smartphones or other devices on which data is stored</li>
+  <li>Inappropriate access controls allowing unauthorised use of information</li>
+  <li>Attempts to gain unauthorised access to computer systems, e.g. hacking</li>
+  <li>Records altered or deleted without authorisation by the data “owner”</li>
+  <li>Introduction of malware into a computer or network, e.g. a phishing or ransomware attack</li>
+  <li>Denial-of-service or other cyber-attack on IT systems or networks</li>
+  <li>Leaving IT equipment unattended when logged-in to a user account without locking the screen to stop others accessing information</li>
+  <li>Audible discussion of confidential topics in public</li>
 </ul>
 
-<h2 id="workflow">Workflow<a href="#workflow">#</a></h2>
-
-<h3 id="kanban-pull-system">Kanban pull system</h3>
-
-<p>Board should be walked from right to left first, and top to bottom second. This means tasks that are furthest to the right should be handled first. If there are more tasks in the rightmost column, items on the top have higher priority.</p>
-
-<h3 id="questions-on-issues">Questions on issues</h3>
-
+<h3 id="application">Application<a href="#incident-management-application">#</a></h3>
+<p>This policy applies to:</p>
 <ul>
-  <li>if you have a question on an issue, leave a comment and re-assign issue to the person you asked the question from;</li>
-  <li>if you answer a question, leave a comment and re-assign issue to the person who asked the question.</li>
+  <li>All information created or received by Further in any format, whether used in the workplace, stored on portable devices and media, transported from the workplace physically or electronically or accessed remotely</li>
+  <li>All IT systems managed by, or on behalf of Further</li>
+  <li>Any other IT systems on which Further information is held or processed</li>
 </ul>
 
-<h3 id="qa">QA</h3>
-
+<h3 id="responsibility">Responsibility<a href="#incident-management-responsibility">#</a></h3>
+<p><strong>All users</strong> (including third-parties), who are given access to Further information, IT and communications facilities have a responsibility to:</p>
 <ul>
-  <li>if you finished working on an issue, move the issue to <code class="highlighter-rouge">QA</code> column, and re-assign it to the person responsible for QA;</li>
-  <li>if you finished QA, and found issues, leave a comment, move issue back to <code class="highlighter-rouge">In progress</code> column and re-assign it;</li>
-  <li>if you finished QA, and found no issues, move issue to <code class="highlighter-rouge">Done</code> column and re-assign to person responsible for deployment.</li>
+  <li>Minimise the risk of vital or confidential information being lost or falling into the hands of people who do not have the right to see it</li>
+  <li>Protect the security and integrity of IT systems on which vital or confidential information is held and processed</li>
+  <li>Immediately report suspected information security incidents so that appropriate action can be taken to minimise harm.</li>
 </ul>
 
-<h3 id="deployment">Deployment</h3>
+<p>The <strong>Technical Lead</strong> is responsible for reporting, investigating and taking appropriate action to address breaches of security.</p>
 
-<ul>
-  <li>whenever deploying issues from <code class="highlighter-rouge">Done</code>, responsible should release new version;</li>
-  <li>version name should follow Semver scheme. E.g.: <code class="highlighter-rouge">v2.1.32</code>.</li>
-</ul>
+<p>The <strong>Managing partner</strong> is responsible for reporting and notifying all third-parties or customers who have been affected by breach of security. If third-party or customers wishes to remain anonymous, Further has to obligation to keep their anonimity.</p>
 
 
 </div>

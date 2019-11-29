@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Tracking | Further Wiki</title>
+    <title>Information Security | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="http://localhost:4040/dist/img/favicon.png?v2" />
 
@@ -91,61 +91,20 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Project Tracking</h1>
+    <h1 class="article__title">Information Security</h1>
 
-    <p>We use Jira for issue tracking and agile project management.</p>
+    <p><small class="owner">Owner: ALL</small></p>
 
-<ul class="toc">
-  <li><a href="#structure">Structure</a></li>
-  <li><a href="#workflow">Workflow</a></li>
-</ul>
+<h3 id="objective">Objective<a href="#information-security-objective">#</a></h3>
+<p>To prevent the unauthorized access to, loss of, damage to, or compromise to information assets, and interruption to the business activities of Further Digital Solutions (C4WEB STUDIO SRL) and its customers.</p>
 
-<h2 id="structure">Structure<a href="#structure">#</a></h2>
-
+<h3 id="policy-requirements">Policy Requirements<a href="#information-security-policy-requirement">#</a></h3>
 <ul>
-  <li>By default every project should have a Jira project attached with a Kanban board</li>
-  <li>By default every development, devops, support, etc. should have a Jira issue</li>
-  <li>Issues/user stories in the backlog should have a dedicated space away from the board</li>
-  <li>In most cases a board should have the following columns:
-    <ul>
-      <li><code class="highlighter-rouge">Selected for development / To do</code> - issues/user stories on which work can start will be dragged here by PM/PO</li>
-      <li><code class="highlighter-rouge">In progress</code></li>
-      <li><code class="highlighter-rouge">QA</code></li>
-      <li><code class="highlighter-rouge">Done</code></li>
-    </ul>
-  </li>
-  <li>All issues on the board, should have an assignee</li>
-  <li>Priorities should not be set on issues, instead Kanban board should be walked from right to left, and top to bottom (see workflow)</li>
+  <li>Information belonging to Further and its customers should be stored in the cloud whenever possible. Only keep local copies of information when it is absolutely necessary. Immediately dispose of copy when it becomes no longer necessary to keep a local copy.</li>
+  <li>Project files (brief, design document, tasks, etc.) shall be stored in our project management tool (productive.io) and only be accessed by the team actively working on the project. If a team member is no longer working actively on the project for over 6 months, their access shall be revoked. If a team member leaves the company, their access shall be immediately revoked.</li>
+  <li>Project source code shall be stored in our code versioning system (bitbucket.org) and can only be accessed by the team actively working on the project. If a team member is no longer working actively on the project for over 6 months, their access shall be revoked. If a team member leaves the company, their access shall be immediately revoked.</li>
+  <li>All other non-project files and information shall be stores on Google Drive and only be accessed by authorized team members. If a team member leaves the company, their access shall be immediately revoked.</li>
 </ul>
-
-<h2 id="workflow">Workflow<a href="#workflow">#</a></h2>
-
-<h3 id="kanban-pull-system">Kanban pull system</h3>
-
-<p>Board should be walked from right to left first, and top to bottom second. This means tasks that are furthest to the right should be handled first. If there are more tasks in the rightmost column, items on the top have higher priority.</p>
-
-<h3 id="questions-on-issues">Questions on issues</h3>
-
-<ul>
-  <li>if you have a question on an issue, leave a comment and re-assign issue to the person you asked the question from;</li>
-  <li>if you answer a question, leave a comment and re-assign issue to the person who asked the question.</li>
-</ul>
-
-<h3 id="qa">QA</h3>
-
-<ul>
-  <li>if you finished working on an issue, move the issue to <code class="highlighter-rouge">QA</code> column, and re-assign it to the person responsible for QA;</li>
-  <li>if you finished QA, and found issues, leave a comment, move issue back to <code class="highlighter-rouge">In progress</code> column and re-assign it;</li>
-  <li>if you finished QA, and found no issues, move issue to <code class="highlighter-rouge">Done</code> column and re-assign to person responsible for deployment.</li>
-</ul>
-
-<h3 id="deployment">Deployment</h3>
-
-<ul>
-  <li>whenever deploying issues from <code class="highlighter-rouge">Done</code>, responsible should release new version;</li>
-  <li>version name should follow Semver scheme. E.g.: <code class="highlighter-rouge">v2.1.32</code>.</li>
-</ul>
-
 
 </div>
 
