@@ -109,7 +109,7 @@ Video should use targeting to reach the audience who speaks the language of the 
 
 <div class="thumb">
     <a href="/dist/media/social-media-marketing-topics-tuesday2.png" target="_blank">
-        <img src="/dist/media/social-media-marketing-topics-topics-tuesday2.png" alt="" />
+        <img src="/dist/media/social-media-marketing-topics-tuesday2.png" alt="" />
     </a>
 </div>
 
