@@ -10,12 +10,12 @@
 
     <title>{% if page.title %}{{page.title}} | {{site.title}}{% else %}{{site.title}}{% endif %}</title>
 
-    <link rel="shortcut icon" type="image/png" href="{{ "/dist/img/favicon.png?v2" | absolute_url }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ "/dist/img/favicon.png" | absolute_url }}" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,600,700&amp;subset=latin-ext" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" />
 
-    <link rel="stylesheet" href="{{ '/dist/css/site.css?v191007' | absolute_url }}" />
+    <link rel="stylesheet" href="{{ '/dist/css/site.css?v191219' | absolute_url }}" />
 </head>
 
 <body id="#top">
@@ -33,7 +33,6 @@
                     <a href="{{ '/life' | absolute_url }}">Life at Further</a>
                     <div class="nav__subnav">
                         <a href="{{ '/life/onboarding' | absolute_url }}">Onboarding</a>
-                        <a href="{{ '/life/perks' | absolute_url }}">Perks</a>
                         <a href="{{ '/life/stand-up-meetings' | absolute_url }}">Stand-up Meetings</a>
                         <a href="{{ '/life/communication' | absolute_url }}">Communication</a>
                         <a href="{{ '/life/time-tracking' | absolute_url }}">Time Tracking</a>
@@ -70,10 +69,16 @@
                     </div>
                 </div>
                 <div class="nav__item">
+                    <a href="{{ '/marketing' | absolute_url }}">Marketing</a>
+                    <div class="nav__subnav">
+                        <a href="{{ '/marketing/blogging' | absolute_url }}">Blogging</a>
+                        <a href="{{ '/marketing/social-media' | absolute_url }}">Social Media</a>
+                    </div>
+                </div>
+                <div class="nav__item">
                     <a href="{{ '/internal-workflows' | absolute_url }}">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="{{ '/internal-workflows/finances' | absolute_url }}">Finances</a>
-                        <a href="{{ '/internal-workflows/social-media-marketing' | absolute_url }}">Social Media Marketing</a>
                     </div>
                 </div>
             </nav>

@@ -8,4 +8,3 @@ The following pages describe the different business capabilities, roles and inte
 
 The following are included:
 - finances
-- social media marketing

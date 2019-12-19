@@ -15,6 +15,7 @@ Remember, these are rough guidelines you should adapt to each project.
 - Did we run `phpstan`? **If not, do it!**
 - Did we run `phpinsights`? **If not, do it!**
 - Is code conforming to [code style](/code-style)? **If not, do it!**
+- Does code use modern OOP features (e.g. type hinting)? 
 - Did we check all pages for n+1 problems? **If not, do it!**
 - Did we clean up code? (orphaned comments, debugging controls, etc.) **If not, do it!**
 - Did we do functional testing? **If not, do it!**

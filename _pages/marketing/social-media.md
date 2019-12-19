@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Social Media Marketing"
-permalink: 'internal-workflows/social-media-marketing'
+permalink: 'marketing/social-media'
 ---
 <small class="owner">Owner: Marketing</small>
 
@@ -38,9 +38,9 @@ Some topics like `Tip day` or `Created content` should be posted each week.
 - Grid plan spreadsheet [&#x2197;](http://bit.ly/2k0sqhl){:target="_blank"}
 
 ### Timeline[#](#grid-planning-timeline)
-- `10 days before the 1st:` planned post titles, ready for approval
-- ` 5 days before the 1st:` elaborated posts (copy and imagery), ready for approval
-- ` 3 days before the 1st:` posts scheduled in {SOFTWARE}
+- `20 days before the 1st:` planned post titles, ready for approval
+- `10 days before the 1st:` elaborated posts (copy and imagery), ready for approval
+- ` 5 days before the 1st:` posts scheduled in {SOFTWARE}
 
 ## Social Media Channels[#](#social-media-channels)
 

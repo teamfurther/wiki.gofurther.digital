@@ -36,7 +36,9 @@ Even before an offer goes out to a client or a contract is signed, a lot of step
 - Quotations template  [HU] [&#x2197;](http://bit.ly/2m6noAS){:target="_blank"} [EN] [&#x2197;](http://bit.ly/2mZakxp){:target="_blank"}
 
 ### Greenfield projects[#](#sending-quotations-greenfield-projects)
-- 
+- Create specification (user stories organised into backlog with MoSCoW method)
+- Create wireframes (where necessary)
+- Create high definition prototypes (where necessary)
 {: .checklist}
 
 ### Project takeovers[#](#sending-quotations-project-takeovers)

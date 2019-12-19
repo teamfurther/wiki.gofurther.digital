@@ -63,6 +63,13 @@
 
     ol {
         margin: 0 0 30px 1em;
+
+        li {
+            ol,
+            ul {
+                margin: 5px 0 5px 1em;
+            }
+        }
     }
 
     p {
@@ -129,7 +136,7 @@
             }
 
             ul {
-                margin: 10px 0 15px 1em;
+                margin: 5px 0 5px 1em;
             }
         }
     }

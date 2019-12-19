@@ -5,9 +5,7 @@ permalink: 'internal-workflows/finances'
 ---
 <small class="owner">Owner: Management</small>
 
-This page describes how 
-
-The following page describes the business functions required to plan and execute our social media marketing strategy.
+This page describes the steps required in order to precisely report financial status internally, to accounting and to clients.  
 
 - [Monthly reporting](#monthly-reporting)
 - [Invoicing](#invoicing)
