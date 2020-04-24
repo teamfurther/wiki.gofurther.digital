@@ -35,8 +35,6 @@
                         <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
                         <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
                         <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
-                        <a href="https://wiki.gofurther.digital/life/time-tracking">Time Tracking</a>
-                        <a href="https://wiki.gofurther.digital/life/project-tracking">Project Tracking</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -45,6 +43,7 @@
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
@@ -57,15 +56,7 @@
                         <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
                         <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
                         <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                    </div>
-                </div>
-                <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/security">Security</a>
-                    <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
-                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
-                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
-                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -79,6 +70,15 @@
                     <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
                     </div>
                 </div>
             </nav>
@@ -102,12 +102,48 @@
     <p><small class="owner">Owner: Development</small></p>
 
 <ul class="toc">
-  <li><a href="#controllers">Controllers</a></li>
-  <li><a href="#form-requests">Form Requests</a></li>
+  <li><a href="#naming-conventions">Naming Conventions</a></li>
+  <li><a href="#commands">Commands</a></li>
+  <li><a href="#routing">Routing</a></li>
   <li><a href="#service-classes">Service Classes</a></li>
+  <li><a href="#validation">Validation</a></li>
 </ul>
 
-<h2 id="controllers">Controllers<a href="#controllers">#</a></h2>
+<h2 id="naming-conventions">Naming Conventions<a href="#naming-conventions">#</a></h2>
+<p>Naming things is often seen as one of the harder things in programming. That’s why we’ve established some high level guidelines for naming classes.</p>
+
+<h3 id="naming-commands">Commands<a href="#naming-commands">#</a></h3>
+<p>The names given to artisan commands should all be kebab-cased.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Good
+php artisan delete-old-records
+
+# Bad
+php artisan deleteOldRecords
+</code></pre></div></div>
+
+<h3 id="naming-configuration-files">Configuration files<a href="#naming-configuration-files">#</a></h3>
+<p>Configuration files must use kebab-case.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/
+  pdf-generator.php
+</code></pre></div></div>
+
+<p>Configuration keys must use snake_case.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// config/pdf-generator.php</span>
+<span class="k">return</span> <span class="p">[</span>
+    <span class="s1">'chrome_path'</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">'CHROME_PATH'</span><span class="p">),</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<p>Avoid using the <code class="highlighter-rouge">env</code> helper outside of configuration files. Create a configuration value from the <code class="highlighter-rouge">env</code> variable like above.</p>
+
+<h3 id="naming-controllers">Controllers<a href="#naming-controllers">#</a></h3>
+<p>Generally controllers are named by the plural form of their corresponding resource and a Controller suffix. This is to avoid naming collisions with models that are often equally named.</p>
+
+<p>e.g. <code class="highlighter-rouge">UsersController</code> or <code class="highlighter-rouge">PostsController</code></p>
+
 <p>Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy). Extract a new controller if you need other actions.</p>
 
 <p>In the following example, we could have <code class="highlighter-rouge">PostsController@favorite</code>, and <code class="highlighter-rouge">PostsController@unfavorite</code>, or we could extract it to a separate <code class="highlighter-rouge">FavoritePostsController</code>.</p>
@@ -159,7 +195,225 @@
 
 <p>This is a loose guideline that doesn’t need to be enforced.</p>
 
-<h2 id="form-requests">Form Requests<a href="#form-requests">#</a></h2>
+<p>When writing non-resourceful controllers you might come across invokable controllers that perform a single action. These can be named by the action they perform again suffixed by Controller.</p>
+
+<p>e.g. <code class="highlighter-rouge">PerformCleanupController</code></p>
+
+<h3 id="naming-events">Events<a href="#naming-events">#</a></h3>
+<p>Events will often be fired before or after the actual event. This should be very clear by the tense used in their name.</p>
+
+<p>E.g. <code class="highlighter-rouge">ApprovingLoan</code> before the action is completed and <code class="highlighter-rouge">LoanApproved</code> after the action is completed.</p>
+
+<h3 id="naming-form-requests">Form Requests<a href="#naming-form-requests">#</a></h3>
+<p>Always name your form requests by the singular name of your resource, suffixed with <code class="highlighter-rouge">Request</code>.</p>
+
+<p>e.g. <code class="highlighter-rouge">PostRequest</code></p>
+
+<p>In some cases, you need separate form requests for the <code class="highlighter-rouge">create()</code> and <code class="highlighter-rouge">update()</code> controller methods. In these cases put the method name between the name of your resource and the <code class="highlighter-rouge">Request</code> suffix.</p>
+
+<p>e.g. <code class="highlighter-rouge">PostCreateRequest</code> or <code class="highlighter-rouge">PostUpdateRequest</code></p>
+
+<h3 id="naming-jobs">Jobs<a href="#naming-jobs">#</a></h3>
+<p>A job’s name should describe its action.</p>
+
+<p>E.g. <code class="highlighter-rouge">CreateUser</code> or <code class="highlighter-rouge">PerformDatabaseCleanup</code></p>
+
+<h3 id="naming-listeners">Listeners<a href="#naming-listeners">#</a></h3>
+<p>Listeners will perform an action based on an incoming event. Their name should reflect that action with a <code class="highlighter-rouge">Listener</code> suffix. This might seem strange at first but will avoid naming collisions with jobs.</p>
+
+<p>E.g. <code class="highlighter-rouge">SendInvitationMailListener</code></p>
+
+<h3 id="naming-mailables">Mailables<a href="#naming-mailables">#</a></h3>
+<p>Again to avoid naming collisions we’ll suffix mailables with <code class="highlighter-rouge">Mail</code>, as they’re often used to convey an event, action or question.</p>
+
+<p>e.g. <code class="highlighter-rouge">AccountActivatedMail</code> or <code class="highlighter-rouge">NewEventMail</code></p>
+
+<h3 id="naming-models">Models<a href="#naming-models">#</a></h3>
+<p>Always name your models by the singular name of your resource.</p>
+
+<p>e.g. <code class="highlighter-rouge">User</code> or <code class="highlighter-rouge">Post</code></p>
+
+<h3 id="naming-notifications">Notifications<a href="#naming-notifications">#</a></h3>
+<p>Again to avoid naming collisions we’ll suffix notifications with <code class="highlighter-rouge">Notification</code>, as they’re often used to convey an event, action or question.</p>
+
+<p>e.g. <code class="highlighter-rouge">AccountActivatedNotification</code> or <code class="highlighter-rouge">NewEventNotication</code></p>
+
+<h3 id="naming-services">Services<a href="#naming-services">#</a></h3>
+<p>Always name your services by the singular name of your resource, suffixed with <code class="highlighter-rouge">Service</code>.</p>
+
+<p>e.g. <code class="highlighter-rouge">PostService</code></p>
+
+<h3 id="naming-views">Views<a href="#naming-views">#</a></h3>
+<p>View files must use kebab-case.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resources/
+    views/
+        pages/
+            cookies-policy.blade.php
+</code></pre></div></div>
+
+<h2 id="commands">Commands<a href="#commands">#</a></h2>
+<p>A command should always give some feedback on what the result is. Minimally you should let the <code class="highlighter-rouge">handle</code> method spit out a comment at the end indicating that all went well.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in a Command</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// do some work</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">'All ok!'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If possible use a descriptive success message eg. <code class="highlighter-rouge">Old records deleted</code>.</p>
+
+<h2 id="facades">Facades<a href="#facades">#</a></h2>
+<p>Whenever possible, avoid using facades in controllers, models or services.</p>
+
+<p>Instead, use a the available helper function or inject the underlying class into your object. Use the <a href="https://laravel.com/docs/master/facades#facade-class-reference">Facade Class Reference</a> to find the underlying class.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">session</span><span class="p">([</span><span class="s1">'cart'</span> <span class="o">=&gt;</span> <span class="nv">$data</span><span class="p">]);</span>
+
+<span class="c1">// Bad</span>
+<span class="nx">Session</span><span class="o">::</span><span class="na">put</span><span class="p">(</span><span class="s1">'cart'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">use</span> <span class="nx">Illuminate\Database\DatabaseManager</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$db</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">DatabaseManager</span> <span class="nv">$db</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span> <span class="o">=</span> <span class="nv">$db</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getComplexQueryResult</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">raw</span><span class="p">(</span><span class="s2">"..."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getComplexQueryResult</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">DB</span><span class="o">::</span><span class="na">raw</span><span class="p">(</span><span class="s2">"..."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="routing">Routing<a href="#routing">#</a></h2>
+<p>Public-facing urls must use kebab-case.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://gofurther.digital/en/custom-software-development
+https://gofurther.digital/en/blog/posts/digital-transformation-pt1-introduction
+</code></pre></div></div>
+
+<p>Route names must use kebab-case with dot notation.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">,</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'blog/posts/{blogPath}'</span><span class="p">,</span> <span class="s1">'BlogController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'blog.show'</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">,</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">)</span>
+       <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'customSoftwareDevelopment'</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'blog/posts/{blogPath}'</span><span class="p">,</span> <span class="s1">'BlogController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'blog-show'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>When defining routes, use method chaining instead of the array notation.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">,</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'as'</span> <span class="o">=&gt;</span> <span class="s1">'custom-software-development'</span><span class="p">,</span>
+    <span class="s1">'uses'</span> <span class="o">=&gt;</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">,</span>
+<span class="p">]);</span>
+</code></pre></div></div>
+
+<p>All routes have an http verb, that’s why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">,</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">name</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">,</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Route parameters should use camelCase.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'blog/posts/{blogPath}'</span><span class="p">,</span> <span class="s1">'BlogController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'blog.show'</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'blog/posts/{blog_path}'</span><span class="p">,</span> <span class="s1">'BlogController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'blog.show'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>A route url should not start with <code class="highlighter-rouge">/</code> unless the url would be an empty string.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'HomeController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'home'</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">,</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'HomeController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'home'</span><span class="p">);</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/custom-software-development'</span><span class="p">,</span> <span class="s1">'CustomSoftwareDevelopmentController@show'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>If your route only needs to return a view, you may use the <code class="highlighter-rouge">Route::view</code> method.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">'privacy-policy'</span><span class="p">,</span> <span class="s1">'pages.privacy'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'privacy'</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'privacy-policy'</span><span class="p">,</span> <span class="s1">'PrivacyPolicyController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'privacy'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="service-classes">Service Classes<a href="#service-classes">#</a></h2>
+<p>A controller must only have the responsibility to return a response. Move business logic from controllers to service classes.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">articleService</span><span class="o">-&gt;</span><span class="na">handleUploadedImage</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">));</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">ArticleService</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handleUploadedImage</span><span class="p">(</span><span class="nv">$image</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_null</span><span class="p">(</span><span class="nv">$image</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$image</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">'images'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'temp'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">hasFile</span><span class="p">(</span><span class="s1">'image'</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">'images'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'temp'</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="validation">Validation<a href="#validation">#</a></h2>
 <p>In most cases it is preferable to move validation in separate form request classes.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
@@ -194,37 +448,26 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="service-classes">Service Classes<a href="#service-classes">#</a></h2>
-<p>A controller must only have the responsibility to return a response. Move business logic from controllers to service classes.</p>
+<p>When using multiple rules for one field in a form request, avoid using <code class="highlighter-rouge">|</code>, always use array notation. Using an array notation will make it easier to apply custom rule classes to a field.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">rules</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">articleService</span><span class="o">-&gt;</span><span class="na">handleUploadedImage</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">));</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">ArticleService</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">handleUploadedImage</span><span class="p">(</span><span class="nv">$image</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_null</span><span class="p">(</span><span class="nv">$image</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nv">$image</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">'images'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'temp'</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'required'</span><span class="p">,</span> <span class="s1">'email'</span><span class="p">],</span>
+    <span class="p">];</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">rules</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">hasFile</span><span class="p">(</span><span class="s1">'image'</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">'images'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'temp'</span><span class="p">);</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'required|email'</span><span class="p">,</span>
+    <span class="p">];</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<p>Custom validation rules should be always defined using a rule object instead of closures or extending the <code class="highlighter-rouge">Validator</code> facade.</p>
 
 </div>
 

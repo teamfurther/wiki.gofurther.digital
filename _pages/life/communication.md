@@ -3,14 +3,17 @@ layout: page
 title: "Communication"
 permalink: 'life/communication'
 ---
+<small class="owner">Owner: All</small>
+
 All communication within the Further team is done via Slack. Skype or other chat services might be used when communicating with clients or contractors, but migrating them over to Slack is encouraged.
 
 - [Public channels](#public-channels)
 - [Project Channels](#project-channels)
+- [Etiquette](#etiquette)
 - [Third-party Integrations](#third-party)
 {: .toc}
 
-## Public channels[#](#public-channels)
+## Public Channels[#](#public-channels)
 
 `#general` - use for company-wide announcements and work-based matters only.
 
@@ -27,16 +30,11 @@ As a general rule, if you don't know if you should post to `#general` or `#water
 - Old team members should be removed from channel
 - Project questions specifically addressed to one team member, should be set via DM instead
 
+## Etiquette[#](#etiquette)
+
+When reacting to a message from a colleague, do not reply with 'Thank you',  'You're welcome' or 'OK' as this will send a notification interrupting their work. Everyone know you're grateful! Instead, use reactions. 
+
 ## Third-party Integrations[#](#third-party) {#third-party}
-
-### Jira
-All Jira projects should be connected with project's Slack channel.
-
-To avoid message noise, connection should be configured to only send notification when an assignee has been updated. To do this, follow these steps:
-1. Type `/jira` in Slack channel
-1. Click Manage subscription
-1. Click Edit next to project name
-1. Uncheck all boxes except "Assignee updated"
 
 ### Bugsnag
 All Bugsnag projects should be connected with project's Slack channel. Notifications should be sent when:

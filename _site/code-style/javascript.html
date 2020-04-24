@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Javascript | Further Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,600,700&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.gofurther.digital/dist/css/site.css?v191219" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://gofurther.digital" target="_blank"><img src="https://wiki.gofurther.digital/dist/img/logo.svg?v2" title="Further Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/life">Life at Further</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
+                        <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
+                        <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/project-workflow">Project Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/marketing">Marketing</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
+                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; Further Digital Solutions
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">Javascript</h1>
+
+    <p><small class="owner">Owner: Development</small></p>
+
+<ul class="toc">
+  <li><a href="#spacing-and-indentation">Spacing and Indentation</a></li>
+  <li><a href="#line-length">Line Length</a></li>
+  <li><a href="#brackets">Brackets</a></li>
+  <li><a href="#quotes">Quotes</a></li>
+  <li><a href="#semicolons">Semicolons</a></li>
+  <li><a href="#variables">Variables</a></li>
+  <li><a href="#comparisons">Comparisons</a></li>
+  <li><a href="#functions">Functions</a></li>
+  <li><a href="#code-clean-up">Code Clean-up</a></li>
+</ul>
+
+<h2 id="spacing-and-indentation">Spacing and Indentation<a href="#spacing-and-indentation">#</a></h2>
+
+<h3 id="indentation">Indentation<a href="#indentation">#</a></h3>
+<p>Code must be indented with 4 spaces.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad, only 2 spaces.</span>
+<span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="control-statements">Control statements<a href="#control-statements">#</a></h3>
+<p>When it comes to spaces around symbols or keywords, the rule of thumb is: add them.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad, needs more spaces.</span>
+<span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Opening braces should always be on the same line as their corresponding statement or declaration (known as the one true brace style).</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="infix-operators">Infix operators<a href="#infix-operators">#</a></h3>
+<p>Infix operators need room to breath.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">two</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// Bad, needs more spaces.</span>
+<span class="kd">const</span> <span class="nx">two</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="functions">Functions<a href="#functions">#</a></h3>
+<p>Named functions don’t have a space before their parameters. Anonymous ones do.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad, no space before the parameters.</span>
+<span class="kd">function</span> <span class="nx">save</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+
+<span class="c1">// Bad, anonymous functions require a space before the parameters.</span>
+<span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="arrays">Arrays<a href="#arrays">#</a></h3>
+<p>Arrays that contain an object or another array mustn’t have a space between the brackets. Multiline arrays require trailing commas.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">];</span>
+
+<span class="c1">// Bad, no extra spaces required</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span> <span class="p">];</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Adrian'</span><span class="p">,</span>
+    <span class="s1">'Sebastian'</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="c1">// Bad, no trailing comma.</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Adrian'</span><span class="p">,</span>
+    <span class="s1">'Sebastian'</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]];</span>
+
+<span class="c1">// Bad, no extra spaces if the array contains arrays or objects.</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]</span> <span class="p">];</span>
+</code></pre></div></div>
+
+<h3 id="objects">Objects<a href="#objects">#</a></h3>
+<p>Objects require spaces between their braces. Multiline objects require trailing commas.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span> <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span> <span class="p">};</span>
+
+<span class="c1">// Bad, no spaces between parentheses.</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span> <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span><span class="p">};</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span>
+    <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// Bad, no trailing comma.</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span>
+    <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">people</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Willem'</span> <span class="p">}];</span>
+
+<span class="c1">// Bad, no extra spaces if the array contains arrays or objects.</span>
+<span class="kd">const</span> <span class="nx">people</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Willem'</span> <span class="p">}</span> <span class="p">];</span>
+</code></pre></div></div>
+
+<h2 id="line-length">Line Length<a href="#line-length">#</a></h2>
+<p>Lines shouldn’t be longer than 80 characters, and must not be longer than 120 characters. Comments must not be longer than 80 characters.</p>
+
+<h2 id="control-structures">Control Structures<a href="#control-structure">#</a></h2>
+
+<h3 id="brackets">Brackets<a href="#brackets">#</a></h3>
+<p>Always use curly brackets.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">$condition</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">$condition</span><span class="p">)</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<h3 id="happy-path">Happy Path<a href="#happy-path">#</a></h3>
+<p>Generally a function should have its unhappy path first and its happy path last. In most cases this will cause the happy path being in an unindented part of the function which makes it more readable.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">goodCondition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// do work</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Bad</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">goodCondition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do work</span>
+<span class="p">}</span>
+
+<span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="avoid-else">Avoid Else<a href="#avoid-else">#</a></h3>
+<p>In general, <code class="highlighter-rouge">else</code> should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionBA</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// conditionB A failed</span>
+   
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionB</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// conditionB A passed, B failed</span>
+   
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// condition A and B passed</span>
+</code></pre></div></div>
+
+<h3 id="compound-ifs">Compound Ifs<a href="#compound-ifs">#</a></h3>
+<p>In general, separate <code class="highlighter-rouge">if</code> statements should be preferred over a compound condition. This makes debugging code easier.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionA</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionB</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionC</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// do stuff</span>
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">conditionA</span> <span class="o">&amp;&amp;</span> <span class="nx">conditionB</span> <span class="o">&amp;&amp;</span> <span class="nx">conditionC</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// do stuff</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="quotes">Quotes<a href="#quotes">#</a></h2>
+<p>Use single quotes if possible. If you need multiline strings or interpolation, use template strings.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">company</span> <span class="o">=</span> <span class="s1">'Spatie'</span><span class="p">;</span>
+
+<span class="c1">// Bad, single quotes can be used here.</span>
+<span class="kd">const</span> <span class="nx">company</span> <span class="o">=</span> <span class="s2">"Spatie"</span><span class="p">;</span>
+
+<span class="c1">// Bad, single quotes can be used here.</span>
+<span class="kd">const</span> <span class="nx">company</span> <span class="o">=</span> <span class="s2">`Spatie`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad, template strings are preferred.</span>
+<span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">'Hello '</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s1">'!'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Also, when writing html templates (or jsx for that matter), start multiline templates on a new line if possible.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">createLabel</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`
+        &lt;div class="label"&gt;
+            </span><span class="p">${</span><span class="nx">text</span><span class="p">}</span><span class="s2">
+        &lt;/div&gt;
+    `</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="semicolons">Semicolons<a href="#semicolons">#</a></h2>
+<p>Always.</p>
+
+<h2 id="variables">Variables<a href="#variables">#</a></h2>
+<p>When assigning variables, prefer <code class="highlighter-rouge">const</code> over <code class="highlighter-rouge">let</code>. Only use <code class="highlighter-rouge">let</code> to indicate that a variable will be reassigned. Never use <code class="highlighter-rouge">var</code>.</p>
+
+<h3 id="assigning">Assigning<a href="#assigning-variables">#</a></h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">willNotChange</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">willChange</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">change</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">willChange</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="kd">var</span> <span class="nx">willNotChange</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">willChange</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">change</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">willChange</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="naming">Naming<a href="#naming-variables">#</a></h3>
+<p>Variable names should always be camelCase.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">myConstant</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="kd">const</span> <span class="nx">my_constant</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">MyOtherConstant</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Variable names generally shouldn’t be abbreviated.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad, it's hard to reason about abbreviations in blocks as they grow.</span>
+<span class="kd">function</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nx">u</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In single-line arrow functions, abbreviations are allowed to reduce noise if the context is clear enough. For example, if you’re calling <code class="highlighter-rouge">map</code> or <code class="highlighter-rouge">forEach</code> on a collection of items, it’s clear that the parameter is an item of a certain type, which can be derived from the collection’s substantive variable name.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">saveUserSessions</span><span class="p">(</span><span class="nx">userSessions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">userSessions</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">saveUserSession</span><span class="p">(</span><span class="nx">s</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// Ok, but pretty noisy.</span>
+<span class="kd">function</span> <span class="nx">saveUserSessions</span><span class="p">(</span><span class="nx">userSessions</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">userSessions</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">userSession</span> <span class="o">=&gt;</span> <span class="nx">saveUserSession</span><span class="p">(</span><span class="nx">userSession</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="comparisons">Comparisons<a href="#comparisons">#</a></h2>
+<p>Always use a triple equal to do variable comparisons. If you’re unsure of the type, cast it first.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">const</span> <span class="nx">one</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">another</span> <span class="o">=</span> <span class="s2">"1"</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">one</span> <span class="o">===</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">another</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="kd">const</span> <span class="nx">one</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">another</span> <span class="o">=</span> <span class="s2">"1"</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">one</span> <span class="o">==</span> <span class="nx">another</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="functions-1">Functions<a href="#functions">#</a></h2>
+
+<h3 id="naming-1">Naming<a href="#naming-functions">#</a></h3>
+<p>Function names should always be camelCase.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="kd">function</span> <span class="nx">my_function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">MyOtherFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="function-keyword-vs-arrow-functions">Function keyword vs. arrow functions<a href="#function-keyword-vs-arrow-functions">#</a></h3>
+<p>Function declarations should use the function keyword.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">scrollTo</span><span class="p">(</span><span class="nx">offset</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Using an arrow function doesn't provide any benefits here, while the</span>
+<span class="c1">// `function`  keyword immediately makes it clear that this is a function.</span>
+<span class="kd">const</span> <span class="nx">scrollTo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">offset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Terse, single line functions can also use the arrow syntax. There’s no hard rule here, but make sure it uses the same pattern as surrounding functions.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// It's a short and simple method, so squashing it to a one-liner is ok.</span>
+<span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">query</span><span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// This one's a bit longer, having everything on one line feels a bit heavy.</span>
+<span class="c1">// It's not easily scannable unlike the previous example.</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kd">function</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">?</span> <span class="mi">1</span>
+        <span class="p">:</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">n</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="kd">function</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">?</span> <span class="mi">1</span>
+        <span class="p">:</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">n</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Anonymous functions should use arrow functions.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+</code></pre></div></div>
+
+<p>Object methods must use the shorthand method syntax.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">handleClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="c1">// Bad, the `function` keyword serves no purpose.</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">handleClick</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="arrow-functions-parameter-brackets">Arrow Functions Parameter Brackets<a href="#arrow-functions-parameter-brackets">#</a></h3>
+<p>An arrow function’s parameter brackets must not be omitted if the function is a one-liner.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+
+<span class="c1">// Bad</span>
+<span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+</code></pre></div></div>
+
+<h2 id="code-clean-up">Code Clean-up<a href="#code-clean-up">#</a></h2>
+<p>Do not leave commented out CSS code in place.</p>
+
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.gofurther.digital/dist/js/site.js"></script>
+
+</body>
+
+</html>

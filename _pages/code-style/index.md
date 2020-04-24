@@ -12,4 +12,4 @@ Why all this fuss and bother over how we write code?
 - it encourages the you to pay attention to the little details
 - it helps to foster an environment of "accountability for your own code"
 
-<small>Based on [guidelines.spatie.be](https://guidelines.spatie.be){:target="_blank"} and [https://google.github.io/styleguide/htmlcssguide.html](https://google.github.io/styleguide/htmlcssguide.html){:target="_blank"}.
+<small>Based on [guidelines.spatie.be](https://guidelines.spatie.be){:target="_blank"}, [google.github.io/styleguide/htmlcssguide.html](https://google.github.io/styleguide/htmlcssguide.html){:target="_blank"} and [github.com/alexeymezenin/laravel-best-practices](https://github.com/alexeymezenin/laravel-best-practices){:target="_blank"}.

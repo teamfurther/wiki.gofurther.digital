@@ -33,7 +33,7 @@ If the repo concerns something else, for example a package, its name should be k
 
 If you're going to remember one thing in this guide, remember this: Once a project has gone live, the master branch must always be stable. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active; stale branches should get cleaned up accordingly.
 
-### Projects in initial development[#](#projects-in-initial-development)
+### Projects in Initial Development[#](#projects-in-initial-development)
 
 Projects that aren't live yet have at least two branches: `master` and `develop`. We do it this way to keep the commit log clean for the initial release.
 
@@ -59,7 +59,7 @@ Featured branches should be capitalised, and only contain lowercase letters and 
 - Good: `Feature-oauth-signup`, `Feature-mailchimp`, `Fix-deliverycosts` or `Updates-june-2018`
 
 
-### Cleaning up branches[#](#cleaning-up-branches)
+### Cleaning up Branches[#](#cleaning-up-branches)
 Merged remote branches should be deleted regularly with `git push origin :<branch>`
 
 After a while, you'll end up with a few stale branches in your local repository. Branches that don't exist upstream can be cleaned up with `git remote prune origin`. If you want to ensure you're not about to delete something important, add a `--dry-run` flag.

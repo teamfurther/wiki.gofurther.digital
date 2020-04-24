@@ -3,6 +3,8 @@ layout: page
 title: "Stand-up Meetings"
 permalink: 'life/stand-up-meetings'
 ---
+<small class="owner">Owner: All</small>
+
 Daily stand-up meetings help better communication between team members. In a remote team it is especially important to chart who is working on which project and what task.
 
 - we meet on Google Hangouts (link is pinned in ```#default``` Slack channel) at 10:00 (RO) every day (Monday to Friday)

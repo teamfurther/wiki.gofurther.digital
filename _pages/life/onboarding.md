@@ -3,6 +3,8 @@ layout: page
 title: "Onboarding"
 permalink: 'life/onboarding'
 ---
+<small class="owner">Owner: HR</small>
+
 This page provides a roadmap and checklists for new employees at Further.
 
 - [Preboarding](#preboarding)
@@ -27,29 +29,21 @@ This page provides a roadmap and checklists for new employees at Further.
     - desktop app is recommended if you use multiple workspaces, otherwise web app is fine;
     - mobile app is recommended;
     - signup [&#x2197;](https://goteamfurther.slack.com/signup){:target="_blank"}.
-- Google Hangouts
+- Google Meet / Hangouts
     - used for group calls, video calls, call with screen-share;
     - initiate from Slack channel with ```/hangout```.
-- Skype [&#x2197;](https://skype.com/en/get-skype/){:target="_blank"} 
-    - only necessary if you are in contact with clients/contractors.
 - Google Drive [&#x2197;](drive.google.com){:target="_blank"}
 - Calendar
     - can be accessed by logging into your Google Suite account with your email address
 {: .checklist}
 
-### Time Tracking
-- Toggl [&#x2197;](https://toggl.com){:target="_blank"}
-    - ask office manager to send you an invite.
-    - read our guide on how we track time [&#x2197;](/life/time-tracking).
-{: .checklist}
-
 ### Project Management
-- Jira [&#x2197;](https://id.atlassian.com/signup){:target="_blank"} 
+- Productive.io [&#x2197;](https://productive.io){:target="_blank"} 
     - ask office manager to add you to the Further team.
 {: .checklist}
 
 ### Version Control
-- Bitbucket [&#x2197;](https://bitbucket.org/account/signup/){:target="_blank"} 
+- GitHub [&#x2197;](https://github.com/join){:target="_blank"} 
     - ask lead developer to add you to the Further team.
 {: .checklist}
 
@@ -57,12 +51,12 @@ This page provides a roadmap and checklists for new employees at Further.
 - PHPStorm [&#x2197;](https://www.jetbrains.com/phpstorm/){:target="_blank"}
     - our IDE of choice, ask us why we like it
 - Docker [&#x2197;](https://www.docker.com/community-edition#/download){:target="_blank"}
+- Laravel Valet[&#x2197;](https://laravel.com/docs/master/valet){:target="_blank"}
 - Frontend Build - Laravel Mix [&#x2197;](https://github.com/JeffreyWay/laravel-mix){:target="_blank"}
 {: .checklist}
     
 ### Design, Prototyping
-- Adobe Suite (Photoshop, Illustrator)
-    - both CS6 or CC is fine
+- Sketch
 - Balsamiq Mockups [&#x2197;](https://balsamiq.com/products/){:target="_blank"}
 - Invision [&#x2197;](https://www.invisionapp.com){:target="_blank"}
 {: .checklist}
@@ -72,7 +66,6 @@ This page provides a roadmap and checklists for new employees at Further.
 - Lorem Ipsum Generator [&#x2197;](https://chrome.google.com/webstore/detail/lorem-ipsum-generator-def/mcdcbjjoakogbcopinefncmkcamnfkdb){:target="_blank"}
 - Nimbus Screenshot [&#x2197;](https://chrome.google.com/webstore/detail/nimbus-screenshot-screen/bpconcjcammlapcogcnnelfmaeghhagj){:target="_blank"}
 - Screencast-O-Matic Launcher [&#x2197;](https://chrome.google.com/webstore/detail/screencast-o-matic-launch/eefedolmcildfckjamddopaplfiiankl){:target="_blank"}
-- Toggl Button [&#x2197;](https://chrome.google.com/webstore/detail/toggl-button-productivity/oejgccbfbmkkpaidnkphaiaecficdnfn){:target="_blank"}
 - Vue.js DevTools [&#x2197;](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd){:target="_blank"}
 - Wappalyzer [&#x2197;](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg){:target="_blank"}
 {: .checklist}

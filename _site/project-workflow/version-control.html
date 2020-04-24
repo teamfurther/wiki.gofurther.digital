@@ -35,8 +35,6 @@
                         <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
                         <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
                         <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
-                        <a href="https://wiki.gofurther.digital/life/time-tracking">Time Tracking</a>
-                        <a href="https://wiki.gofurther.digital/life/project-tracking">Project Tracking</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -45,6 +43,7 @@
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
@@ -57,15 +56,7 @@
                         <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
                         <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
                         <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                    </div>
-                </div>
-                <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/security">Security</a>
-                    <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
-                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
-                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
-                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -79,6 +70,15 @@
                     <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
                     </div>
                 </div>
             </nav>
@@ -136,7 +136,7 @@
 
 <p>If you’re going to remember one thing in this guide, remember this: Once a project has gone live, the master branch must always be stable. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active; stale branches should get cleaned up accordingly.</p>
 
-<h3 id="projects-in-initial-development">Projects in initial development<a href="#projects-in-initial-development">#</a></h3>
+<h3 id="projects-in-initial-development">Projects in Initial Development<a href="#projects-in-initial-development">#</a></h3>
 
 <p>Projects that aren’t live yet have at least two branches: <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">develop</code>. We do it this way to keep the commit log clean for the initial release.</p>
 
@@ -161,7 +161,7 @@
   <li>Good: <code class="highlighter-rouge">Feature-oauth-signup</code>, <code class="highlighter-rouge">Feature-mailchimp</code>, <code class="highlighter-rouge">Fix-deliverycosts</code> or <code class="highlighter-rouge">Updates-june-2018</code></li>
 </ul>
 
-<h3 id="cleaning-up-branches">Cleaning up branches<a href="#cleaning-up-branches">#</a></h3>
+<h3 id="cleaning-up-branches">Cleaning up Branches<a href="#cleaning-up-branches">#</a></h3>
 <p>Merged remote branches should be deleted regularly with <code class="highlighter-rouge">git push origin :&lt;branch&gt;</code></p>
 
 <p>After a while, you’ll end up with a few stale branches in your local repository. Branches that don’t exist upstream can be cleaned up with <code class="highlighter-rouge">git remote prune origin</code>. If you want to ensure you’re not about to delete something important, add a <code class="highlighter-rouge">--dry-run</code> flag.</p>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vue Best Practices | Further Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,600,700&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.gofurther.digital/dist/css/site.css?v191219" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://gofurther.digital" target="_blank"><img src="https://wiki.gofurther.digital/dist/img/logo.svg?v2" title="Further Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/life">Life at Further</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
+                        <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
+                        <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/project-workflow">Project Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/marketing">Marketing</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
+                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; Further Digital Solutions
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">Vue Best Practices</h1>
+
+    <p><small class="owner">Owner: Development</small></p>
+
+<ul class="toc">
+  <li><a href="#general-rules">General Rules</a></li>
+  <li><a href="#directive-shorthands">Directive Shorthands</a></li>
+  <li><a href="#component-instance-options-order">Component/instance Options Order</a></li>
+  <li><a href="#element-attribute-order">Element Attribute Order</a></li>
+  <li><a href="#templates">Templates</a></li>
+</ul>
+
+<h2 id="general-rules">General Rules<a href="#general-rules">#</a></h2>
+<p>When writing Vue code, always adhere to the <a href="https://vuejs.org/v2/style-guide/">Vue style guide</a>, unless otherwise specified below.</p>
+
+<h2 id="directive-shorthands">Directive Shorthands<a href="#directive-shorthands">#</a></h2>
+<p>Directive shorthands (: for v-bind:, @ for v-on: and # for v-slot) should not be used, as they are less readable.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
+<span class="nt">&lt;input</span>
+  <span class="na">v-bind:value=</span><span class="s">"newTodoText"</span>
+  <span class="na">v-bind:placeholder=</span><span class="s">"newTodoInstructions"</span>
+<span class="nt">&gt;</span>
+
+// Bad
+<span class="nt">&lt;input</span>
+  <span class="na">:value=</span><span class="s">"newTodoText"</span>
+  <span class="na">:placeholder=</span><span class="s">"newTodoInstructions"</span>
+<span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="componentinstance-options-order">Component/instance Options Order<a href="#component-instance-options-order">#</a></h2>
+<p>The <a href="https://vuejs.org/v2/style-guide/#Component-instance-options-order-recommended">Vue style guide</a> specifies a recommended order for component/instance options, but we prefer putting them in alphabetical order, the only exception being <code class="highlighter-rouge">el</code>, which might go first.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
+    <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="na">created</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="na">mounted</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="na">watch</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="element-attribute-order">Element Attribute Order<a href="#element-attribute-order">#</a></h2>
+<p>The <a href="https://vuejs.org/v2/style-guide/#Element-attribute-order-recommended">Vue style guide</a> specifies a recommended order for element attributes, but we prefer putting standard HTML attributes first, followed by Vue attributes in alphabetical order.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;my-element</span> <span class="na">class=</span><span class="s">"component__element has-modifier"</span> <span class="na">id=</span><span class="s">"my-first-element"</span>
+    <span class="na">v-bind:value=</span><span class="s">"myValue"</span>
+    <span class="na">v-if=</span><span class="s">"isMyElementVisible"</span>
+    <span class="na">v-on:click=</span><span class="s">"toggleMyElement"</span>
+<span class="nt">&gt;&lt;/my-element&gt;</span>
+</code></pre></div></div>
+
+<h2 id="templates">Templates</h2>
+
+<p>If a Vue component has so many props (or listeners, directives, …) that they don’t fit on one line anymore you need to put every prop on its own line. Every line needs to be intended with 4 spaces. The closing <code class="highlighter-rouge">&gt;</code> goes on a new unintended line followed by the closing tag.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="c">&lt;!-- Good --&gt;</span>
+    <span class="nt">&lt;my-component</span> <span class="na">myProp=</span><span class="s">"value"</span><span class="nt">&gt;&lt;/my-component&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="c">&lt;!-- Good --&gt;</span>
+    <span class="nt">&lt;my-component</span>
+        <span class="na">v-if=</span><span class="s">"shouldDisplay"</span>
+        <span class="na">myProp=</span><span class="s">"value"</span>
+        <span class="err">@</span><span class="na">change=</span><span class="s">"handleEvent"</span>
+    <span class="nt">&gt;&lt;/my-component&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="c">&lt;!-- Bad: wrong indentation, closing `&gt;` is not correct placed --&gt;</span>
+    <span class="nt">&lt;my-component</span>
+            <span class="na">v-if=</span><span class="s">"shouldDisplay"</span>
+            <span class="na">myProp=</span><span class="s">"value"</span>
+            <span class="err">@</span><span class="na">change=</span><span class="s">"handleEvent"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/my-component&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.gofurther.digital/dist/js/site.js"></script>
+
+</body>
+
+</html>

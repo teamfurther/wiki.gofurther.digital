@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Server & CI/CD Set-up | Further Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,600,700&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.gofurther.digital/dist/css/site.css?v191219" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://gofurther.digital" target="_blank"><img src="https://wiki.gofurther.digital/dist/img/logo.svg?v2" title="Further Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/life">Life at Further</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
+                        <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
+                        <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/project-workflow">Project Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/marketing">Marketing</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
+                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; Further Digital Solutions
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">Server & CI/CD Set-up</h1>
+
+    <p><small class="owner">Owner: Project Lead</small></p>
+
+<p>A guide to installing LEMP Stack (Linux - nginx - MariaDB - PHP) on VPS and setting up a continuous deployment process from a Bitbucket GIT repository.</p>
+
+<ul class="toc">
+  <li><a href="#server-and-ci-cd-setup-linode">Linode</a></li>
+  <li><a href="#server-and-ci-cd-setup-firewall">Firewall</a></li>
+  <li><a href="#server-and-ci-cd-setup-nginx">nginx</a></li>
+  <li><a href="#server-and-ci-cd-setup-dns">DNS</a></li>
+  <li><a href="#server-and-ci-cd-setup-ssl">SSL</a></li>
+  <li><a href="#server-and-ci-cd-setup-php">PHP</a></li>
+  <li><a href="#server-and-ci-cd-setup-mariadb">MariaDB</a></li>
+  <li><a href="#server-and-ci-cd-setup-phpmyadmin">PhpMyAdmin</a></li>
+  <li><a href="#server-and-ci-cd-setup-composer">Composer</a></li>
+  <li><a href="#server-and-ci-cd-setup-git">GIT</a></li>
+  <li><a href="#server-and-ci-cd-setup-npm">NPM</a></li>
+  <li><a href="#server-and-ci-cd-setup-jenkins">Jenkins</a></li>
+</ul>
+
+<h3 id="linode">Linode<a href="#server-and-ci-cd-setup-linode">#</a></h3>
+<p>Our preferred VPS provider is Linode. The below pages are taken from their guidelines, but should apply to any VPS provider.</p>
+
+<ul>
+  <li>Getting Started <a href="https://www.linode.com/docs/getting-started/" target="_blank">↗</a></li>
+  <li>Securing Server <a href="https://www.linode.com/docs/security/securing-your-server/" target="_blank">↗</a></li>
+</ul>
+
+<h3 id="firewall">Firewall<a href="#server-and-ci-cd-setup-firewall">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw enable</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw allow ssh</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw allow http</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw allow https</code></li>
+</ul>
+
+<h3 id="nginx">nginx<a href="#server-and-ci-cd-setup-nginx">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">ssh {user}@{ip}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get update</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get upgrade</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install nginx</code></li>
+  <li>Go to <code class="highlighter-rouge">{ip}</code> in your browser, you should see Welcome to nginx! page. If it’s not running, then: <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo service nginx start</code></li>
+</ul>
+
+<h3 id="dns">DNS<a href="#server-and-ci-cd-setup-dns">#</a></h3>
+<p>Our preferred DNS provider is Cloudflare.</p>
+
+<ul>
+  <li>Create an <code class="highlighter-rouge">A</code> record pointing to <code class="highlighter-rouge">{ip}</code></li>
+  <li>Configure production and staging websites in <code class="highlighter-rouge">/etc/nginx/sites-available/</code></li>
+  <li>Go to <code class="highlighter-rouge">{url}</code></li>
+</ul>
+
+<h3 id="ssl">SSL<a href="#server-and-ci-cd-setup-ssl">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install software-properties-common</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo add-apt-repository universe</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo add-apt-repository ppa:certbot/certbot</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get update</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install certbot python-certbot-nginx</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo certbot certonly --nginx</code></li>
+  <li>Test automatic renewal with <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo certbot renew --dry-run</code></li>
+  <li>Update nginx configuration in <code class="highlighter-rouge">/etc/nginx/sites-available/</code></li>
+  <li>Check if SSL certificate is working</li>
+</ul>
+
+<h3 id="php">PHP<a href="#server-and-ci-cd-setup-php">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install python-software-properties</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo add-apt-repository ppa:ondrej/php</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get update</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php7.4-fpm php7.4-cli php7.4-common</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-mysql php7.4-xml</code></li>
+  <li>Check status with <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">service php7.4-fpm status // check status</code>. If it’s not running, then <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo service php7.4-fpm start</code></li>
+</ul>
+
+<h3 id="mariadb">MariaDB<a href="#server-and-ci-cd-setup-mariadb">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install mariadb-client mariadb-server</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo mysql_secure_installation</code></li>
+  <li>If you can’t connect to mysql with root user:
+    <ul>
+      <li><code class="highlighter-rouge">sudo mysql</code></li>
+      <li><code class="highlighter-rouge">UPDATE mysql.user SET plugin = 'mysql_native_password'</code>;</li>
+      <li><code class="highlighter-rouge">FLUSH PRIVILEGES</code>;</li>
+    </ul>
+  </li>
+  <li>Create database and user
+    <ul>
+      <li><code class="highlighter-rouge">mysql -u root -p</code></li>
+      <li><code class="highlighter-rouge">CREATE DATABASE {database};</code></li>
+      <li><code class="highlighter-rouge">CREATE USER '{username}'@'localhost' IDENTIFIED BY '{password}';</code></li>
+      <li><code class="highlighter-rouge">GRANT ALL ON {database}.* TO {username}@`localhost`;</code></li>
+      <li><code class="highlighter-rouge">FLUSH PRIVILEGES;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="phpmyadmin">PhpMyAdmin<a href="#server-and-ci-cd-setup-phpmyadmin">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install phpmyadmin</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ln -s /usr/share/phpmyadmin /path/to/project/public/folder</code></li>
+</ul>
+
+<p><small class="note">Never leave it installed for projects in production!</small></p>
+
+<h3 id="composer">Composer<a href="#server-and-ci-cd-setup-composer">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">curl -sS https://getcomposer.org/installer -o composer-setup.php</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer</code></li>
+  <li>Check of correctly installed <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">composer</code></li>
+  <li>Install <code class="highlighter-rouge">unzip</code>, which is necessary for <code class="highlighter-rouge">composer install</code>
+    <ul>
+      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install unzip</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="git">GIT<a href="#server-and-ci-cd-setup-git">#</a></h3>
+<ul>
+  <li>Generate SSH key
+    <ul>
+      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">ssh-keygen -t rsa</code></li>
+    </ul>
+  </li>
+  <li>Set up SSH key in Bitbucket
+    <ul>
+      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cat ~/.ssh/id_rsa.pub</code></li>
+      <li>Copy key to clipboard</li>
+      <li>Go to <code class="highlighter-rouge">Bitbucket -&gt; Settings -&gt; General -&gt; Access keys</code> and paste your key</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install git</code></p>
+  </li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">mkdir /var/www/{appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo chown -R www-data:www-data /var/www/{appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cd /var/www/{appdomain.com}</code></li>
+  <li>
+    <p><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git clone git@bitbucket.org:{repo_url}.git .</code></p>
+  </li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">mkdir /var/www/{dev.appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo chown -R www-data:www-data /var/www/{dev.appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cd /var/www/{dev.appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git clone git@bitbucket.org:{repo_url}.git .</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git checkout dev // or staging</code></li>
+</ul>
+
+<h3 id="npm">NPM<a href="#server-and-ci-cd-setup-npm">#</a></h3>
+<ul>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install npm</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo npm install --unsafe-perm</code></li>
+</ul>
+
+<h3 id="jenkins">Jenkins<a href="#server-and-ci-cd-setup-jenkins">#</a></h3>
+<ul>
+  <li>Set up Jenkins pipeline
+    <ul>
+      <li>Clone an existing project</li>
+      <li>Change repo</li>
+      <li>Change script file path</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="thumb">
+    <a href="/dist/media/ci-cd-setup-jenkins.png" target="_blank">
+        <img src="/dist/media/ci-cd-setup-jenkins.png" alt="" />
+    </a>
+</div>
+
+<ul>
+  <li>Create script file on <strong>CI/CD server</strong> in <code class="highlighter-rouge">/var/lib/jenkins/scripts</code></li>
+  <li>Add <code class="highlighter-rouge">jenkins</code> public key to access keys on Bitbucket repo</li>
+  <li>Create hook in Bitbucket (<code class="highlighter-rouge">Settings / Webhooks</code>): <code class="highlighter-rouge">https://ci.gofurther.digital/bitbucket-hook/</code></li>
+  <li>Create <code class="highlighter-rouge">jenkins</code> user on <strong>remote server</strong> and give <code class="highlighter-rouge">sudo</code> rights
+    <ul>
+      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo adduser jenkins</code></li>
+      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo adduser jenkins sudo</code></li>
+    </ul>
+  </li>
+  <li>Add <code class="highlighter-rouge">jenkins</code> public key to <code class="highlighter-rouge">~/.ssh/authorized_keys</code> on <strong>remote server</strong></li>
+  <li>Add line <code class="highlighter-rouge">jenkins ALL=(ALL) NOPASSWD: ALL</code> to <code class="highlighter-rouge">/etc/sudoers</code> on <strong>remote server</strong></li>
+</ul>
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.gofurther.digital/dist/js/site.js"></script>
+
+</body>
+
+</html>

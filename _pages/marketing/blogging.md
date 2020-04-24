@@ -29,7 +29,7 @@ All blog posts need approval __by at least one (marketing) colleague__ before th
 ## Editing[#](#editing)
 Editing is easiest to do in code. Some development knowledge is required, though following the below step-by-step guide should allow anyone to edit posts.
 
-### Blog list page[#](#editing-blog-list)
+### Blog List Page[#](#editing-blog-list)
 The view for the blog list page can be found at `/resources/views/[en or hu]/blog/index.blade.php`. You need to create a new block for the new blog post.
 
 <div class="thumb">
@@ -45,7 +45,7 @@ The view for the blog list page can be found at `/resources/views/[en or hu]/blo
 4. Change the post excerpt
     - <small>Should fit in at most 6 lines, usually around 200 characters.</small>
 
-### Blog detail page[#](#editing-blog-detail)
+### Blog Detail Page[#](#editing-blog-detail)
 The view for the blog detail page can be found at `/resources/views/[en or hu]/blog/view.blade.php`. This view includes a subview for each post.
 
 These subviews must be named as [slug].blade.php and located in `/resources/views/[en or hu]/blog/posts/`.

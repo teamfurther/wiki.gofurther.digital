@@ -35,8 +35,6 @@
                         <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
                         <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
                         <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
-                        <a href="https://wiki.gofurther.digital/life/time-tracking">Time Tracking</a>
-                        <a href="https://wiki.gofurther.digital/life/project-tracking">Project Tracking</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -45,6 +43,7 @@
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
@@ -57,15 +56,7 @@
                         <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
                         <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
                         <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                    </div>
-                </div>
-                <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/security">Security</a>
-                    <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
-                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
-                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
-                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -79,6 +70,15 @@
                     <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
                     </div>
                 </div>
             </nav>
@@ -99,15 +99,18 @@
         <div class="article">
     <h1 class="article__title">Communication</h1>
 
-    <p>All communication within the Further team is done via Slack. Skype or other chat services might be used when communicating with clients or contractors, but migrating them over to Slack is encouraged.</p>
+    <p><small class="owner">Owner: All</small></p>
+
+<p>All communication within the Further team is done via Slack. Skype or other chat services might be used when communicating with clients or contractors, but migrating them over to Slack is encouraged.</p>
 
 <ul class="toc">
   <li><a href="#public-channels">Public channels</a></li>
   <li><a href="#project-channels">Project Channels</a></li>
+  <li><a href="#etiquette">Etiquette</a></li>
   <li><a href="#third-party">Third-party Integrations</a></li>
 </ul>
 
-<h2 id="public-channels">Public channels<a href="#public-channels">#</a></h2>
+<h2 id="public-channels">Public Channels<a href="#public-channels">#</a></h2>
 
 <p><code class="highlighter-rouge">#general</code> - use for company-wide announcements and work-based matters only.</p>
 
@@ -126,18 +129,11 @@
   <li>Project questions specifically addressed to one team member, should be set via DM instead</li>
 </ul>
 
+<h2 id="etiquette">Etiquette<a href="#etiquette">#</a></h2>
+
+<p>When reacting to a message from a colleague, do not reply with ‘Thank you’,  ‘You’re welcome’ or ‘OK’ as this will send a notification interrupting their work. Everyone know you’re grateful! Instead, use reactions.</p>
+
 <h2 id="third-party">Third-party Integrations<a href="#third-party">#</a></h2>
-
-<h3 id="jira">Jira</h3>
-<p>All Jira projects should be connected with project’s Slack channel.</p>
-
-<p>To avoid message noise, connection should be configured to only send notification when an assignee has been updated. To do this, follow these steps:</p>
-<ol>
-  <li>Type <code class="highlighter-rouge">/jira</code> in Slack channel</li>
-  <li>Click Manage subscription</li>
-  <li>Click Edit next to project name</li>
-  <li>Uncheck all boxes except “Assignee updated”</li>
-</ol>
 
 <h3 id="bugsnag">Bugsnag</h3>
 <p>All Bugsnag projects should be connected with project’s Slack channel. Notifications should be sent when:</p>

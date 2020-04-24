@@ -35,8 +35,6 @@
                         <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
                         <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
                         <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
-                        <a href="https://wiki.gofurther.digital/life/time-tracking">Time Tracking</a>
-                        <a href="https://wiki.gofurther.digital/life/project-tracking">Project Tracking</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -45,6 +43,7 @@
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
@@ -57,15 +56,7 @@
                         <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
                         <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
                         <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                    </div>
-                </div>
-                <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/security">Security</a>
-                    <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
-                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
-                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
-                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -79,6 +70,15 @@
                     <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
                     </div>
                 </div>
             </nav>
@@ -101,37 +101,103 @@
 
     <p><small class="owner">Owner: PM</small></p>
 
-<p>During the lifetime of a project, we need to go through numerous steps to ensure our work is efficient, timelines can be met, and product quality assured. We keep these steps in a checklist:</p>
+<p>During the lifetime of a project, we need to go through numerous steps to ensure our work is efficient, timelines can be met, and product quality assured. This page describes these steps and provides checklists.</p>
 
-<h3 id="before-kick-off">Before kick-off<a href="#project-management-before">#</a></h3>
+<ul class="toc">
+  <li><a href="#kanban">Kanban Boards</a></li>
+  <li><a href="#time-tracking">Time Tracking</a></li>
+  <li><a href="#checklists">Checklists</a></li>
+</ul>
+
+<h2 id="kanban-boards">Kanban Boards<a href="#kanban">#</a></h2>
+
+<ul>
+  <li>By default every project should have a Productive project attached with a Backlog and a Kanban board</li>
+  <li>In most cases the Backlog board should have the following columns:
+    <ul>
+      <li><code class="highlighter-rouge">Backlog</code></li>
+      <li><code class="highlighter-rouge">To be estimated</code></li>
+    </ul>
+  </li>
+  <li>In most cases the Kanban board should have the following columns:
+    <ul>
+      <li><code class="highlighter-rouge">Selected for development / To do</code> - tasks/user stories on which work can start will be dragged here by PM</li>
+      <li><code class="highlighter-rouge">In progress</code></li>
+      <li><code class="highlighter-rouge">QA</code></li>
+      <li><code class="highlighter-rouge">Ready for deployment</code></li>
+    </ul>
+  </li>
+  <li>All tasks on the boards, should have an assignee (except in when in <code class="highlighter-rouge">Backlog</code> column)</li>
+</ul>
+
+<h3 id="kanban-pull-system">Kanban Pull System<a href="#kanban-pull-system">#</a></h3>
+
+<p>Board should be walked from right to left first, and top to bottom second. This means tasks that are furthest to the right should be handled first. If there are more tasks in the rightmost column, items on the top have higher priority.</p>
+
+<h3 id="questions-on-tasks">Questions on Tasks<a href="#kanban-questions">#</a></h3>
+
+<ul>
+  <li>if you have a question on an task, leave a comment and re-assign task to the person you asked the question from;</li>
+  <li>if you answer a question, leave a comment and re-assign task to the person who asked the question.</li>
+</ul>
+
+<h3 id="qa">QA<a href="#kanban-qa">#</a></h3>
+
+<ul>
+  <li>if you finished working on an task, move the task to <code class="highlighter-rouge">QA</code> column, and re-assign it to the person responsible for QA;</li>
+  <li>if you finished QA, and found issues, leave a comment, move task back to <code class="highlighter-rouge">In progress</code> column and re-assign it;</li>
+  <li>if you finished QA, and found no issues, move task to <code class="highlighter-rouge">Ready for deployment</code> column and re-assign to person responsible for deployment.</li>
+</ul>
+
+<h3 id="deployment">Deployment<a href="#kanban-deployment">#</a></h3>
+
+<ul>
+  <li>whenever deploying tasks from <code class="highlighter-rouge">Ready for deployment</code>, responsible should mark task as completed</li>
+</ul>
+
+<h2 id="time-tracking">Time Tracking<a href="#time-tracking">#</a></h2>
+<p>We use Productive’s built in timer to track time on all our company-related activities.</p>
+
+<h3 id="general-rules">General Rules<a href="#time-tracking-general-rules">#</a></h3>
+
+<ul>
+  <li>Always try to start the timer, whatever you’re working on</li>
+  <li>If no project, budget or service exists for the activity you are doing or you are not part of the project team, ask the project manager to create it/add you</li>
+</ul>
+
+<h3 id="project-related-tasks">Project Related Tasks<a href="#time-tracking-project-related-tasks">#</a></h3>
+
+<p>All project related tasks should have a task selected on top of the project and service. If no task exists, ask the project manager to create it for you, or do it yourself. E.g.:</p>
+
+<h3 id="non-project-tasks">Non-project tasks<a href="#time-tracking-non-project-tasks">#</a></h3>
+
+<p>For non-project tasks, use the <code class="highlighter-rouge">Internal</code> project.</p>
+
+<h2 id="checklists">Checklists<a href="#checklists">#</a></h2>
+
+<h3 id="greenfield-projects">Greenfield Projects<a href="#checklists-greenfield-projects">#</a></h3>
+<p><strong>Before kick-off</strong></p>
 <ul class="checklist">
   <li>Do we have a backlog of user stories?</li>
   <li>Do we have sprint planning for first sprint?</li>
   <li>Do we have a Risk Assessment Matrix? <strong>If not, create one!</strong></li>
-  <li>Do we have a Toggl project set-up?</li>
+  <li>Do we have project roles established (PM, project lead, code reviewer)? <strong>If not, do it!</strong></li>
+  <li>Do we have a Productive project set-up?</li>
   <li>Do we have a Slack channel set-up?</li>
   <li>Do we have a GIT repo set-up? <strong>If not, do it!</strong></li>
   <li>Do we have a server with CI/CD set-up? <strong>If not, do it!</strong></li>
   <li>Do we have an IPS set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have a project document repo? <strong>If not, do it!</strong></li>
+  <li>Do we have all project documents uploaded to notes in Productive?</li>
 </ul>
 
-<h3 id="during-project">During project<a href="#project-management-during">#</a></h3>
+<p><strong>During project</strong></p>
 <ul class="checklist">
   <li>Is user story backlog up-to-date?</li>
   <li>Do we have sprint planning for next sprint?</li>
   <li>Is project repo up-to-date?</li>
-  <li>Are roles up-to-date in IPS?</li>
 </ul>
 
-<h3 id="client-calls-meetings">Client calls, meetings<a href="#project-management-meetings">#</a></h3>
-<ul class="checklist">
-  <li>Did we take meeting notes?</li>
-  <li>Did we get approval on meeting notes?</li>
-  <li>Did we create tasks based on meeting notes?</li>
-</ul>
-
-<h3 id="change-requests">Change requests<a href="#project-management-change-requests">#</a></h3>
+<p><strong>Change requests</strong></p>
 <ul>
   <li>Did we create task? <small>(mark with CR flag)</small></li>
   <li>Did we communicate changes in deadline / budget?</li>
@@ -139,12 +205,31 @@
 
 <p class="checklist"><small class="note">Communicate CR deadline changes / value even if we offer it for free / at a discounted price!</small></p>
 
-<h3 id="closing-project">Closing project<a href="#project-management-closing">#</a></h3>
+<p><strong>Closing project</strong></p>
 <ul class="checklist">
   <li>Do we have a delivery certificate? <strong>If not, do it!</strong> <small>(this marks the start of warranty period)</small></li>
   <li>Do we have any outstanding billable hours? <strong>If yes, invoice it!</strong></li>
 </ul>
 
+<h3 id="support-projects">Support projects<a href="#checklists-support-projects">#</a></h3>
+<ul class="checklist">
+  <li>Is the IPS up-to-date?</li>
+  <li>Do all tasks have deadlines set?</li>
+</ul>
+
+<h3 id="client-calls-meetings">Client calls, meetings<a href="#checklists-meetings">#</a></h3>
+<ul class="checklist">
+  <li>Did we take meeting notes?</li>
+  <li>Did we get approval on meeting notes?</li>
+  <li>Did we create tasks based on meeting notes? Assign them a deadline!</li>
+</ul>
+
+<h3 id="qa-1">QA<a href="#checklists-qa">#</a></h3>
+<ul class="checklist">
+  <li>Each user story / task should be individually tested by developer 1st</li>
+  <li>Each user story should be end-to-end tested by project lead 2nd</li>
+  <li>Each user story / task should be individually tested by project manager 3rd</li>
+</ul>
 
 </div>
 

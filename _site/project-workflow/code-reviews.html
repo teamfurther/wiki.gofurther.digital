@@ -35,8 +35,6 @@
                         <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
                         <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
                         <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
-                        <a href="https://wiki.gofurther.digital/life/time-tracking">Time Tracking</a>
-                        <a href="https://wiki.gofurther.digital/life/project-tracking">Project Tracking</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -45,6 +43,7 @@
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
@@ -57,15 +56,7 @@
                         <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
                         <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
                         <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                    </div>
-                </div>
-                <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/security">Security</a>
-                    <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
-                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
-                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
-                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -79,6 +70,15 @@
                     <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
                     </div>
                 </div>
             </nav>
@@ -99,7 +99,7 @@
         <div class="article">
     <h1 class="article__title">Code Reviews</h1>
 
-    <p><small class="owner">Owner: Project Lead</small></p>
+    <p><small class="owner">Owner: Project Lead (or Code Reviewer)</small></p>
 
 <p>Project lead is responsible for weekly code reviews, including final code review before deployment. To help with code reviews, we created a checklist. Use this template <a href="http://bit.ly/30Z3fLP" target="_blank">↗</a> to do code reviews.</p>
 
@@ -112,6 +112,7 @@
   <li>Did we run <code class="highlighter-rouge">phpstan</code>? <strong>If not, do it!</strong></li>
   <li>Did we run <code class="highlighter-rouge">phpinsights</code>? <strong>If not, do it!</strong></li>
   <li>Is code conforming to <a href="/code-style">code style</a>? <strong>If not, do it!</strong></li>
+  <li>Do we have a setup.md file? <strong>If not, do it!</strong></li>
   <li>Does code use modern OOP features (e.g. type hinting)?</li>
   <li>Did we check all pages for n+1 problems? <strong>If not, do it!</strong></li>
   <li>Did we clean up code? (orphaned comments, debugging controls, etc.) <strong>If not, do it!</strong></li>

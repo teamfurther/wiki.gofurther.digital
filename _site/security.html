@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Tracking | Further Wiki</title>
+    <title>Security | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
 
@@ -35,8 +35,6 @@
                         <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
                         <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
                         <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
-                        <a href="https://wiki.gofurther.digital/life/time-tracking">Time Tracking</a>
-                        <a href="https://wiki.gofurther.digital/life/project-tracking">Project Tracking</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -45,6 +43,7 @@
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
@@ -57,15 +56,7 @@
                         <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
                         <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
                         <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                    </div>
-                </div>
-                <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/security">Security</a>
-                    <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
-                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
-                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
-                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -79,6 +70,15 @@
                     <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
                     </div>
                 </div>
             </nav>
@@ -97,61 +97,17 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Project Tracking</h1>
+    <h1 class="article__title">Security</h1>
 
-    <p>We use Jira for issue tracking and agile project management.</p>
+    <p class="is-text-large">The following pages describe the processes Further must take to ensure the security of its information, and the security of its clients’ information, to ensure business continuity and how to handle incident and unforeseen events.</p>
 
-<ul class="toc">
-  <li><a href="#structure">Structure</a></li>
-  <li><a href="#workflow">Workflow</a></li>
-</ul>
-
-<h2 id="structure">Structure<a href="#structure">#</a></h2>
-
+<p>The following are included:</p>
 <ul>
-  <li>By default every project should have a Jira project attached with a Kanban board</li>
-  <li>By default every development, devops, support, etc. should have a Jira issue</li>
-  <li>Issues/user stories in the backlog should have a dedicated space away from the board</li>
-  <li>In most cases a board should have the following columns:
-    <ul>
-      <li><code class="highlighter-rouge">Selected for development / To do</code> - issues/user stories on which work can start will be dragged here by PM/PO</li>
-      <li><code class="highlighter-rouge">In progress</code></li>
-      <li><code class="highlighter-rouge">QA</code></li>
-      <li><code class="highlighter-rouge">Done</code></li>
-    </ul>
-  </li>
-  <li>All issues on the board, should have an assignee</li>
-  <li>Priorities should not be set on issues, instead Kanban board should be walked from right to left, and top to bottom (see workflow)</li>
+  <li>business continuity plan</li>
+  <li>incident management plan</li>
+  <li>information security plan</li>
+  <li>physical security plan</li>
 </ul>
-
-<h2 id="workflow">Workflow<a href="#workflow">#</a></h2>
-
-<h3 id="kanban-pull-system">Kanban pull system</h3>
-
-<p>Board should be walked from right to left first, and top to bottom second. This means tasks that are furthest to the right should be handled first. If there are more tasks in the rightmost column, items on the top have higher priority.</p>
-
-<h3 id="questions-on-issues">Questions on issues</h3>
-
-<ul>
-  <li>if you have a question on an issue, leave a comment and re-assign issue to the person you asked the question from;</li>
-  <li>if you answer a question, leave a comment and re-assign issue to the person who asked the question.</li>
-</ul>
-
-<h3 id="qa">QA</h3>
-
-<ul>
-  <li>if you finished working on an issue, move the issue to <code class="highlighter-rouge">QA</code> column, and re-assign it to the person responsible for QA;</li>
-  <li>if you finished QA, and found issues, leave a comment, move issue back to <code class="highlighter-rouge">In progress</code> column and re-assign it;</li>
-  <li>if you finished QA, and found no issues, move issue to <code class="highlighter-rouge">Done</code> column and re-assign to person responsible for deployment.</li>
-</ul>
-
-<h3 id="deployment">Deployment</h3>
-
-<ul>
-  <li>whenever deploying issues from <code class="highlighter-rouge">Done</code>, responsible should release new version;</li>
-  <li>version name should follow Semver scheme. E.g.: <code class="highlighter-rouge">v2.1.32</code>.</li>
-</ul>
-
 
 </div>
 

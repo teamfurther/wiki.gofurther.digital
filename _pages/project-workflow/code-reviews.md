@@ -3,7 +3,7 @@ layout: page
 title: "Code Reviews"
 permalink: 'project-workflow/code-reviews'
 ---
-<small class="owner">Owner: Project Lead</small>
+<small class="owner">Owner: Project Lead (or Code Reviewer)</small>
 
 Project lead is responsible for weekly code reviews, including final code review before deployment. To help with code reviews, we created a checklist. Use this template [&#x2197;](http://bit.ly/30Z3fLP){:target="_blank"} to do code reviews.
 
@@ -15,6 +15,7 @@ Remember, these are rough guidelines you should adapt to each project.
 - Did we run `phpstan`? **If not, do it!**
 - Did we run `phpinsights`? **If not, do it!**
 - Is code conforming to [code style](/code-style)? **If not, do it!**
+- Do we have a setup.md file? **If not, do it!**
 - Does code use modern OOP features (e.g. type hinting)? 
 - Did we check all pages for n+1 problems? **If not, do it!**
 - Did we clean up code? (orphaned comments, debugging controls, etc.) **If not, do it!**

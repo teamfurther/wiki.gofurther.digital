@@ -15,6 +15,7 @@ The following page describes the business functions required to plan and execute
 - [Topics](#topics)
 - [Posting on Facebook](#posting-on-facebook)
 - [Posting on Instagram](#posting-on-instagram)
+- [Posting on LinkedIn](#posting-on-linkedin)
 {: .toc}
 
 ## Branding[#](#branding)
@@ -64,25 +65,27 @@ Some topics like `Tip day` or `Created content` should be posted each week.
 {: .checklist}
 
 ## Topics[#](#topics)
-Topics are a way of thematically organising posts. By keeping topics consistent (e.g. every Monday's topic is Tips), we create a sense of expectancy in our followers and increase engagement. Topics are primarily applied to Facebook posts, but can be followed for other channels as well.
+Topics are a way of thematically organising posts. By keeping topics consistent (e.g. every Monday's topic is Tips/Quotes), we create a sense of expectancy in our followers and increase engagement. Topics are primarily applied to Facebook posts, but can be followed for other channels as well.
 
-- Monday: __Tip day__ [#](#topics-monday)
-- Tuesday: __Created content (video)__
+A sample grid of topics might be:
+
+- Monday: __Tip/quote day__ [#](#topics-monday)
+- Tuesday: __Created Content (video)__
 - Wednesday: __News__
-- Thursday: __Created content (repeated)__
-- Friday: __Personal content__
-- Saturday: __Created content__
-- Sunday: __Curated content__
+- Thursday: __Created Content (repeated)__
+- Friday: __Personal Content__
+- Saturday: __Created Content__
+- Sunday: __Curated Content__
 
-### Monday: Tip day[#](#topics-monday)
+### Monday: Tip/Quote Day[#](#topics-monday)
 The aim of this topic is to share knowledge with our audience.
-On tip days we show how we use different tools and techniques, and how these can help our audience as well.
+On tip/quote days we show how we use different tools and techniques, and how these can help our audience as well.
 
 Subjects might include: productivity tips, time management, project management or remote work.
 
 Always hashtag post: 
-- `EN`: #mondaytips
-- `HU`: #hétfőitipp
+- `EN`: #mondaytips, #mondayquote
+- `HU`: #hétfőitipp, #hétfőiidézet
 
 <div class="thumb">
     <a href="/dist/media/social-media-marketing-topics-monday.png" target="_blank">
@@ -248,5 +251,9 @@ Subjects might include: IT, software, business, etc.
 </div>
 
 ## Posting on Instagram[#](#posting-on-instagram)
+
+//@TODO
+
+## Posting on LinkedIn[#](#posting-on-linkedin)
 
 //@TODO

@@ -35,8 +35,6 @@
                         <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
                         <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
                         <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
-                        <a href="https://wiki.gofurther.digital/life/time-tracking">Time Tracking</a>
-                        <a href="https://wiki.gofurther.digital/life/project-tracking">Project Tracking</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -45,6 +43,7 @@
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
@@ -57,15 +56,7 @@
                         <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
                         <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
                         <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                    </div>
-                </div>
-                <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/security">Security</a>
-                    <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
-                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
-                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
-                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -79,6 +70,15 @@
                     <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
                     </div>
                 </div>
             </nav>
@@ -103,7 +103,7 @@
 
 <ul class="toc">
   <li><a href="#general-php-rules">General PHP Rules</a></li>
-  <li><a href="#naming-classes">Naming Classes</a></li>
+  <li><a href="#organizing-classes">Organizing Classes</a></li>
   <li><a href="#routing">Routing</a></li>
   <li><a href="#views">Views</a></li>
   <li><a href="#blade-templates">Blade Templates</a></li>
@@ -230,11 +230,11 @@
 <span class="p">{</span>
     <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pages</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">,</span> <span class="nv">$url</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$page</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$page</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
 
@@ -245,10 +245,10 @@
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getPage</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pages</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">,</span> <span class="nv">$url</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$page</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$page</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$page</span><span class="p">;</span>
@@ -287,12 +287,30 @@
 <h3 id="class-properties-and-array-keys">Class Properties and Array Keys<a href="#class-properties-and-array-keys">#</a></h3>
 <p>Both class properties and array keys should be in camelCase.</p>
 
-<ul>
-  <li>Bad: <code class="highlighter-rouge">$array[‘some_property’]</code>, <code class="highlighter-rouge">$obj-&gt;some_property</code></li>
-  <li>Good: <code class="highlighter-rouge">$array[‘someProperty’</code>, <code class="highlighter-rouge">$obj-&gt;someProperty</code></li>
-</ul>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'someValue'</span><span class="p">,</span> <span class="s1">'someOtherValue'</span><span class="p">];</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">someValue</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'some_value'</span><span class="p">,</span> <span class="s1">'some_other_value'</span><span class="p">];</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">some_value</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>Exceptions are configuration variables and language string keys, which should be snake_case.</p>
+
+<h3 id="trailing-commas">Trailing commas</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">const</span> <span class="no">person</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Adrian'</span><span class="p">,</span>
+    <span class="s1">'Sebastian'</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="c1">// Bad, no trailing comma.</span>
+<span class="k">const</span> <span class="no">person</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Adrian'</span><span class="p">,</span>
+    <span class="s1">'Sebastian'</span>
+<span class="p">];</span>
+</code></pre></div></div>
 
 <h3 id="if-statements">If Statements<a href="#if-statements">#</a></h3>
 <p>Always use curly brackets.</p>
@@ -344,6 +362,72 @@
 <span class="nv">$username</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">:</span> <span class="s1">'nobody'</span><span class="p">;</span>
 </code></pre></div></div>
 
+<h3 id="happy-path">Happy Path<a href="#happy-path">#</a></h3>
+<p>Generally a function should have its unhappy path first and its happy path last. In most cases this will cause the happy path being in an unindented part of the function which makes it more readable.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$goodCondition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// do work</span>
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Bad</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$goodCondition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do work</span>
+<span class="p">}</span>
+
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="avoid-else">Avoid Else<a href="#avoid-else">#</a></h3>
+<p>In general, <code class="highlighter-rouge">else</code> should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionBA</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// conditionB A failed</span>
+   
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionB</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// conditionB A passed, B failed</span>
+   
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// condition A and B passed</span>
+</code></pre></div></div>
+
+<h3 id="compound-ifs">Compound Ifs<a href="#compound-ifs">#</a></h3>
+<p>In general, separate <code class="highlighter-rouge">if</code> statements should be preferred over a compound condition. This makes debugging code easier.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionA</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionB</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionC</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// do stuff</span>
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$conditionA</span> <span class="o">&amp;&amp;</span> <span class="nv">$conditionB</span> <span class="o">&amp;&amp;</span> <span class="nv">$conditionC</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// do stuff</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <h3 id="infix-operators">Infix Operators<a href="#infix-operators">#</a></h3>
 <p>Always use spaces before and after infix operators in expressions.</p>
 
@@ -352,61 +436,80 @@
   <li>Good: <code class="highlighter-rouge">$i &lt; 10</code>, <code class="highlighter-rouge">$a + $b</code>, <code class="highlighter-rouge">$a != $b</code>, <code class="highlighter-rouge">$a = []</code>, <code class="highlighter-rouge">$key =&gt; $value</code></li>
 </ul>
 
-<h2 id="naming-classes">Naming Classes<a href="#naming-classes">#</a></h2>
-<p>Naming things is often seen as one of the harder things in programming. That’s why we’ve established some high level guidelines for naming classes.</p>
+<h2 id="organizing-classes">Organizing Classes<a href="#organizing-classes">#</a></h2>
 
-<h3 id="naming-models">Models<a href="#naming-models">#</a></h3>
-<p>Always name your models by the singular name of your resource.</p>
+<h3 id="property-and-method-order">Property and method order<a href="#property-and-method-order">#</a></h3>
+<p>All properties and methods in a class should be ordered alphabetically. Constants should preceed variables. The constructor should always be the first method.</p>
 
-<p>e.g. <code class="highlighter-rouge">User</code> or <code class="highlighter-rouge">Post</code></p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nx">const</span> <span class="nv">$id</span><span class="p">;</span>
 
-<h3 id="naming-controllers">Controllers<a href="#naming-controllers">#</a></h3>
-<p>Generally controllers are named by the plural form of their corresponding resource and a Controller suffix. This is to avoid naming collisions with models that are often equally named.</p>
+    <span class="k">private</span> <span class="nv">$address</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$age</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$title</span><span class="p">;</span>
 
-<p>e.g. <code class="highlighter-rouge">UsersController</code> or <code class="highlighter-rouge">PostsController</code></p>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">changeAddress</span><span class="p">(</span><span class="nv">$newAddress</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...    </span>
+    <span class="p">}</span>
 
-<p>When writing non-resourceful controllers you might come across invokable controllers that perform a single action. These can be named by the action they perform again suffixed by Controller.</p>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">incrementAge</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...    </span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<p>e.g. <code class="highlighter-rouge">PerformCleanupController</code></p>
+<span class="c1">// Bad</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$title</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$address</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$age</span><span class="p">;</span>
 
-<h3 id="naming-form-requests">Form Requests<a href="#naming-form-requests">#</a></h3>
-<p>Always name your form requests by the singular name of your resource, suffixed with <code class="highlighter-rouge">Request</code>.</p>
+    <span class="k">public</span> <span class="nx">const</span> <span class="nv">$id</span><span class="p">;</span>
 
-<p>e.g. <code class="highlighter-rouge">PostRequest</code></p>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
 
-<p>In some cases, you need separate form requests for the <code class="highlighter-rouge">create()</code> and <code class="highlighter-rouge">update()</code> controller methods. In these cases put the method name between the name of your resource and the <code class="highlighter-rouge">Request</code> suffix.</p>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">incrementAge</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...    </span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">changeAddress</span><span class="p">(</span><span class="nv">$newAddress</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...    </span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>e.g. <code class="highlighter-rouge">PostCreateRequest</code> or <code class="highlighter-rouge">PostUpdateRequest</code></p>
+<h3 id="traits">Traits<a href="#traits">#</a></h3>
+<p>Traits should always come first in the class definition.</p>
 
-<h3 id="naming-services">Services<a href="#naming-services">#</a></h3>
-<p>Always name your services by the singular name of your resource, suffixed with <code class="highlighter-rouge">Service</code>.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">IsMammal</span><span class="p">;</span>
+    
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 
-<p>e.g. <code class="highlighter-rouge">PostService</code></p>
+<span class="c1">// Bad</span>
+<span class="c1">// Good</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
 
-<h3 id="naming-jobs">Jobs<a href="#naming-jobs">#</a></h3>
-<p>A job’s name should describe its action.</p>
-
-<p>E.g. <code class="highlighter-rouge">CreateUser</code> or <code class="highlighter-rouge">PerformDatabaseCleanup</code></p>
-
-<h3 id="naming-events">Events<a href="#naming-events">#</a></h3>
-<p>Events will often be fired before or after the actual event. This should be very clear by the tense used in their name.</p>
-
-<p>E.g. <code class="highlighter-rouge">ApprovingLoan</code> before the action is completed and <code class="highlighter-rouge">LoanApproved</code> after the action is completed.</p>
-
-<h3 id="naming-listeners">Listeners<a href="#naming-listeners">#</a></h3>
-<p>Listeners will perform an action based on an incoming event. Their name should reflect that action with a <code class="highlighter-rouge">Listener</code> suffix. This might seem strange at first but will avoid naming collisions with jobs.</p>
-
-<p>E.g. <code class="highlighter-rouge">SendInvitationMailListener</code></p>
-
-<h3 id="naming-mailables">Mailables<a href="#naming-mailables">#</a></h3>
-<p>Again to avoid naming collisions we’ll suffix mailables with <code class="highlighter-rouge">Mail</code>, as they’re often used to convey an event, action or question.</p>
-
-<p>e.g. <code class="highlighter-rouge">AccountActivatedMail</code> or <code class="highlighter-rouge">NewEventMail</code></p>
-
-<h3 id="naming-notifications">Notifications<a href="#naming-notifications">#</a></h3>
-<p>Again to avoid naming collisions we’ll suffix notifications with <code class="highlighter-rouge">Notification</code>, as they’re often used to convey an event, action or question.</p>
-
-<p>e.g. <code class="highlighter-rouge">AccountActivatedNotification</code> or <code class="highlighter-rouge">NewEventNotication</code></p>
+    <span class="k">use</span> <span class="nx">IsMammal</span><span class="p">;</span>
+    
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="routing">Routing<a href="#routing">#</a></h2>
 <p>Public-facing urls must use kebab-case.</p>

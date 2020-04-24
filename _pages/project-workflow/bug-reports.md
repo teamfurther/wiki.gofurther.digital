@@ -21,6 +21,6 @@ Remember, these are rough guidelines you should adapt to each situation.
 - Screenshot
 - Screencast <small>(in case screenshot is not enough)</small>
 
-### Bug involving files[#](#bug-reports-files)
+### Bug Involving Files[#](#bug-reports-files)
 - Attach actual file
 {: .checklist}

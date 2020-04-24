@@ -16,13 +16,19 @@ This page describes the steps required in order to precisely report financial st
 ## Monthly reporting[#](#monthly-reporting)
 We report unpaid billable hours and outstanding sums to our clients on a monthly basis. Later on, these reports will serve as the basis for invoicing and financial stats.
 
-Use Toggl's reports menu to generate a report of billable hours from the previous month. Proceed by updating the billable hours in the outstandings spreadsheet's `List` sheet, client by client. When updating a row, make sure you assign the values to the correct client/project/item. If not corresponding row exists, create one.
+Use Productive's time reports to generate a report of billable hours from the previous month.
+
+// image
+
+<small class="note">After finishing monthly reports, notify managing partner to sign-off on reports.</small>
+
+### Legacy outstandings spreadsheets
+
+Update the billable hours in the outstandings spreadsheet's `List` sheet, client by client. When updating a row, make sure you assign the values to the correct client/project/item. If not corresponding row exists, create one.
 
 When working in the spreadsheet, make sure you colour code the rows / cells you edited, so other collaborators know which values were edited by which team member.
 
 The `Clients` sheet in the outstandings spreadsheet contains the rates, related tasks and instructions for each specific client.
-
-<small class="note">After finishing monthly reports, notify managing partner to sign-off on reports.</small>
 
 ### Resources[#](#monthly-reporting-resources)
 - Outstandings spreadsheet [&#x2197;](http://bit.ly/2mfWwOw){:target="_blank"}

@@ -6,7 +6,7 @@ permalink: 'code-style/php'
 <small class="owner">Owner: Development</small>
 
 - [General PHP Rules](#general-php-rules)
-- [Naming Classes](#naming-classes)
+- [Organizing Classes](#organizing-classes)
 - [Routing](#routing)
 - [Views](#views)
 - [Blade Templates](#blade-templates)
@@ -140,11 +140,11 @@ public function getPage($url)
 {
     $page = $this->pages()->where('slug', $url)->first();
 
-    if (! $page) {
+    if (!$page) {
         return null;
     }
 
-    if ($page['private'] && ! Auth::check()) {
+    if ($page['private'] && !Auth::check()) {
         return null;
     }
 
@@ -155,10 +155,10 @@ public function getPage($url)
 public function getPage($url)
 {
     $page = $this->pages()->where('slug', $url)->first();
-    if (! $page) {
+    if (!$page) {
         return null;
     }
-    if ($page['private'] && ! Auth::check()) {
+    if ($page['private'] && !Auth::check()) {
         return null;
     }
     return $page;
@@ -199,12 +199,32 @@ if ($foo) {
 ### Class Properties and Array Keys[#](#class-properties-and-array-keys)
 Both class properties and array keys should be in camelCase.
 
-- Bad: `$array[‘some_property’]`, `$obj->some_property`
-- Good: `$array[‘someProperty’`, `$obj->someProperty`
+```php
+// Good
+$array = ['someValue', 'someOtherValue'];
+$value = $obj->someValue;
 
+// Bad
+$array = ['some_value', 'some_other_value'];
+$value = $obj->some_value;
+```
 
 Exceptions are configuration variables and language string keys, which should be snake_case.
 
+### Trailing commas
+```php
+// Good
+const person = [
+    'Adrian',
+    'Sebastian',
+];
+
+// Bad, no trailing comma.
+const person = [
+    'Adrian',
+    'Sebastian'
+];
+```
 
 ### If Statements[#](#if-statements)
 Always use curly brackets.
@@ -260,67 +280,159 @@ $username = $_GET['user'] ?: 'nobody';
 $username = isset($_GET['user']) ? $_GET['user'] : 'nobody';
 ```
 
+### Happy Path[#](#happy-path)
+Generally a function should have its unhappy path first and its happy path last. In most cases this will cause the happy path being in an unindented part of the function which makes it more readable.
+
+```php
+// Good
+
+if (!$goodCondition) {
+    throw new Exception;
+}
+
+// do work
+```
+
+```php
+// Bad
+
+if ($goodCondition) {
+    // do work
+}
+
+throw new Exception;
+```
+
+### Avoid Else[#](#avoid-else)
+In general, ```else``` should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.
+
+```php
+// Good
+
+if (!$conditionBA) {
+   // conditionB A failed
+   
+   return;
+}
+
+if (!$conditionB) {
+   // conditionB A passed, B failed
+   
+   return;
+}
+
+// condition A and B passed
+```
+
+### Compound Ifs[#](#compound-ifs)
+In general, separate ```if``` statements should be preferred over a compound condition. This makes debugging code easier.
+
+```php
+// Good
+if (!$conditionA) {
+   return;
+}
+
+if (!$conditionB) {
+   return;
+}
+
+if (!$conditionC) {
+   return;
+}
+
+// do stuff
+```
+
+```php
+// bad
+if ($conditionA && $conditionB && $conditionC) {
+  // do stuff
+}
+```
+
 ### Infix Operators[#](#infix-operators)
 Always use spaces before and after infix operators in expressions.
 
 - Bad: `$i<10`, `$a+$b`, `$a!=$b`, `$a=[]`, `$key=>$value`
 - Good: `$i < 10`, `$a + $b`, `$a != $b`, `$a = []`, `$key => $value`
 
-## Naming Classes[#](#naming-classes)
-Naming things is often seen as one of the harder things in programming. That's why we've established some high level guidelines for naming classes.
+## Organizing Classes[#](#organizing-classes)
 
-### Models[#](#naming-models) {#naming-models}
-Always name your models by the singular name of your resource.
- 
-e.g. `User` or `Post`
+### Property and method order[#](#property-and-method-order)
+All properties and methods in a class should be ordered alphabetically. Constants should preceed variables. The constructor should always be the first method.
 
-### Controllers[#](#naming-controllers) {#naming-controllers}
-Generally controllers are named by the plural form of their corresponding resource and a Controller suffix. This is to avoid naming collisions with models that are often equally named.
+```php
+// Good
+class Person
+{
+    public const $id;
 
-e.g. `UsersController` or `PostsController`
+    private $address;
+    private $age;
+    private $name;
+    private $title;
 
-When writing non-resourceful controllers you might come across invokable controllers that perform a single action. These can be named by the action they perform again suffixed by Controller.
+    public function __construct() {
+        // ...
+    }
+    
+    public function changeAddress($newAddress) {
+        // ...    
+    }
 
-e.g. `PerformCleanupController`
+    public function incrementAge() {
+        // ...    
+    }
+}
 
-### Form Requests[#](#naming-form-requests) {#naming-form-requests}
-Always name your form requests by the singular name of your resource, suffixed with `Request`.
+// Bad
+class Person
+{
+    private $name;
+    private $title;
+    private $address;
+    private $age;
 
-e.g. `PostRequest`
+    public const $id;
 
-In some cases, you need separate form requests for the `create()` and `update()` controller methods. In these cases put the method name between the name of your resource and the `Request` suffix.
+    public function __construct() {
+        // ...
+    }
 
-e.g. `PostCreateRequest` or `PostUpdateRequest`
+    public function incrementAge() {
+        // ...    
+    }
+    
+    public function changeAddress($newAddress) {
+        // ...    
+    }
+}
+```
 
-### Services[#](#naming-services) {#naming-services}
-Always name your services by the singular name of your resource, suffixed with `Service`.
+### Traits[#](#traits)
+Traits should always come first in the class definition.
 
-e.g. `PostService`
+```php
+// Good
+class Person
+{
+    use IsMammal;
+    
+    // ...
+}
 
-### Jobs[#](#naming-jobs) {#naming-jobs}
-A job's name should describe its action.
+// Bad
+// Good
+class Person
+{
+    public $name;
 
-E.g. `CreateUser` or `PerformDatabaseCleanup`
-
-### Events[#](#naming-events) {#naming-events}
-Events will often be fired before or after the actual event. This should be very clear by the tense used in their name.
-
-E.g. `ApprovingLoan` before the action is completed and `LoanApproved` after the action is completed.
-
-### Listeners[#](#naming-listeners) {#naming-listeners}
-Listeners will perform an action based on an incoming event. Their name should reflect that action with a `Listener` suffix. This might seem strange at first but will avoid naming collisions with jobs.
-
-E.g. `SendInvitationMailListener`
-
-### Mailables[#](#naming-mailables) {#naming-mailables}
-Again to avoid naming collisions we'll suffix mailables with `Mail`, as they're often used to convey an event, action or question.
-
-e.g. `AccountActivatedMail` or `NewEventMail`
-
-### Notifications[#](#naming-notifications) {#naming-notifications}
-Again to avoid naming collisions we'll suffix notifications with `Notification`, as they're often used to convey an event, action or question.
-
-e.g. `AccountActivatedNotification` or `NewEventNotication`
+    use IsMammal;
+    
+    // ...
+}
+```
 
 ## Routing[#](#routing)
 Public-facing urls must use kebab-case.
