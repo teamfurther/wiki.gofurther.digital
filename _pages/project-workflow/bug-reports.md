@@ -9,7 +9,7 @@ To make it easier for developers to find the root cause of bugs, they should be 
 
 Remember, these are rough guidelines you should adapt to each situation.
 
-### General[#](#bug-reports-general)
+### General[#](#general)
 - Date and time
 - URL
 - Browser <small>type & version</small>
@@ -21,6 +21,6 @@ Remember, these are rough guidelines you should adapt to each situation.
 - Screenshot
 - Screencast <small>(in case screenshot is not enough)</small>
 
-### Bug Involving Files[#](#bug-reports-files)
+### Bug Involving Files[#](#files)
 - Attach actual file
 {: .checklist}

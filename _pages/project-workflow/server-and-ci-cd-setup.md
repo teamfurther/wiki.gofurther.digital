@@ -7,47 +7,47 @@ permalink: 'project-workflow/server-and-ci-cd-setup'
 
 A guide to installing LEMP Stack (Linux - nginx - MariaDB - PHP) on VPS and setting up a continuous deployment process from a Bitbucket GIT repository.
 
-- [Linode](#server-and-ci-cd-setup-linode)
-- [Firewall](#server-and-ci-cd-setup-firewall)
-- [nginx](#server-and-ci-cd-setup-nginx)
-- [DNS](#server-and-ci-cd-setup-dns)
-- [SSL](#server-and-ci-cd-setup-ssl)
-- [PHP](#server-and-ci-cd-setup-php)
-- [MariaDB](#server-and-ci-cd-setup-mariadb)
-- [PhpMyAdmin](#server-and-ci-cd-setup-phpmyadmin)
-- [Composer](#server-and-ci-cd-setup-composer)
-- [GIT](#server-and-ci-cd-setup-git)
-- [NPM](#server-and-ci-cd-setup-npm)
-- [Jenkins](#server-and-ci-cd-setup-jenkins)
+- [Linode](#linode)
+- [Firewall](#firewall)
+- [nginx](#nginx)
+- [DNS](#dns)
+- [SSL](#ssl)
+- [PHP](#php)
+- [MariaDB](#mariadb)
+- [PhpMyAdmin](#phpmyadmin)
+- [Composer](#composer)
+- [GIT](#git)
+- [NPM](#npm)
+- [Jenkins](#jenkins)
 {: .toc}
 
-### Linode[#](#server-and-ci-cd-setup-linode)
+### Linode[#](#linode)
 Our preferred VPS provider is Linode. The below pages are taken from their guidelines, but should apply to any VPS provider.
 
 - Getting Started [&#x2197;](https://www.linode.com/docs/getting-started/){:target="_blank"}
 - Securing Server [&#x2197;](https://www.linode.com/docs/security/securing-your-server/){:target="_blank"}
 
-### Firewall[#](#server-and-ci-cd-setup-firewall)
+### Firewall[#](#firewall)
 - ```$``` ```sudo ufw enable```
 - ```$``` ```sudo ufw allow ssh```
 - ```$``` ```sudo ufw allow http```
 - ```$``` ```sudo ufw allow https```
 
-### nginx[#](#server-and-ci-cd-setup-nginx)
+### nginx[#](#nginx)
 - ```$``` ```ssh {user}@{ip}```
 - ```$``` ```sudo apt-get update```
 - ```$``` ```sudo apt-get upgrade```
 - ```$``` ```sudo apt-get install nginx```
 - Go to ```{ip}``` in your browser, you should see Welcome to nginx! page. If it’s not running, then: ```$``` ```sudo service nginx start```
 
-### DNS[#](#server-and-ci-cd-setup-dns)
+### DNS[#](#dns)
 Our preferred DNS provider is Cloudflare.
 
 - Create an ```A``` record pointing to ```{ip}```
 - Configure production and staging websites in ```/etc/nginx/sites-available/```
 - Go to ```{url}```
 
-### SSL[#](#server-and-ci-cd-setup-ssl)
+### SSL[#](#ssl)
 - ```$``` ```sudo apt-get install software-properties-common```
 - ```$``` ```sudo add-apt-repository universe```
 - ```$``` ```sudo add-apt-repository ppa:certbot/certbot```
@@ -58,7 +58,7 @@ Our preferred DNS provider is Cloudflare.
 - Update nginx configuration in ```/etc/nginx/sites-available/```
 - Check if SSL certificate is working
     
-### PHP[#](#server-and-ci-cd-setup-php)
+### PHP[#](#php)
 - ```$``` ```sudo apt-get install python-software-properties```
 - ```$``` ```sudo add-apt-repository ppa:ondrej/php```
 - ```$``` ```sudo apt-get update```
@@ -66,7 +66,7 @@ Our preferred DNS provider is Cloudflare.
 - ```$``` ```sudo apt-get install php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-mysql php7.4-xml```
 - Check status with ```$``` ```service php7.4-fpm status // check status```. If it's not running, then ```$``` ```sudo service php7.4-fpm start```
 
-### MariaDB[#](#server-and-ci-cd-setup-mariadb)
+### MariaDB[#](#mariadb)
 - ```$``` ```sudo apt-get install mariadb-client mariadb-server```
 - ```$``` ```sudo mysql_secure_installation```
 - If you can't connect to mysql with root user:
@@ -80,20 +80,20 @@ Our preferred DNS provider is Cloudflare.
     - ```GRANT ALL ON {database}.* TO {username}@`localhost`;```
     - ```FLUSH PRIVILEGES;```
     
-### PhpMyAdmin[#](#server-and-ci-cd-setup-phpmyadmin)
+### PhpMyAdmin[#](#phpmyadmin)
 - ```$``` ```sudo apt-get install phpmyadmin```
 - ```$``` ```sudo ln -s /usr/share/phpmyadmin /path/to/project/public/folder```
 
 <small class="note">Never leave it installed for projects in production!</small>
 
-### Composer[#](#server-and-ci-cd-setup-composer)
+### Composer[#](#composer)
 - ```$``` ```curl -sS https://getcomposer.org/installer -o composer-setup.php```
 - ```$``` ```sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer```
 - Check of correctly installed ```$``` ```composer```
 - Install ```unzip```, which is necessary for ```composer install```
     - ```$``` ```sudo apt-get install unzip```
     
-### GIT[#](#server-and-ci-cd-setup-git)
+### GIT[#](#git)
 - Generate SSH key
     - ```$``` ```ssh-keygen -t rsa```
 - Set up SSH key in Bitbucket
@@ -114,11 +114,11 @@ Our preferred DNS provider is Cloudflare.
 - ```$``` ```git clone git@bitbucket.org:{repo_url}.git .```
 - ```$``` ```git checkout dev // or staging```
 
-### NPM[#](#server-and-ci-cd-setup-npm)
+### NPM[#](#npm)
 - ```$``` ```sudo apt-get install npm```
 - ```$``` ```sudo npm install --unsafe-perm```
 
-### Jenkins[#](#server-and-ci-cd-setup-jenkins)
+### Jenkins[#](#jenkins)
 - Set up Jenkins pipeline
     - Clone an existing project
     - Change repo

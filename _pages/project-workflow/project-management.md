@@ -12,7 +12,7 @@ During the lifetime of a project, we need to go through numerous steps to ensure
 - [Checklists](#checklists)
 {: .toc}
 
-## Kanban Boards[#](#kanban)
+## Kanban Boards[#](#kanban) {#kanban}
 
 - By default every project should have a Productive project attached with a Backlog and a Kanban board
 - In most cases the Backlog board should have the following columns:
