@@ -7,6 +7,7 @@ permalink: 'code-style/laravel-best-practices'
 
 - [Naming Conventions](#naming-conventions)
 - [Commands](#commands)
+- [Facades](#facades)
 - [Routing](#routing)
 - [Service Classes](#service-classes)
 - [Validation](#validation)

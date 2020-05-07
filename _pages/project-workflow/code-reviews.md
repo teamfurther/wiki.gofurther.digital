@@ -22,7 +22,6 @@ Remember, these are rough guidelines you should adapt to each project.
 - Is code conforming to [code style](/code-style)? **If not, do it!**
 - Did we clean up code? (orphaned comments, debugging controls, etc.) **If not, do it!**
 - Did we check for `@TODO` occurences? **If not, do it!**
-- Did we run `phpcs` and `phpmd`? **If not, do it!**
 - Did we run `phpstan`? **If not, do it!**
 - Did we run `phpinsights`? **If not, do it!**
 - Did we check all pages for n+1 problems? **If not, do it!**
