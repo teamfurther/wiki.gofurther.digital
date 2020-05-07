@@ -132,7 +132,7 @@ Our preferred DNS provider is Cloudflare.
 
 - Create script file on __CI/CD server__ in ```/var/lib/jenkins/scripts```
 - Make sure ```jenkins``` user has SSH access
-- Create push webhook on GitHub repo (```Settings / Webhooks```): ```https://ci.gofurther.digital/github-hook/```
+- Create push webhook on GitHub repo (```Settings / Webhooks```): ```https://ci.gofurther.digital/github-webhook/```
 - Create ```jenkins``` user on __remote server__ and give ```sudo``` rights
     - ```$``` ```sudo adduser jenkins```
     - ```$``` ```sudo adduser jenkins sudo```
