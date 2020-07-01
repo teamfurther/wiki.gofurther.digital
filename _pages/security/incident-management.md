@@ -3,7 +3,7 @@ layout: page
 title: "Incident Management"
 permalink: 'security/incident-management'
 ---
-<small class="owner">Owner: ALL</small>
+<small class="owner">Owner: ALL</small> _Last revision: 04.01.2020_
 
 ### Objective[#](#incident-management-objective)
 To prevent any event that has the potential to affect the confidentiality, integrity or availability of information belonging to Further Digital Solutions (C4WEB STUDIO SRL), in any format, or IT systems in which this information is held.

@@ -3,7 +3,7 @@ layout: page
 title: "Communication"
 permalink: 'life/communication'
 ---
-<small class="owner">Owner: All</small>
+<small class="owner">Owner: All</small> _Last revision: 04.01.2020_
 
 All communication within the Further team is done via Slack. Skype or other chat services might be used when communicating with clients or contractors, but migrating them over to Slack is encouraged.
 

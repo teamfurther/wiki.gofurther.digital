@@ -3,7 +3,7 @@ layout: page
 title: "Finances"
 permalink: 'internal-workflows/finances'
 ---
-<small class="owner">Owner: Management</small>
+<small class="owner">Owner: Management</small> _Last revision: never_
 
 This page describes the steps required in order to precisely report financial status internally, to accounting and to clients.  
 

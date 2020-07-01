@@ -3,7 +3,7 @@ layout: page
 title: "Version Control"
 permalink: 'project-workflow/version-control'
 ---
-<small class="owner">Owner: Development</small>
+<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
 
 All our projects use Git, mostly with a repository hosted on Bitbucket.
 

@@ -3,7 +3,7 @@ layout: page
 title: "Vue Best Practices"
 permalink: 'code-style/vue-best-practices'
 ---
-<small class="owner">Owner: Development</small>
+<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
 
 - [General Rules](#general-rules)
 - [Directive Shorthands](#directive-shorthands)
@@ -33,7 +33,7 @@ Directive shorthands (: for v-bind:, @ for v-on: and # for v-slot) should not be
 >
 ```
 
-## Component/instance Options Order[#](#component-instance-options-order)
+## Component/instance Options Order[#](#component-instance-options-order) {#component-instance-options-order}
 The [Vue style guide](https://vuejs.org/v2/style-guide/#Component-instance-options-order-recommended) specifies a recommended order for component/instance options, but we prefer putting them in alphabetical order, the only exception being ```el```, which might go first.
 
 ```javascript

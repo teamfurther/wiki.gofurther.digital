@@ -3,7 +3,7 @@ layout: page
 title: "CSS"
 permalink: 'code-style/css'
 ---
-<small class="owner">Owner: Development</small>
+<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
 
 - [Preprocessing](#preprocessing)
 - [BEVM](#bevm)

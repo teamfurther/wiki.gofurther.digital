@@ -3,7 +3,7 @@ layout: page
 title: "Server & CI/CD Set-up"
 permalink: 'project-workflow/server-and-ci-cd-setup'
 ---
-<small class="owner">Owner: Project Lead</small>
+<small class="owner">Owner: Project Lead</small> _Last revision: 24.04.2020_
 
 A guide to installing LEMP Stack (Linux - nginx - MariaDB - PHP) on VPS and setting up a continuous deployment process from a Bitbucket GIT repository.
 
@@ -108,11 +108,11 @@ Our preferred DNS provider is Cloudflare.
 - ```$``` ```cd /var/www/{appdomain.com}```
 - ```$``` ```git clone git@bitbucket.org:{repo_url}.git .```
 
-- ```$``` ```mkdir /var/www/{dev.appdomain.com}```
-- ```$``` ```sudo chown -R www-data:www-data /var/www/{dev.appdomain.com}```
-- ```$``` ```cd /var/www/{dev.appdomain.com}```
+- ```$``` ```mkdir /var/www/{staging.appdomain.com}```
+- ```$``` ```sudo chown -R www-data:www-data /var/www/{staging.appdomain.com}```
+- ```$``` ```cd /var/www/{staging.appdomain.com}```
 - ```$``` ```git clone git@bitbucket.org:{repo_url}.git .```
-- ```$``` ```git checkout dev // or staging```
+- ```$``` ```git checkout staging // or develop```
 
 ### NPM[#](#npm)
 - ```$``` ```sudo apt-get install npm```
@@ -131,7 +131,8 @@ Our preferred DNS provider is Cloudflare.
 </div>
 
 - Create script file on __CI/CD server__ in ```/var/lib/jenkins/scripts```
-- Make sure ```jenkins``` user has SSH access
+- Make sure the __CI/CD server__ ```jenkins``` user has SSH access to __remote server__
+- Add deploy keys to GitHub repo (```Settings / Deploy keys```) for user that handles pull on __remote server__
 - Create push webhook on GitHub repo (```Settings / Webhooks```): ```https://ci.gofurther.digital/github-webhook/```
 - Create ```jenkins``` user on __remote server__ and give ```sudo``` rights
     - ```$``` ```sudo adduser jenkins```

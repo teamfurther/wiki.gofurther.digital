@@ -3,7 +3,7 @@ layout: page
 title: "Laravel Best Practices"
 permalink: 'code-style/laravel-best-practices'
 ---
-<small class="owner">Owner: Development</small>
+<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
 
 - [Naming Conventions](#naming-conventions)
 - [Commands](#commands)

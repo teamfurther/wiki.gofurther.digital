@@ -99,12 +99,13 @@
         <div class="article">
     <h1 class="article__title">Project Management</h1>
 
-    <p><small class="owner">Owner: PM</small></p>
+    <p><small class="owner">Owner: PM</small> <em>Last revision: 26.06.2020</em></p>
 
 <p>During the lifetime of a project, we need to go through numerous steps to ensure our work is efficient, timelines can be met, and product quality assured. This page describes these steps and provides checklists.</p>
 
 <ul class="toc">
   <li><a href="#kanban">Kanban Boards</a></li>
+  <li><a href="#definition-of-done">Definition of Done</a></li>
   <li><a href="#time-tracking">Time Tracking</a></li>
   <li><a href="#checklists">Checklists</a></li>
 </ul>
@@ -112,18 +113,26 @@
 <h2 id="kanban">Kanban Boards<a href="#kanban">#</a></h2>
 
 <ul>
-  <li>By default every project should have a Productive project attached with a Backlog and a Kanban board</li>
+  <li>By default every project should have a Productive project attached with a Backlog and at least a Kanban board</li>
   <li>In most cases the Backlog board should have the following columns:
     <ul>
       <li><code class="highlighter-rouge">Backlog</code></li>
       <li><code class="highlighter-rouge">To be estimated</code></li>
     </ul>
   </li>
-  <li>In most cases the Kanban board should have the following columns:
+  <li>For greenfield projects, a Kanban board should have the following columns:
     <ul>
       <li><code class="highlighter-rouge">Selected for development / To do</code> - tasks/user stories on which work can start will be dragged here by PM</li>
       <li><code class="highlighter-rouge">In progress</code></li>
-      <li><code class="highlighter-rouge">QA</code></li>
+      <li><code class="highlighter-rouge">QA (internal)</code></li>
+      <li><code class="highlighter-rouge">QA (external)</code></li>
+    </ul>
+  </li>
+  <li>For support projects, a Kanban board should have the following columns:
+    <ul>
+      <li><code class="highlighter-rouge">Selected for development / To do</code> - tasks/user stories on which work can start will be dragged here by PM</li>
+      <li><code class="highlighter-rouge">In progress</code></li>
+      <li><code class="highlighter-rouge">QA</code> - may be separated into <code class="highlighter-rouge">QA (internal)</code> &amp; <code class="highlighter-rouge">QA (external)</code></li>
       <li><code class="highlighter-rouge">Ready for deployment</code></li>
     </ul>
   </li>
@@ -152,7 +161,16 @@
 <h3 id="deployment">Deployment<a href="#kanban-deployment">#</a></h3>
 
 <ul>
-  <li>whenever deploying tasks from <code class="highlighter-rouge">Ready for deployment</code>, responsible should mark task as completed</li>
+  <li>whenever deploying tasks from <code class="highlighter-rouge">Ready for deployment</code>, responsible should mark task as completed.</li>
+  <li>if there is no <code class="highlighter-rouge">Ready for deployment</code> column, tasks can be marked as completed after client approval from <code class="highlighter-rouge">QA (external)</code>.</li>
+</ul>
+
+<h2 id="definition-of-done">Definition of Done<a href="#definition-of-done">#</a></h2>
+
+<p>A task is considered done, when:</p>
+<ul>
+  <li>changes are pushed to version control (<code class="highlighter-rouge">staging</code> branch)</li>
+  <li>changes are tested on <code class="highlighter-rouge">staging</code> server</li>
 </ul>
 
 <h2 id="time-tracking">Time Tracking<a href="#time-tracking">#</a></h2>
@@ -178,43 +196,74 @@
 <h3 id="greenfield-projects">Greenfield Projects<a href="#checklists-greenfield-projects">#</a></h3>
 <p><strong>Before kick-off</strong></p>
 <ul class="checklist">
-  <li>Do we have a backlog of user stories?</li>
-  <li>Do we have sprint planning for first sprint?</li>
-  <li>Do we have a Risk Assessment Matrix? <strong>If not, create one!</strong></li>
-  <li>Do we have project roles established (PM, project lead, code reviewer)? <strong>If not, do it!</strong></li>
-  <li>Do we have a Productive project set-up?</li>
-  <li>Do we have a Slack channel set-up?</li>
-  <li>Do we have a GIT repo set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have a server with CI/CD set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have an IPS set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have all project documents uploaded to notes in Productive?</li>
+  <li><small class="owner">BA</small> Did we have a kick-off meeting (BA, PM, project lead)? <strong>If not, do it!</strong></li>
+  <li><small class="owner">BA</small> Do we have a backlog of user stories defined?</li>
+  <li><small class="owner">BA</small> Do we have wireframes / high-definition prototypes?</li>
+  <li><small class="owner">Project lead</small> Do we have a risk assessment matrix?</li>
+  <li><small class="owner">PM</small> Do we have project roles established? <strong>If not, do it!</strong>
+    <ul>
+      <li>PM</li>
+      <li>Project lead</li>
+      <li>Sitebuild</li>
+      <li>Frontend</li>
+      <li>Backend</li>
+      <li>QA</li>
+      <li>Code reviewer</li>
+      <li>DevOps</li>
+    </ul>
+  </li>
+  <li><small class="owner">Project lead</small> Did we have an onboarding meeting with development team?</li>
+  <li><small class="owner">DevOps</small> Do we have a server with CI/CD set-up? <strong>If not, do it!</strong></li>
+  <li><small class="owner">PM</small> Do we have a Productive project set-up? <strong>If not, do it!</strong>
+    <ul>
+      <li>Backlog board</li>
+      <li>Kanban boards</li>
+      <li>Tasks</li>
+      <li>Budgets</li>
+      <li>Documentation (as notes)</li>
+    </ul>
+  </li>
+  <li>cDo we have a Slack channel set-up?</li>
+  <li><small class="owner">Project lead</small> Do we have an IPS set-up? <strong>If not, do it!</strong></li>
 </ul>
 
 <p><strong>During project</strong></p>
 <ul class="checklist">
-  <li>Is user story backlog up-to-date?</li>
-  <li>Do we have sprint planning for next sprint?</li>
-  <li>Is project repo up-to-date?</li>
+  <li><small class="owner">PM</small> Is user story backlog up-to-date (backlog grooming)?</li>
+  <li><small class="owner">PM</small> Do we have sprint planning for next 2 sprints?</li>
+  <li><small class="owner">PM</small> Do we have all the necessary answers, information, materials to complete next sprint? <strong>If not, do it!</strong></li>
+  <li><small class="owner">PM</small> Did we schedule a sprint demo? <strong>If not, do it!</strong></li>
+  <li><small class="owner">QA</small> Are all tasks tested (UAT) and ready for sprint demo? <strong>If not, do it!</strong></li>
+  <li><small class="owner">PM</small> Did we include client bug reports in the next sprint?</li>
+  <li><small class="owner">PM</small> Did we include client feedback and change requests in backlog?</li>
 </ul>
 
 <p><strong>Change requests</strong></p>
-<ul>
-  <li>Did we create task? <small>(mark with CR flag)</small></li>
-  <li>Did we communicate changes in deadline / budget?</li>
+<ul class="checklist">
+  <li><small class="owner">PM</small> Did we create task in backlog? <small>(mark with CR flag)</small></li>
+  <li><small class="owner">PM</small> Did we communicate changes in deadline / budget?</li>
 </ul>
 
-<p class="checklist"><small class="note">Communicate CR deadline changes / value even if we offer it for free / at a discounted price!</small></p>
+<p><small class="note">Communicate CR deadline changes / value even if we offer it for free / at a discounted price!</small></p>
 
 <p><strong>Closing project</strong></p>
 <ul class="checklist">
-  <li>Do we have a delivery certificate? <strong>If not, do it!</strong> <small>(this marks the start of warranty period)</small></li>
-  <li>Do we have any outstanding billable hours? <strong>If yes, invoice it!</strong></li>
+  <li><small class="owner">QA</small> Did we perform final end-to-end user-acceptance testing (UAT)?</li>
+  <li><small class="owner">PM</small> Did we schedule a retrospective meeting?</li>
+  <li><small class="owner">PM</small> Do we have a delivery certificate? <strong>If not, do it!</strong> <small>(this marks the start of warranty period)</small></li>
+  <li><small class="owner">PM</small> Do we have any outstanding billable hours? <strong>If yes, invoice it!</strong></li>
 </ul>
 
 <h3 id="support-projects">Support projects<a href="#checklists-support-projects">#</a></h3>
+<p><strong>Before kick-off</strong></p>
+<ul>
+  <li><small class="owner">BA</small> Do we have the takeover documentation?</li>
+</ul>
+
+<p><strong>During project</strong></p>
 <ul class="checklist">
-  <li>Is the IPS up-to-date?</li>
-  <li>Do all tasks have deadlines set?</li>
+  <li><small class="owner">Project lead</small> Is the IPS up-to-date?</li>
+  <li><small class="owner">PM</small> Do all tasks have deadlines set?</li>
 </ul>
 
 <h3 id="client-calls-meetings">Client calls, meetings<a href="#checklists-meetings">#</a></h3>

@@ -3,7 +3,7 @@ layout: page
 title: "Social Media Marketing"
 permalink: 'marketing/social-media'
 ---
-<small class="owner">Owner: Marketing</small>
+<small class="owner">Owner: Marketing</small> _Last revision: never_
 
 Social media marketing is one of our most important internal business capabilities, vital to raise our brand awareness, trust, and employer reputation, and ultimately to generate more leads.
 

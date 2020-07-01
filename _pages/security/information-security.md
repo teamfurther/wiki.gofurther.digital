@@ -3,7 +3,7 @@ layout: page
 title: "Information Security"
 permalink: 'security/information-security'
 ---
-<small class="owner">Owner: ALL</small>
+<small class="owner">Owner: ALL</small> _Last revision: 04.01.2020_
 
 ### Objective[#](#information-security-objective)
 To prevent unauthorized access to, loss of, damage to, or compromise to information assets, and interruption to the business activities of Further Digital Solutions (C4WEB STUDIO SRL) and its customers.

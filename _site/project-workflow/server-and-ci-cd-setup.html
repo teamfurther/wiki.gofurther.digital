@@ -99,7 +99,7 @@
         <div class="article">
     <h1 class="article__title">Server & CI/CD Set-up</h1>
 
-    <p><small class="owner">Owner: Project Lead</small></p>
+    <p><small class="owner">Owner: Project Lead</small> <em>Last revision: 24.04.2020</em></p>
 
 <p>A guide to installing LEMP Stack (Linux - nginx - MariaDB - PHP) on VPS and setting up a continuous deployment process from a Bitbucket GIT repository.</p>
 
@@ -240,11 +240,11 @@
   <li>
     <p><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git clone git@bitbucket.org:{repo_url}.git .</code></p>
   </li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">mkdir /var/www/{dev.appdomain.com}</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo chown -R www-data:www-data /var/www/{dev.appdomain.com}</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cd /var/www/{dev.appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">mkdir /var/www/{staging.appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo chown -R www-data:www-data /var/www/{staging.appdomain.com}</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cd /var/www/{staging.appdomain.com}</code></li>
   <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git clone git@bitbucket.org:{repo_url}.git .</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git checkout dev // or staging</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git checkout staging // or develop</code></li>
 </ul>
 
 <h3 id="npm">NPM<a href="#npm">#</a></h3>
@@ -272,7 +272,8 @@
 
 <ul>
   <li>Create script file on <strong>CI/CD server</strong> in <code class="highlighter-rouge">/var/lib/jenkins/scripts</code></li>
-  <li>Make sure <code class="highlighter-rouge">jenkins</code> user has SSH access</li>
+  <li>Make sure the <strong>CI/CD server</strong> <code class="highlighter-rouge">jenkins</code> user has SSH access to <strong>remote server</strong></li>
+  <li>Add deploy keys to GitHub repo (<code class="highlighter-rouge">Settings / Deploy keys</code>) for user that handles pull on <strong>remote server</strong></li>
   <li>Create push webhook on GitHub repo (<code class="highlighter-rouge">Settings / Webhooks</code>): <code class="highlighter-rouge">https://ci.gofurther.digital/github-webhook/</code></li>
   <li>Create <code class="highlighter-rouge">jenkins</code> user on <strong>remote server</strong> and give <code class="highlighter-rouge">sudo</code> rights
     <ul>

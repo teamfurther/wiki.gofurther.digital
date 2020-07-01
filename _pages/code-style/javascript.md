@@ -3,7 +3,7 @@ layout: page
 title: "Javascript"
 permalink: 'code-style/javascript'
 ---
-<small class="owner">Owner: Development</small>
+<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
 
 - [Spacing and Indentation](#spacing-and-indentation)
 - [Line Length](#line-length)

@@ -3,7 +3,7 @@ layout: page
 title: "Physical Security"
 permalink: 'security/physical-security'
 ---
-<small class="owner">Owner: ALL</small>
+<small class="owner">Owner: ALL</small> _Last revision: 04.01.2020_
 
 ### Objective[#](#physical-security-objective)
 To prevent unauthorised access or damage to IT services. To prevent the loss of, damage to, or compromise to information assets, and interruption to the business activities of Further Digital Solutions (C4WEB STUDIO SRL) and its customers.

@@ -3,7 +3,7 @@ layout: page
 title: "Analysis & Offer"
 permalink: 'project-workflow/analysis-offer'
 ---
-<small class="owner">Owner: BA</small>
+<small class="owner">Owner: BA</small> _Last revision: 26.06.2020_
 
 Even before an offer goes out to a client or a contract is signed, a lot of steps have to be taken to ensure the budgets and deadlines are realistic, and product quality can be assured.
 

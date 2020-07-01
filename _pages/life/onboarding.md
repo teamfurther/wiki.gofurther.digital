@@ -3,7 +3,7 @@ layout: page
 title: "Onboarding"
 permalink: 'life/onboarding'
 ---
-<small class="owner">Owner: HR</small>
+<small class="owner">Owner: HR</small> _Last revision: 04.01.2020_
 
 This page provides a roadmap and checklists for new employees at Further.
 

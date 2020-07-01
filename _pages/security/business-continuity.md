@@ -3,7 +3,7 @@ layout: page
 title: "Business Continuity"
 permalink: 'security/business-continuity'
 ---
-<small class="owner">Owner: ALL</small>
+<small class="owner">Owner: ALL</small> _Last revision: 04.01.2020_
 
 ### Objective[#](#business-continuity-objective)
 To ensure that the organization can still accomplish its mission and it would not lose the capability to process, retrieve and protect information maintained in the event of an interruption or disaster leading to temporary or permanent loss of computer facilities.

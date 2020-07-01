@@ -3,7 +3,7 @@ layout: page
 title: "Stand-up Meetings"
 permalink: 'life/stand-up-meetings'
 ---
-<small class="owner">Owner: All</small>
+<small class="owner">Owner: All</small> _Last revision: 04.01.2020_
 
 Daily stand-up meetings help better communication between team members. In a remote team it is especially important to chart who is working on which project and what task.
 

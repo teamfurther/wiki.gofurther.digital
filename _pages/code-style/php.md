@@ -3,7 +3,7 @@ layout: page
 title: "PHP"
 permalink: 'code-style/php'
 ---
-<small class="owner">Owner: Development</small>
+<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
 
 - [General PHP Rules](#general-php-rules)
 - [Organizing Classes](#organizing-classes)

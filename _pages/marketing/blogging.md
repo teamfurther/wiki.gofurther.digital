@@ -3,7 +3,7 @@ layout: page
 title: "Blogging"
 permalink: 'marketing/blogging'
 ---
-<small class="owner">Owner: Marketing</small>
+<small class="owner">Owner: Marketing</small> _Last revision: never_
 
 
 The following page describes how to write and publish blog posts.
