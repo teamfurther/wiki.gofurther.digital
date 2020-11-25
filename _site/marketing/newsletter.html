@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bug report | Further Wiki</title>
+    <title>Newsletter | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
 
@@ -98,32 +98,74 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Bug report</h1>
+    <h1 class="article__title">Newsletter</h1>
 
-    <p><small class="owner">Owner: PM</small> <em>Last revision: 26.06.2020</em></p>
+    <p><small class="owner">Owner: Marketing</small> <em>Last revision: never</em></p>
 
-<p>To make it easier for developers to find the root cause of bugs, they should be provided by a detailed bug report. Below you can find a guide of what details we should ask to be included in bug report by client.</p>
+<p>The following page describes how to write and publish our monthly newsletter digest.</p>
 
-<p>Remember, these are rough guidelines you should adapt to each situation.</p>
-
-<h3 id="general">General<a href="#general">#</a></h3>
-<ul>
-  <li>Date and time</li>
-  <li>URL</li>
-  <li>Browser <small>type &amp; version</small></li>
-  <li>Operating System <small>type &amp; version</small></li>
-  <li>Description</li>
-  <li>Steps to reproduce</li>
-  <li>Expected result</li>
-  <li>Actual result</li>
-  <li>Screenshot</li>
-  <li>Screencast <small>(in case screenshot is not enough)</small></li>
+<ul class="toc">
+  <li><a href="#editing-templates">Editing templates</a></li>
+  <li><a href="#editing-newsletter">Editing newsletter</a></li>
+  <li><a href="#testing">Testing</a></li>
+  <li><a href="#scheduling">Scheduling</a></li>
 </ul>
 
-<h3 id="bug-involving-files">Bug Involving Files<a href="#files">#</a></h3>
-<ul class="checklist">
-  <li>Attach actual file</li>
-</ul>
+<h2 id="editing-templates">Editing templates<a href="#editing-templates">#</a></h2>
+<p>Start by duplicating one of the older issues. The base issue should be the latest one, unless you have a specific reason to use an older issue as the source.</p>
+
+<ol>
+  <li>Update the fixed sections for both the Hungarian (<code class="highlighter-rouge">src/templates/hu.html</code>) and English (<code class="highlighter-rouge">src/templates/en.html</code>) language templates.
+    <ul>
+      <li>title meta tag</li>
+      <li>issue number and month</li>
+      <li>headline</li>
+      <li>intro image &amp; text</li>
+      <li>blog articles</li>
+      <li>events</li>
+      <li>case study</li>
+      <li>etc.</li>
+    </ul>
+  </li>
+  <li>Compile your templates using <code class="highlighter-rouge">npm start</code> from the issue directory.</li>
+</ol>
+
+<p>We always send a slightly different version of the newsletter for new subscribers (greenhorns). Edit the two template files (<code class="highlighter-rouge">src/templates/hu_greenhorn.html</code> &amp;&amp; <code class="highlighter-rouge">src/templates/hu_greenhorn.html</code>) by copying the content from the main templates. Change the <strong>intro image &amp; text</strong> to the one from <strong>the very first issue</strong>.</p>
+
+<h2 id="editing-newsletter">Editing newsletter<a href="#editing-newsletter">#</a></h2>
+<p>We use <a href="https://sendinblue.com" target="_blank">Sendinblue</a> to edit and schedule the newsletters themselves. On the Campaigns tab, duplicate one of the older issues. The base issue should be the latest one, unless you have a specific reason to use an older issue as the source.</p>
+
+<ol>
+  <li>Update the campaign name, subject, preview text and HTML content.</li>
+  <li>Copy the template content from the HTML file (<code class="highlighter-rouge">dist/{lang}.html</code>) to the Sendinblue editor (click Edit the email content on the Design tab).</li>
+  <li>Sendinblue doesn’t process image URL’s, so you’ll need to manually re-map every image using the Picture icon on the Design tab.</li>
+  <li>Since Sendinblue doesn’t allow the mapping if images inlined into CSS, we had to add these to HTML. After mapping images (see step #4), remove these images from the source code.</li>
+  <li>Select the correct newsletter list from the Recipients tab.</li>
+</ol>
+
+<h2 id="testing">Testing<a href="#testing">#</a></h2>
+<ol>
+  <li>Proofread. This email goes out hundreds of trusted, long-time partners.
+    <ul>
+      <li>Copy the text into Google Docs to spell-check</li>
+      <li>or use a service like <a href="https://www.grammarly.com" target="_blank">Grammarly</a>.</li>
+    </ul>
+  </li>
+  <li>Check that all the links point to the right place. It’s easy to miss them when copying!</li>
+  <li>Before scheduling the newsletter…
+    <ul>
+      <li>…make sure you send a test version of all 4 templates to yourself.</li>
+      <li>…make sure you perform a test on <a href="https://www.litmus.com" target="_blank">litmus.com</a>.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="scheduling">Scheduling<a href="#scheduling">#</a></h2>
+<ol>
+  <li>Once the newsletter is set-up and tested, we need to schedule it.</li>
+  <li>Sendinblue has a daily sending limit, so make sure to spread the campaigns through several days.</li>
+  <li>We’re still testing to find the best day and time of week to send newsletters. As a rule of thumb, the best time to send is before 12 AM.</li>
+</ol>
 
 </div>
 
