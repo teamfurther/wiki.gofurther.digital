@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Code Reviews | Further Wiki</title>
+    <title>Perks | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
 
@@ -99,86 +99,78 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Code Reviews</h1>
+    <h1 class="article__title">Perks</h1>
 
-    <p><small class="owner">Owner: Project Lead (or Code Reviewer)</small> <em>Last revision: 24.04.2020</em></p>
+    <p><small class="owner">Owner: Management</small> <em>Last revision: never</em></p>
 
-<p>Project lead is responsible for weekly code reviews, including final code review before deployment. To help with code reviews, we created a checklist. Use this template <a href="http://bit.ly/30Z3fLP" target="_blank">↗</a> to do code reviews.</p>
-
-<p>Remember, these are rough guidelines you should adapt to each project.</p>
+<p>Working at Further does come with a couple of perks. Being a small company we don’t offer gym memberships or provided lunch. Instead we try to focus on perks which are in alignment with our company values: personal development, constant learning and work-life balance.</p>
 
 <ul class="toc">
-  <li><a href="#code-quality">Code Quality</a></li>
-  <li><a href="#devops">DevOps</a></li>
-  <li><a href="#security">Security</a></li>
-  <li><a href="#testing">Testing</a></li>
-  <li><a href="#technical-pm">Technical PM</a></li>
-  <li><a href="#ux">User Experience</a></li>
-  <li><a href="#resources">Resources</a></li>
+  <li><a href="#flexi-time">Flexi-time</a></li>
+  <li><a href="#holidays-and-leaves">Holidays and leaves</a></li>
+  <li><a href="#remote-work">Remote work</a></li>
+  <li><a href="#personal-development-allowance">Personal development allowance</a></li>
+  <li><a href="#productivity-allowance">Productivity allowance</a></li>
 </ul>
 
-<h3 id="code-quality">Code Quality<a href="#code-quality">#</a></h3>
-<ul class="checklist">
-  <li>Is code conforming to <a href="/code-style">code style</a>? <strong>If not, do it!</strong></li>
-  <li>Did we clean up code? (orphaned comments, debugging controls, etc.) <strong>If not, do it!</strong></li>
-  <li>Did we check for <code class="highlighter-rouge">@TODO</code> occurences? <strong>If not, do it!</strong></li>
-  <li>Did we run <code class="highlighter-rouge">phpinsights</code>? <strong>If not, do it!</strong></li>
-  <li>Did we check all pages for n+1 problems? <strong>If not, do it!</strong></li>
-  <li>Does code use modern OOP features (e.g. type hinting)?</li>
-  <li>Did we use Laravel Telescope to track slow queries and other issues? <strong>If not, do it!</strong></li>
-</ul>
+<h2 id="flexi-time">Flexi-time<a href="#flexi-time">#</a></h2>
 
-<h3 id="devops">DevOps<a href="#devops">#</a></h3>
-<ul class="checklist">
-  <li>Does our deployment server use SSL certificates? <strong>If not, set it up!</strong></li>
-  <li>Does our server redirect <em>www</em> to <em>non-www</em> and to <em>https</em>? <strong>If not, set it up!</strong></li>
-  <li>Do we have Docker local environment set-up to match server config? <strong>If not, do it!</strong></li>
-  <li>Do we have CI/CD set-up? <strong>If not, do it!</strong></li>
-  <li>Do we have separate <code class="highlighter-rouge">production</code> and <code class="highlighter-rouge">staging</code> environments set-up? <strong>If not, do it!</strong></li>
-  <li>Are backups set-up? <strong>If not, set it up!</strong></li>
-  <li>Is <code class="highlighter-rouge">artisan scheduler</code> set-up in crontab?</li>
-</ul>
+<p>At Further we believe our team should be allowed to handle whatever life throws at them. Although we follow traditional 9 to 5 business hours, we encourage you to take a couple of hours off whenever you need to run a couple of errands or to baby-sit.</p>
 
-<h3 id="security">Security<a href="#security">#</a></h3>
-<ul class="checklist">
-  <li>Are <code class="highlighter-rouge">/api</code> routes protected by <code class="highlighter-rouge">auth:api</code> middleware? <strong>If not, do it!</strong></li>
-  <li>Is <code class="highlighter-rouge">user</code> object in localStorage verified against server-side? <strong>If not, do it!</strong></li>
-  <li>Is <code class="highlighter-rouge">APP_ENV</code> set to <code class="highlighter-rouge">production</code>? Is <code class="highlighter-rouge">APP_DEBUG</code> set to <code class="highlighter-rouge">false</code>? <strong>If not, do it!</strong></li>
-</ul>
+<p>We trust you’ll make up for this time and make sure deadlines are met. The only thing we request is that, if possible, you either stay accessible in reach for urgent matters or let us know in advance that you will be off-grid in the <code class="highlighter-rouge">#general</code> Slack channel.</p>
 
-<h3 id="testing">Testing<a href="#testing">#</a></h3>
-<ul class="checklist">
-  <li>Did we do functional testing? <strong>If not, do it!</strong></li>
-  <li>Did we do browser tests? <strong>If not, do it!</strong></li>
-  <li>Did we do stress tests for performance and scalability? <strong>If not, do it!</strong></li>
-</ul>
+<h2 id="holidays-and-leaves">Holidays and leaves<a href="#holidays-and-leaves">#</a></h2>
 
-<h3 id="technical-pm">Technical PM<a href="#technical-pm">#</a></h3>
-<ul class="checklist">
-  <li>Do we have Bugsnag set-up for PHP &amp; JS, and integrated into Slack channel? <strong>If not, do it!</strong></li>
-  <li>Do we have a setup.md file? <strong>If not, do it!</strong></li>
-  <li>Did we replace <code class="highlighter-rouge">develop</code> branch with <code class="highlighter-rouge">staging</code>? <strong>If not, do it!</strong></li>
-  <li>Is IPS up-to-date?</li>
-  <li>Are class diagrams / data models / API docs up-to-date?</li>
-</ul>
-
-<h3 id="ux">User Experience<a href="#ux">#</a></h3>
-<ul class="checklist">
-  <li>Did we run page speed tests?
-    <ul>
-      <li><a href="https://gtmetrix.com" target="_blank">https://gtmetrix.com</a></li>
-      <li><a href="https://tools.pingdom.com" target="_blank">https://tools.pingdom.com</a></li>
-      <li><a href="https://webpagetest.org" target="_blank">https://webpagetest.org</a></li>
-    </ul>
-  </li>
-  <li>Do we have proper error handling. Custom pages for <em>404</em>, <em>500</em>, <em>503</em>, <em>Token Mismatch</em></li>
-  <li>Did we verify that all HTTP status codes are ok with <a href="https://github.com/spatie/http-status-check" target="_blank">https://github.com/spatie/http-status-check</a></li>
-  <li>Did we scan for mixed content with <a href="https://github.com/spatie/mixed-content-scanner-cli" target="_blank">https://github.com/spatie/mixed-content-scanner-cli</a></li>
-</ul>
-
-<h3 id="resources">Resources<a href="#resources">#</a></h3>
+<p>Regular time off is essential in order to maintain a healthy work-life balance and avoid burnout. We don’t want you to worry about counting the paid vacation days you’ve got left, so we provide unlimited:</p>
 <ul>
-  <li>Code review template <a href="http://bit.ly/30Z3fLP" target="_blank">↗</a></li>
+  <li>sick leave</li>
+  <li>parental leave</li>
+  <li>paid holidays</li>
+</ul>
+
+<p>As with flexi-time, we ask you to let us know in advance of your holiday plans. We welcome if you notify us the sooner, the longer the planned holiday will be. This way we can plan ahead an not over-extend ourselves.</p>
+
+<p>Remember, having unlimited holidays is not enough if you don’t use them. We recommend taking at least 3 weeks vacation per year.</p>
+
+<h3 id="national-holidays">National holidays</h3>
+
+<p>Since our team works remotely from different countries, we naturally observe different national holidays. Let us know in advance which national holidays you wish to celebrate.</p>
+
+<h2 id="remote-work">Remote work<a href="#remote-work">#</a></h2>
+
+<p>Whether you wish to work from home, a coffee shop or a co-working office, remote work is our second nature. No questions asked.</p>
+
+<h2 id="personal-development-allowance">Personal development allowance<a href="#personal-development-allowance">#</a></h2>
+
+<p>Constant learning and personal development is really important for us. In order to help you achieve this, we provide an allowance which you can use for:</p>
+<ul>
+  <li>books, e-books, audio books</li>
+  <li>online courses, tutorial</li>
+  <li>conference tickets</li>
+  <li>language courses</li>
+  <li>etc.</li>
+</ul>
+
+<p>Please let us know of your purchases beforehand so we can handle billing. Afterwards, please track your purchases in the allowances spreadsheets.</p>
+
+<ul>
+  <li>Allowances spreadsheet <a href="http://bit.ly/36BTf0m" target="_blank">↗</a></li>
+</ul>
+
+<h2 id="productivity-allowance">Productivity allowance<a href="#productivity-allowance">#</a></h2>
+
+<p>If you’re not productive, it’s not only bad for the company, but it’s also frustrating to you. To avoid this, we provide you with a productivity allowance, which you can use for:</p>
+<ul>
+  <li>software licences</li>
+  <li>hardware (laptop, headset, etc.)</li>
+  <li>desk in a co-working office</li>
+  <li>etc.</li>
+</ul>
+
+<p>Please let us know of your purchases beforehand so we can handle billing. Afterwards, please track your purchases in the allowances spreadsheets.</p>
+
+<ul>
+  <li>Allowances spreadsheet <a href="http://bit.ly/36BTf0m" target="_blank">↗</a></li>
 </ul>
 
 </div>
