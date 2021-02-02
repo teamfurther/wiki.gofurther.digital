@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "laravel-mix": "^5.0.4",
-    "sass": "^1.26.9",
+    "laravel-mix": "^5.0.9",
+    "sass": "^1.32.6",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   }
 }
