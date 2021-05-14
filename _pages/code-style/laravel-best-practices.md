@@ -9,7 +9,7 @@ permalink: 'code-style/laravel-best-practices'
 - [Commands](#commands)
 - [Facades](#facades)
 - [Routing](#routing)
-- [Service Classes](#service-classes)
+- [Single Responsibility](#single-responsibility)
 - [Validation](#validation)
 {: .toc}
 
@@ -147,13 +147,6 @@ e.g. `User` or `Post`
 Again to avoid naming collisions we'll suffix notifications with `Notification`, as they're often used to convey an event, action or question.
 
 e.g. `AccountActivatedNotification` or `NewEventNotication`
-                       
-                       
-
-### Services[#](#naming-services) {#naming-services}
-Always name your services by the singular name of your resource, suffixed with `Service`.
-
-e.g. `PostService`
 
 ### Views[#](#naming-views) {#naming-views}
 View files must use kebab-case.
@@ -304,21 +297,21 @@ Route::view('privacy-policy', 'pages.privacy')->name('privacy');
 Route::get('privacy-policy', 'PrivacyPolicyController@show')->name('privacy');
 ```
 
-## Service Classes[#](#service-classes)
-A controller must only have the responsibility to return a response. Move business logic from controllers to service classes.
+## Single Responsibility[#](#single-responsibility)
+A controller must only have the responsibility to return a response. Move business logic from controllers to injectable action classes.
  
 ```php
 // Good
 public function store(Request $request)
 {
-    $this->articleService->handleUploadedImage($request->file('image'));
+    $this->saveArticleImageAction->execute($request->file('image'));
 
     // ...
 }
 
-class ArticleService
+class SaveArticleImageAction
 {
-    public function handleUploadedImage($image)
+    public function execute($image)
     {
         if (!is_null($image)) {
             $image->move(public_path('images') . 'temp');

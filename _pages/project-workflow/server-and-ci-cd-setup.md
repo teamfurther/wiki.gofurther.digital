@@ -137,6 +137,7 @@ Our preferred DNS provider is Cloudflare.
     - ```$``` ```sudo adduser jenkins sudo```
 - Add ```jenkins``` public key to ```~/.ssh/authorized_keys``` on __remote server__
 - Add line ```jenkins ALL=(ALL) NOPASSWD: ALL``` to ```/etc/sudoers``` on __remote server__
+- Clone GIT repo into ```/var/build``` (and ```/var/www``` if you haven't done o yet)
 
 ### Backups[#](#backups)
 All the following step shall be done on the __CI/CD server__:

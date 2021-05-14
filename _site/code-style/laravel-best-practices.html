@@ -108,7 +108,7 @@
   <li><a href="#commands">Commands</a></li>
   <li><a href="#facades">Facades</a></li>
   <li><a href="#routing">Routing</a></li>
-  <li><a href="#service-classes">Service Classes</a></li>
+  <li><a href="#single-responsibility">Single Responsibility</a></li>
   <li><a href="#validation">Validation</a></li>
 </ul>
 
@@ -240,11 +240,6 @@ php artisan deleteOldRecords
 <p>Again to avoid naming collisions we’ll suffix notifications with <code class="highlighter-rouge">Notification</code>, as they’re often used to convey an event, action or question.</p>
 
 <p>e.g. <code class="highlighter-rouge">AccountActivatedNotification</code> or <code class="highlighter-rouge">NewEventNotication</code></p>
-
-<h3 id="naming-services">Services<a href="#naming-services">#</a></h3>
-<p>Always name your services by the singular name of your resource, suffixed with <code class="highlighter-rouge">Service</code>.</p>
-
-<p>e.g. <code class="highlighter-rouge">PostService</code></p>
 
 <h3 id="naming-views">Views<a href="#naming-views">#</a></h3>
 <p>View files must use kebab-case.</p>
@@ -384,20 +379,20 @@ https://gofurther.digital/en/blog/posts/digital-transformation-pt1-introduction
 <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'privacy-policy'</span><span class="p">,</span> <span class="s1">'PrivacyPolicyController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'privacy'</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h2 id="service-classes">Service Classes<a href="#service-classes">#</a></h2>
-<p>A controller must only have the responsibility to return a response. Move business logic from controllers to service classes.</p>
+<h2 id="single-responsibility">Single Responsibility<a href="#single-responsibility">#</a></h2>
+<p>A controller must only have the responsibility to return a response. Move business logic from controllers to injectable action classes.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">articleService</span><span class="o">-&gt;</span><span class="na">handleUploadedImage</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">));</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">saveArticleImageAction</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">file</span><span class="p">(</span><span class="s1">'image'</span><span class="p">));</span>
 
     <span class="c1">// ...</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">ArticleService</span>
+<span class="k">class</span> <span class="nc">SaveArticleImageAction</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">handleUploadedImage</span><span class="p">(</span><span class="nv">$image</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nv">$image</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_null</span><span class="p">(</span><span class="nv">$image</span><span class="p">))</span> <span class="p">{</span>
             <span class="nv">$image</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">'images'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'temp'</span><span class="p">);</span>
