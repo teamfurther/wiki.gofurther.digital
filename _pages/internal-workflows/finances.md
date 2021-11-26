@@ -3,7 +3,7 @@ layout: page
 title: "Finances"
 permalink: 'internal-workflows/finances'
 ---
-<small class="owner">Owner: Management</small> _Last revision: never_
+<small class="owner">Owner: Management</small> _Last revision: 12.11.2021_
 
 This page describes the steps required in order to precisely report financial status internally, to accounting and to clients.  
 
@@ -18,7 +18,7 @@ We report unpaid billable hours and outstanding sums to our clients on a monthly
 
 Use Productive's time reports to generate a report of billable hours from the previous month.
 
-// image
+<small class="owner">// image (@TODO)</small>
 
 <small class="note">After finishing monthly reports, notify managing partner to sign-off on reports.</small>
 

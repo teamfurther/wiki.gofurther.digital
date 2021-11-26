@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Javascript"
-permalink: 'code-style/javascript'
+permalink: 'coding/javascript'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_ 
 
 - [Spacing and Indentation](#spacing-and-indentation)
 - [Line Length](#line-length)
@@ -76,33 +76,6 @@ const two = 1 + 1;
 
 // Bad, needs more spaces.
 const two = 1+1;
-```
-
-### Functions[#](#functions)
-Named functions don't have a space before their parameters. Anonymous ones do.
-
-```javascript
-// Good
-function save(user) {
-    // ...
-}
-
-// Bad, no space before the parameters.
-function save (user) {
-    // ...
-}
-```
-
-```javascript
-// Good
-save(user, function (response) {
-    // ...
-});
-
-// Bad, anonymous functions require a space before the parameters.
-save(user, function(response) {
-    // ...
-});
 ```
 
 ### Arrays[#](#arrays)
@@ -265,13 +238,19 @@ Use single quotes if possible. If you need multiline strings or interpolation, u
 
 ```javascript
 // Good
-const company = 'Spatie';
+import Vue from 'vue';
+
+const company = 'Further';
 
 // Bad, single quotes can be used here.
-const company = "Spatie";
+import Vue from "vue";
+
+const company = "Further";
 
 // Bad, single quotes can be used here.
-const company = `Spatie`;
+import Vue from `vue`;
+
+const company = `Further`;
 ```
 
 ```javascript

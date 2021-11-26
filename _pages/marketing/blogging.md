@@ -3,7 +3,7 @@ layout: page
 title: "Blogging"
 permalink: 'marketing/blogging'
 ---
-<small class="owner">Owner: Marketing</small> _Last revision: never_
+<small class="owner">Owner: Marketing</small> _Last revision: 12.11.2021_
 
 
 The following page describes how to write and publish blog posts.
@@ -110,6 +110,10 @@ Every blog post should be in it's own feature branch. This branch can then be me
 
 ## Promoting[#](#promoting)
 For promoting in social media (Facebook, LinkedIn, Twitter), please refer to the [social media marketing](/marketing/social-media) page.
+
+### Facebook[#](#promoting-facebook)
+- Share blog article in thematically related groups.
+- Consider creating an ad campaign targeting relevant users or including blog article in a remarketing chain campaign. 
 
 ### HackerNews[#](#promoting-hackernews)
 Paste a link.

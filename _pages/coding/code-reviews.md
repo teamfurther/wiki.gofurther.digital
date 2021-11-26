@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Code Reviews"
-permalink: 'project-workflow/code-reviews'
+permalink: 'coding/code-reviews'
 ---
-<small class="owner">Owner: Project Lead (or Code Reviewer)</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Project Lead (or Code Reviewer)</small> _Last revision: 12.11.2021_
 
 Project lead is responsible for weekly code reviews, including final code review before deployment. To help with code reviews, we created a checklist. Use this template [&#x2197;](http://bit.ly/30Z3fLP){:target="_blank"} to do code reviews.
 
@@ -19,7 +19,7 @@ Remember, these are rough guidelines you should adapt to each project.
 {: .toc}
 
 ### Code Quality[#](#code-quality)
-- Is code conforming to [code style](/code-style)? **If not, do it!**
+- Is code conforming to [code style](/coding)? **If not, do it!**
 - Did we clean up code? (orphaned comments, debugging controls, etc.) **If not, do it!**
 - Did we check for `@TODO` occurences? **If not, do it!**
 - Did we run `phpinsights`? **If not, do it!**

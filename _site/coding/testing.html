@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Code Style | Further Wiki</title>
+    <title>Testing | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
 
@@ -43,21 +43,23 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
                 </div>
                 <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <a href="https://wiki.gofurther.digital/coding">Coding</a>
                     <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
-                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
-                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
-                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
-                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/coding/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/coding/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/coding/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/typescript">TypeScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/coding/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/coding/testing">Testing</a>
+                        <a href="https://wiki.gofurther.digital/coding/code-reviews">Code Reviews</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -65,7 +67,6 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
                         <a href="https://wiki.gofurther.digital/marketing/newsletter">Newsletter</a>
-                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -99,20 +100,38 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Code Style</h1>
+    <h1 class="article__title">Testing</h1>
 
-    <p class="is-text-large">The following pages describe the use of coding rules adhered to while writing awesome code for Further.</p>
+    <p><small class="owner">Owner: Development</small> <em>Last revision: 12.11.2021</em></p>
 
-<p>Why all this fuss and bother over how we write code?</p>
-<ul>
-  <li>it increases code development and debugging speed</li>
-  <li>it makes code more maintainable</li>
-  <li>it makes code more readable, every line of code should appear to be written by a single person, no matter the number of contributors</li>
-  <li>it encourages the you to pay attention to the little details</li>
-  <li>it helps to foster an environment of “accountability for your own code”</li>
+<ul class="toc">
+  <li><a href="#unit-vs-feature">Unit vs feature tests</a></li>
+  <li><a href="#functional-tests">Functional tests</a></li>
 </ul>
 
-<p><small>Based on <a href="https://guidelines.spatie.be" target="_blank">guidelines.spatie.be</a>, <a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">google.github.io/styleguide/htmlcssguide.html</a> and <a href="https://github.com/alexeymezenin/laravel-best-practices" target="_blank">github.com/alexeymezenin/laravel-best-practices</a>.</small></p>
+<h2 id="unit-vs-feature-tests">Unit vs feature tests<a href="#unit-vs-feature">#</a></h2>
+<p>Laravel introduced feature tests as a concept, but under the hood they are actually integration tests. They should be used whenever testing a complete feature. For more simple tests, use unit tests.</p>
+
+<p>E.g.:</p>
+
+<p>A test class for a contact form, with the following assertions should be considered a feature test, since it tests multiple aspect of a contact form (success state, validation, notifications, etc.)</p>
+
+<ul>
+  <li><code class="highlighter-rouge">testContactShouldRedirectIfSuccess</code></li>
+  <li><code class="highlighter-rouge">testContactShouldReturn422IfInvalidEmailGiven</code></li>
+  <li><code class="highlighter-rouge">testContactShouldReturn422IfNoEmailGiven</code></li>
+  <li><code class="highlighter-rouge">testContactShouldReturn422IfNoMessageGiven</code></li>
+  <li><code class="highlighter-rouge">testContactShouldSendNotificationIfSuccess</code></li>
+</ul>
+
+<p>A test class for a registration form which only tests if a user has been created in the database, is considered a unit test.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">testRegistrationUserCreatedIfSuccess</code></li>
+</ul>
+
+<h2 id="functional-tests">Functional tests<a href="#functional-tests">#</a></h2>
+<p>Functional test should be considered in addition to unit/feature tests when developing complex flows, such a multi-step registration process or a checkout process.</p>
 
 </div>
 

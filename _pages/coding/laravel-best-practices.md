@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Laravel Best Practices"
-permalink: 'code-style/laravel-best-practices'
+permalink: 'coding/laravel-best-practices'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_
 
 - [Naming Conventions](#naming-conventions)
 - [Commands](#commands)
@@ -148,6 +148,20 @@ Again to avoid naming collisions we'll suffix notifications with `Notification`,
 
 e.g. `AccountActivatedNotification` or `NewEventNotication`
 
+### Tests[#](#naming-tests) {#naming-tests}
+Function names of tests cases should always begin with `test`.
+
+```
+public function testIfPageReturns200(): void
+{
+        $response = $this->json('POST', 'page', [
+            'somedata' => 'Data',
+        ]);
+
+        $response->assertStatus(200);
+}
+```
+
 ### Views[#](#naming-views) {#naming-views}
 View files must use kebab-case.
 
@@ -174,7 +188,7 @@ public function handle()
 If possible use a descriptive success message eg. ```Old records deleted```.
 
 ## Facades[#](#facades)
-Whenever possible, avoid using facades in controllers, models or services.
+Whenever possible, avoid using facades in controllers, models or actions.
 
 Instead, use a the available helper function or inject the underlying class into your object. Use the [Facade Class Reference](https://laravel.com/docs/master/facades#facade-class-reference) to find the underlying class.
 
@@ -309,11 +323,11 @@ public function store(Request $request)
     // ...
 }
 
-class SaveArticleImageAction
+class SaveArticleImageAction implements ActionInterface
 {
-    public function execute($image)
+    public function execute(...$args)
     {
-        if (!is_null($image)) {
+        if (!is_null($args[0])) {
             $image->move(public_path('images') . 'temp');
         }
     }

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Code Style"
-permalink: 'code-style'
+permalink: 'coding'
 ---
 <p class="is-text-large">The following pages describe the use of coding rules adhered to while writing awesome code for Further.</p>
 

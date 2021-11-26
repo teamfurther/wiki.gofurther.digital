@@ -43,21 +43,23 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
                 </div>
                 <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <a href="https://wiki.gofurther.digital/coding">Coding</a>
                     <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
-                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
-                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
-                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
-                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/coding/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/coding/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/coding/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/typescript">TypeScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/coding/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/coding/testing">Testing</a>
+                        <a href="https://wiki.gofurther.digital/coding/code-reviews">Code Reviews</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -65,7 +67,6 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
                         <a href="https://wiki.gofurther.digital/marketing/newsletter">Newsletter</a>
-                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -101,7 +102,7 @@
         <div class="article">
     <h1 class="article__title">PHP</h1>
 
-    <p><small class="owner">Owner: Development</small> <em>Last revision: 24.04.2020</em></p>
+    <p><small class="owner">Owner: Development</small> <em>Last revision: 12.11.2021</em></p>
 
 <ul class="toc">
   <li><a href="#general-php-rules">General PHP Rules</a></li>
@@ -390,14 +391,14 @@
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionBA</span><span class="p">)</span> <span class="p">{</span>
-   <span class="c1">// conditionB A failed</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionA</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// condition A failed</span>
    
    <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionB</span><span class="p">)</span> <span class="p">{</span>
-   <span class="c1">// conditionB A passed, B failed</span>
+   <span class="c1">// condition A passed, B failed</span>
    
    <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
@@ -502,7 +503,6 @@
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
-<span class="c1">// Good</span>
 <span class="k">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
@@ -511,87 +511,6 @@
     
     <span class="c1">// ...</span>
 <span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="routing">Routing<a href="#routing">#</a></h2>
-<p>Public-facing urls must use kebab-case.</p>
-
-<p><code class="highlighter-rouge">https://gofurther.digital/open-source</code>, <code class="highlighter-rouge">https://gofurther.digital/solutions/time-tracking</code></p>
-
-<p>Route names must use camelCase. You are also encouraged to use namespaces.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'open-source'</span><span class="p">,</span> <span class="s1">'OpenSourceController@index'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'openSource'</span><span class="p">);</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'solutions/time-tracking'</span><span class="p">,</span> <span class="s1">'SolutionsController@timeTracking'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'solutions.timeTracking'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ route('solutions.timeTracking') }}"</span><span class="nt">&gt;</span>
-    Time Tracking
-<span class="nt">&lt;/a&gt;</span>
-</code></pre></div></div>
-
-<p>All routes have an http verb, that’s why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good: all http verbs come first</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'HomeController@index'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'home'</span><span class="p">);</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'open-source'</span><span class="p">,</span> <span class="s1">'OpenSourceController@index'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">'openSource'</span><span class="p">);</span>
-
-<span class="c1">// Bad: http verbs not easily scannable</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">name</span><span class="p">(</span><span class="s1">'home'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'HomeController@index'</span><span class="p">);</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">'openSource'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'OpenSourceController@index'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Route parameters should use camelCase.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'news/{newsItem}'</span><span class="p">,</span> <span class="s1">'NewsItemsController@index'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>A route url should not start with <code class="highlighter-rouge">/</code> unless the url would be an empty string.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'HomeController@index'</span><span class="p">);</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'open-source'</span><span class="p">,</span> <span class="s1">'OpenSourceController@index'</span><span class="p">);</span>
-
-<span class="c1">// Bad</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'HomeController@index'</span><span class="p">);</span>
-<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/open-source'</span><span class="p">,</span> <span class="s1">'OpenSourceController@index'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h2 id="views">Views<a href="#views">#</a></h2>
-<p>View files must use camelCase.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resources/
-  views/
-    openSource.blade.php
-</code></pre></div></div>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">OpenSourceController</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">'openSource'</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="blade-templates">Blade Templates<a href="#blade-templates">#</a></h2>
-<p>Indent using four spaces.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/open-source"</span><span class="nt">&gt;</span>
-    Open Source
-<span class="nt">&lt;/a&gt;</span>
-</code></pre></div></div>
-
-<p>Always add spaces after control structures.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@if ($condition)
-    Something
-@endif
-</code></pre></div></div>
-
-<p>Translations must be rendered with the <code class="highlighter-rouge">__</code> function. We prefer using this over <code class="highlighter-rouge">@lang</code> in Blade views because <code class="highlighter-rouge">__</code> can be used in both Blade views and regular PHP code. Here’s an example:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>{{ __('newsletter.form.title') }}<span class="nt">&lt;/h2&gt;</span>
-
-{!! __('newsletter.form.description') !!}
 </code></pre></div></div>
 
 <h2 id="code-clean-up">Code Clean-up<a href="#code-clean-up">#</a></h2>

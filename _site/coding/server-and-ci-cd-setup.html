@@ -43,21 +43,23 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
                 </div>
                 <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <a href="https://wiki.gofurther.digital/coding">Coding</a>
                     <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
-                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
-                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
-                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
-                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/coding/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/coding/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/coding/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/typescript">TypeScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/coding/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/coding/testing">Testing</a>
+                        <a href="https://wiki.gofurther.digital/coding/code-reviews">Code Reviews</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -65,7 +67,6 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
                         <a href="https://wiki.gofurther.digital/marketing/newsletter">Newsletter</a>
-                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -101,7 +102,7 @@
         <div class="article">
     <h1 class="article__title">Server & CI/CD Set-up</h1>
 
-    <p><small class="owner">Owner: Project Lead</small> <em>Last revision: 25.11.2020</em></p>
+    <p><small class="owner">Owner: Project Lead</small> <em>Last revision: 12.11.2021</em></p>
 
 <p>A guide to installing LEMP Stack (Linux - nginx - MariaDB - PHP) on VPS and setting up a continuous deployment process from a Github repository.</p>
 
@@ -170,9 +171,9 @@
   <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install software-properties-common</code></li>
   <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo add-apt-repository ppa:ondrej/php</code></li>
   <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get update</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php7.4-fpm php7.4-cli php7.4-common</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-mysql php7.4-xml</code></li>
-  <li>Check status with <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">service php7.4-fpm status // check status</code>. If it’s not running, then <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo service php7.4-fpm start</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php8.0-fpm php8.0-cli php8.0-common</code></li>
+  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php8.0-curl php8.0-gd php8.0-json php8.0-mbstring php8.0-mysql php8.0-xml</code></li>
+  <li>Check status with <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">service php8.0-fpm status // check status</code>. If it’s not running, then <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo service php8.0-fpm start</code></li>
 </ul>
 
 <h3 id="mariadb">MariaDB<a href="#mariadb">#</a></h3>

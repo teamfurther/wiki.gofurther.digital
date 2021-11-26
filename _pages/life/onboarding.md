@@ -3,7 +3,7 @@ layout: page
 title: "Onboarding"
 permalink: 'life/onboarding'
 ---
-<small class="owner">Owner: HR</small> _Last revision: 04.01.2020_
+<small class="owner">Owner: HR</small> _Last revision: 12.11.2021_
 
 This page provides a roadmap and checklists for new employees at Further.
 
@@ -15,6 +15,7 @@ This page provides a roadmap and checklists for new employees at Further.
 
 ## Preboarding[#](#pre-onboarding)
 - Medical check-up
+    - "Fisă de aptitudine" from medicina muncii
 - Sign NDA
 - Sign Contract
 {: .checklist}
@@ -29,9 +30,9 @@ This page provides a roadmap and checklists for new employees at Further.
     - desktop app is recommended if you use multiple workspaces, otherwise web app is fine;
     - mobile app is recommended;
     - signup [&#x2197;](https://goteamfurther.slack.com/signup){:target="_blank"}.
-- Google Meet / Hangouts
+- Google Meet
     - used for group calls, video calls, call with screen-share;
-    - initiate from Slack channel with ```/hangout```.
+    - we encourage you to create name Meet rooms with each team member for quick access
 - Google Drive [&#x2197;](drive.google.com){:target="_blank"}
 - Calendar
     - can be accessed by logging into your Google Suite account with your email address
@@ -50,15 +51,15 @@ This page provides a roadmap and checklists for new employees at Further.
 ### Development
 - PHPStorm [&#x2197;](https://www.jetbrains.com/phpstorm/){:target="_blank"}
     - our IDE of choice, ask us why we like it
-- Docker [&#x2197;](https://www.docker.com/community-edition#/download){:target="_blank"}
 - Laravel Valet[&#x2197;](https://laravel.com/docs/master/valet){:target="_blank"}
+- Docker [&#x2197;](https://www.docker.com/community-edition#/download){:target="_blank"}
 - Frontend Build - Laravel Mix [&#x2197;](https://github.com/JeffreyWay/laravel-mix){:target="_blank"}
 {: .checklist}
     
 ### Design, Prototyping
-- Sketch
+- Figma [&#x2197;](https://figma.com/){:target="_blank"}
+- Miro [&#x2197;](https://miro.com/){:target="_blank"}
 - Balsamiq Mockups [&#x2197;](https://balsamiq.com/products/){:target="_blank"}
-- Invision [&#x2197;](https://www.invisionapp.com){:target="_blank"}
 {: .checklist}
 
 ### Browser Extensions

@@ -43,21 +43,23 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
                 </div>
                 <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <a href="https://wiki.gofurther.digital/coding">Coding</a>
                     <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
-                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
-                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
-                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
-                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/coding/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/coding/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/coding/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/typescript">TypeScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/coding/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/coding/testing">Testing</a>
+                        <a href="https://wiki.gofurther.digital/coding/code-reviews">Code Reviews</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -65,7 +67,6 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
                         <a href="https://wiki.gofurther.digital/marketing/newsletter">Newsletter</a>
-                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -101,7 +102,7 @@
         <div class="article">
     <h1 class="article__title">CSS</h1>
 
-    <p><small class="owner">Owner: Development</small> <em>Last revision: 24.04.2020</em></p>
+    <p><small class="owner">Owner: Development</small> <em>Last revision: 12.11.2021</em></p>
 
 <ul class="toc">
   <li><a href="#preprocessing">Preprocessing</a></li>
@@ -121,15 +122,15 @@
 
 <p>We only use classes for styling, with the following ingredients:</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.component</span>                      <span class="c">/* Component */</span>   
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.component</span>                      <span class="c">/* Component */</span>
 <span class="nc">.component__element</span>             <span class="c">/* Child */</span>
 <span class="nc">.component__element__element</span>    <span class="c">/* Grandchild */</span>
 
 <span class="nc">.items</span>                          <span class="c">/* Use plurals if possible */</span>
-<span class="nc">.item</span>                        
+<span class="nc">.item</span> 
 
 <span class="nc">.has-modifier</span>                   <span class="c">/* Single property modifier, can be chained */</span>
-<span class="nc">.is-modifier</span>     
+<span class="nc">.is-modifier</span> 
 
 <span class="nc">.component--variation</span>           <span class="c">/* Standalone variation of a component */</span>
 <span class="nc">.component__element--variation</span>  <span class="c">/* Standalone variation of an element */</span>
@@ -293,6 +294,7 @@
 |-- components : less reusable specific components
 |-- elements   : reusable elements
 |-- vendor     : custom files from 3rd party components like fancybox, select2 etc.
+|-- views      : specific Vue (or Blade) view styles
 `-- app.scss   : main file
 </code></pre></div></div>
 
@@ -353,18 +355,6 @@
 
 <span class="c1">// Bad</span>
 <span class="nl">color</span><span class="p">:</span> <span class="mh">#e5e5e5</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h3 id="trailing-whitespace">Trailing Whitespace<a href="#trailing-whitespace">#</a></h3>
-<p>Remove trailing white spaces.</p>
-
-<p>Trailing white spaces are unnecessary and can complicate diffs.</p>
-
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="nl">content</span><span class="p">:</span> <span class="s1">'I am alright'</span><span class="p">;</span>
-
-<span class="c1">// Bad</span>
-<span class="nl">content</span><span class="p">:</span> <span class="s1">'Diff will cry'</span><span class="p">;</span><span class="nt">_</span>
 </code></pre></div></div>
 
 <h3 id="quotes">Quotes<a href="#quotes">#</a></h3>
@@ -433,12 +423,11 @@
         <span class="err">…</span>
     <span class="p">}</span>
     
-    <span class="cm">/* Try to avoid */</span>      
-    <span class="nt">h1</span> <span class="p">{</span>                          <span class="cm">/* Avoid unless you have no control over the HTML inside the `.component` */</span>
+    <span class="nt">h1</span> <span class="p">{</span>                          <span class="cm">/* Avoid unless you have no control over the HTML inside the `.component`, use `&amp;__element` instead so that generated CSS is flat */</span>
         <span class="err">…</span>
     <span class="p">}</span>
     
-    <span class="k">&amp;</span><span class="nt">__element</span> <span class="p">{</span>                  <span class="cm">/* Use `&amp;__element` so that generated CSS is flat */</span>
+    <span class="k">&amp;</span><span class="nt">__element</span> <span class="p">{</span>
         <span class="err">…</span>
     <span class="p">}</span>     
 <span class="p">}</span>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Typescript | Further Wiki</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,600,700&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" />
+
+    <link rel="stylesheet" href="https://wiki.gofurther.digital/dist/css/site.css?v191219" />
+</head>
+
+<body id="#top">
+
+    <div class="sidebar">
+        <div class="sidebar__contents">
+            <header class="header">
+                <a class="header__logo" href="https://gofurther.digital" target="_blank"><img src="https://wiki.gofurther.digital/dist/img/logo.svg?v2" title="Further Wiki" /></a>
+            </header>
+            <nav class="nav">
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/">Home</a>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/life">Life at Further</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/life/onboarding">Onboarding</a>
+                        <a href="https://wiki.gofurther.digital/life/stand-up-meetings">Stand-up Meetings</a>
+                        <a href="https://wiki.gofurther.digital/life/communication">Communication</a>
+                        <a href="https://wiki.gofurther.digital/life/perks">Perks</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/project-workflow">Project Workflow</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
+                        <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/coding">Coding</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/coding/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/coding/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/coding/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/coding/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/typescript">TypeScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/coding/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/coding/testing">Testing</a>
+                        <a href="https://wiki.gofurther.digital/coding/code-reviews">Code Reviews</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/marketing">Marketing</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
+                        <a href="https://wiki.gofurther.digital/marketing/newsletter">Newsletter</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/internal-workflows">Internal Workflows</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/internal-workflows/finances">Finances</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="https://wiki.gofurther.digital/security">Security</a>
+                    <div class="nav__subnav">
+                        <a href="https://wiki.gofurther.digital/security/information-security">Information Security</a>
+                        <a href="https://wiki.gofurther.digital/security/physical-security">Physical Security</a>
+                        <a href="https://wiki.gofurther.digital/security/business-continuity">Business Continuity</a>
+                        <a href="https://wiki.gofurther.digital/security/incident-management">Incident Management</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="footer">
+            &copy; Further Digital Solutions
+        </footer>
+    </div>
+
+    <a class="sidebar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+    <section class="content">
+        <div class="article">
+    <h1 class="article__title">Typescript</h1>
+
+    <p><small class="owner">Owner: Development</small> <em>Last revision: 12.11.2021</em></p>
+
+<ul class="toc">
+  <li><a href="#http-service">HTTP Service</a></li>
+  <li><a href="#repositories">Repositories</a></li>
+  <li><a href="#types">Types</a></li>
+</ul>
+
+<h2 id="http-service">HTTP Service<a href="#http-service">#</a></h2>
+<p>It’s generally a good idea to separate frontend logic from the HTTP service. This allows us to easily switch the underlying HTTP client, e.g. from <code class="highlighter-rouge">axios</code> to <code class="highlighter-rouge">vue-resource</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// services/HttpService.ts</span>
+<span class="k">import</span> <span class="nx">axios</span><span class="p">,</span> <span class="p">{</span> <span class="nx">AxiosResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'axios'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">HttpService</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="kr">static</span> <span class="nx">instance</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="kr">public</span> <span class="kr">static</span> <span class="nx">getInstance</span><span class="p">():</span> <span class="nx">HttpService</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">instance</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HttpService</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">get</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/api/'</span> <span class="o">+</span> <span class="nx">endpoint</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+                <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// repositories/Repository.ts</span>
+<span class="k">import</span> <span class="nx">HttpService</span> <span class="k">from</span> <span class="s1">'../services/HttpService'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ExampleType</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"../types/ExampleType"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">ExampleRepository</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="na">httpService</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">=</span> <span class="nx">HttpService</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+    
+    <span class="kr">public</span> <span class="nx">getExample</span><span class="p">(</span><span class="na">project</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'example'</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="p">...</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="repositories">Repositories<a href="#repositories">#</a></h2>
+<p>Use the repository pattern to abstract any interaction with an external API or database.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">HttpService</span> <span class="k">from</span> <span class="s1">'../services/HttpService'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ExampleType</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"../types/ExampleType"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">ExampleRepository</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">httpService</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">=</span> <span class="nx">HttpService</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+    
+    <span class="kr">public</span> <span class="nx">getExample</span><span class="p">(</span><span class="nx">project</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'example/1'</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="p">...</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kr">public</span> <span class="nx">deleteExample</span><span class="p">(</span><span class="na">project</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">'example/1'</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="p">...</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="types">Types<a href="#types">#</a></h2>
+<p>Use types wherever possible to improve code structure and allow better type hinting. Types are preferred to interfaces or model classes.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">OtherType</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./OtherType'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="nx">type</span> <span class="nx">ExampleType</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="nl">others</span><span class="p">:</span> <span class="nx">OtherType</span><span class="p">[];</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+</div>
+
+    </section>
+
+    <a class="back-to-top" href="#top"></a>
+
+<script src="https://wiki.gofurther.digital/dist/js/site.js"></script>
+
+</body>
+
+</html>

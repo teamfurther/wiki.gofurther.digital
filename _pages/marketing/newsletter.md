@@ -3,7 +3,7 @@ layout: page
 title: "Newsletter"
 permalink: 'marketing/newsletter'
 ---
-<small class="owner">Owner: Marketing</small> _Last revision: never_
+<small class="owner">Owner: Marketing</small> _Last revision: 12.11.2021_
 
 
 The following page describes how to write and publish our monthly newsletter digest.

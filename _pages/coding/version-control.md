@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Version Control"
-permalink: 'project-workflow/version-control'
+permalink: 'coding/version-control'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_
 
 All our projects use Git, mostly with a repository hosted on Bitbucket.
 

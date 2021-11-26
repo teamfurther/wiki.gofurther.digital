@@ -3,7 +3,7 @@ layout: page
 title: "Project Management"
 permalink: 'project-workflow/project-management'
 ---
-<small class="owner">Owner: PM</small> _Last revision: 26.06.2020_
+<small class="owner">Owner: PM</small> _Last revision: 12.11.2021_
 
 During the lifetime of a project, we need to go through numerous steps to ensure our work is efficient, timelines can be met, and product quality assured. This page describes these steps and provides checklists.
 
@@ -29,6 +29,7 @@ During the lifetime of a project, we need to go through numerous steps to ensure
     - ```In progress```
     - ```QA``` - may be separated into ```QA (internal)``` & ```QA (external)```
     - ```Ready for deployment```
+    - ```Deployed```
 - All tasks on the boards, should have an assignee (except in when in ```Backlog``` column)
 
 ### Kanban Pull System[#](#kanban-pull-system)
@@ -48,7 +49,8 @@ Board should be walked from right to left first, and top to bottom second. This 
 
 ### Deployment[#](#kanban-deployment)
 
-- whenever deploying tasks from ```Ready for deployment```, responsible should mark task as completed.
+- whenever deploying tasks from ```Ready for deployment```, task should be moved to ```Deployed```.
+- <small class="owner">PM</small> will mark task as completed at the next grooming session.
 - if there is no ```Ready for deployment``` column, tasks can be marked as completed after client approval from ```QA (external)```. 
 
 ## Definition of Done[#](#definition-of-done)
@@ -98,7 +100,7 @@ For non-project tasks, use the ```Internal``` project.
     - Tasks
     - Budgets
     - Documentation (as notes)
-- cDo we have a Slack channel set-up?
+- Do we have a Slack channel set-up?
 - <small class="owner">Project lead</small> Do we have an IPS set-up? **If not, do it!**
 {: .checklist}
 

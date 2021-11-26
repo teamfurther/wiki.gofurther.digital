@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "PHP"
-permalink: 'code-style/php'
+permalink: 'coding/php'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_
 
 - [General PHP Rules](#general-php-rules)
 - [Organizing Classes](#organizing-classes)
@@ -309,14 +309,14 @@ In general, ```else``` should be avoided because it makes code less readable. In
 ```php
 // Good
 
-if (!$conditionBA) {
-   // conditionB A failed
+if (!$conditionA) {
+   // condition A failed
    
    return;
 }
 
 if (!$conditionB) {
-   // conditionB A passed, B failed
+   // condition A passed, B failed
    
    return;
 }
@@ -423,7 +423,6 @@ class Person
 }
 
 // Bad
-// Good
 class Person
 {
     public $name;
@@ -433,98 +432,6 @@ class Person
     // ...
 }
 ```
-
-## Routing[#](#routing)
-Public-facing urls must use kebab-case.
-
-`https://gofurther.digital/open-source`, `https://gofurther.digital/solutions/time-tracking`
-
-Route names must use camelCase. You are also encouraged to use namespaces.
-
-```php
-Route::get('open-source', 'OpenSourceController@index')->name('openSource');
-Route::get('solutions/time-tracking', 'SolutionsController@timeTracking')->name('solutions.timeTracking');
-```
-
-```html
-<a href="{{ route('solutions.timeTracking') }}">
-    Time Tracking
-</a>
-```
-
-All routes have an http verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.
-
-```php
-// Good: all http verbs come first
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('open-source', 'OpenSourceController@index')->middleware('openSource');
-
-// Bad: http verbs not easily scannable
-Route::name('home')->get('/', 'HomeController@index');
-Route::middleware('openSource')->get('OpenSourceController@index');
-```
-
-Route parameters should use camelCase.
-
-```php
-Route::get('news/{newsItem}', 'NewsItemsController@index');
-```
-
-A route url should not start with `/` unless the url would be an empty string.
-
-```php
-// Good
-Route::get('/', 'HomeController@index');
-Route::get('open-source', 'OpenSourceController@index');
-
-// Bad
-Route::get('', 'HomeController@index');
-Route::get('/open-source', 'OpenSourceController@index');
-```
-
-## Views[#](#views)
-View files must use camelCase.
-
-```
-resources/
-  views/
-    openSource.blade.php
-```
-
-```php
-class OpenSourceController
-{
-    public function index() {
-        return view('openSource');
-    }
-}
-```
-
-## Blade Templates[#](#blade-templates)
-Indent using four spaces.
-
-```html
-<a href="/open-source">
-    Open Source
-</a>
-```
-
-Always add spaces after control structures.
-
-```html
-@if ($condition)
-    Something
-@endif
-```
-
-Translations must be rendered with the `__` function. We prefer using this over `@lang` in Blade views because `__` can be used in both Blade views and regular PHP code. Here's an example:
-
-```html
-<h2>{{ __('newsletter.form.title') }}</h2>
-
-{!! __('newsletter.form.description') !!}
-```
-
 
 ## Code Clean-up[#](#code-clean-up)
 No debugging code can be left in place, i.e. `dd()`, `var_dump()`, `print_r()`, `die()`.

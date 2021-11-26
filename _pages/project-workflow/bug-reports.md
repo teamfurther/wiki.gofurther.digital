@@ -3,7 +3,7 @@ layout: page
 title: "Bug report"
 permalink: 'project-workflow/bug-reports'
 ---
-<small class="owner">Owner: PM</small> _Last revision: 26.06.2020_
+<small class="owner">Owner: PM</small> _Last revision: 12.11.2021_
 
 To make it easier for developers to find the root cause of bugs, they should be provided by a detailed bug report. Below you can find a guide of what details we should ask to be included in bug report by client.
 

@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Vue Best Practices"
-permalink: 'code-style/vue-best-practices'
+permalink: 'coding/vue-best-practices'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_
 
 - [General Rules](#general-rules)
 - [Directive Shorthands](#directive-shorthands)
@@ -72,7 +72,6 @@ The [Vue style guide](https://vuejs.org/v2/style-guide/#Element-attribute-order-
 ```
 
 ## Templates
-
 If a Vue component has so many props (or listeners, directives, ...) that they don't fit on one line anymore you need to put every prop on its own line. Every line needs to be intended with 4 spaces. The closing ```>``` goes on a new unintended line followed by the closing tag.
 
 ```html

@@ -43,21 +43,23 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/project-workflow/analysis-offer">Analysis & Offer</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/project-management">Project Management</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/version-control">Version Control</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
-                        <a href="https://wiki.gofurther.digital/project-workflow/code-reviews">Code Reviews</a>
                         <a href="https://wiki.gofurther.digital/project-workflow/bug-reports">Bug Reports</a>
                     </div>
                 </div>
                 <div class="nav__item">
-                    <a href="https://wiki.gofurther.digital/code-style">Code Style</a>
+                    <a href="https://wiki.gofurther.digital/coding">Coding</a>
                     <div class="nav__subnav">
-                        <a href="https://wiki.gofurther.digital/code-style/php">PHP</a>
-                        <a href="https://wiki.gofurther.digital/code-style/html">HTML</a>
-                        <a href="https://wiki.gofurther.digital/code-style/css">CSS</a>
-                        <a href="https://wiki.gofurther.digital/code-style/javascript">JavaScript</a>
-                        <a href="https://wiki.gofurther.digital/code-style/laravel-best-practices">Laravel Best Practices</a>
-                        <a href="https://wiki.gofurther.digital/code-style/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/php">PHP</a>
+                        <a href="https://wiki.gofurther.digital/coding/html">HTML</a>
+                        <a href="https://wiki.gofurther.digital/coding/css">CSS</a>
+                        <a href="https://wiki.gofurther.digital/coding/javascript">JavaScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/typescript">TypeScript</a>
+                        <a href="https://wiki.gofurther.digital/coding/laravel-best-practices">Laravel Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/vue-best-practices">Vue Best Practices</a>
+                        <a href="https://wiki.gofurther.digital/coding/version-control">Version Control</a>
+                        <a href="https://wiki.gofurther.digital/coding/server-and-ci-cd-setup">Server & CI/CD Set-up</a>
+                        <a href="https://wiki.gofurther.digital/coding/testing">Testing</a>
+                        <a href="https://wiki.gofurther.digital/coding/code-reviews">Code Reviews</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -65,7 +67,6 @@
                     <div class="nav__subnav">
                         <a href="https://wiki.gofurther.digital/marketing/blogging">Blogging</a>
                         <a href="https://wiki.gofurther.digital/marketing/newsletter">Newsletter</a>
-                        <a href="https://wiki.gofurther.digital/marketing/social-media">Social Media</a>
                     </div>
                 </div>
                 <div class="nav__item">
@@ -101,7 +102,7 @@
         <div class="article">
     <h1 class="article__title">HTML</h1>
 
-    <p><small class="owner">Owner: Development</small> <em>Last revision: 24.04.2020</em></p>
+    <p><small class="owner">Owner: Development</small> <em>Last revision: 12.11.2021</em></p>
 
 <ul class="toc">
   <li><a href="#general-rules-and-guidelines">General Rules and Guidelines</a></li>
@@ -156,8 +157,8 @@
 <span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">"highlighted-text"</span><span class="nt">&gt;</span>I'm cool.<span class="nt">&lt;/strong&gt;</span>
 
 // Bad
-<span class="nt">&lt;strong</span> <span class="na">style=</span><span class="s">"background-color: #fff00; font-size: 20px;&gt;I'm frowned upon.&lt;/strong&gt;
-</span></code></pre></div></div>
+<span class="nt">&lt;strong</span> <span class="na">style=</span><span class="s">"background-color: #fff00; font-size: 20px;"</span><span class="nt">&gt;</span>I'm frowned upon.<span class="nt">&lt;/strong&gt;</span>
+</code></pre></div></div>
 
 <h3 id="semantics">Semantics<a href="#semantics">#</a></h3>
 <p>Use elements for what they have been created for. For example, use heading elements for headings, p elements for paragraphs, a elements for anchors, etc.</p>
@@ -170,9 +171,6 @@
 // Bad
 <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bold"</span><span class="nt">&gt;</span>Bad semantics<span class="nt">&lt;/span&gt;</span>
 </code></pre></div></div>
-
-<h3 id="js-generated-markup">JS Generated Markup<a href="#js-generated-markup">#</a></h3>
-<p>Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible.</p>
 
 <h2 id="formatting">Formatting<a href="#formatting">#</a></h2>
 
@@ -194,18 +192,6 @@
 
 // Bad
 <span class="nt">&lt;IMG</span> <span class="na">SRC=</span><span class="s">"davinci.jpg"</span> <span class="na">ALL=</span><span class="s">"Portrait of Leondardo Da Vinci"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<h3 id="trailing-whitespace">Trailing Whitespace<a href="#trailing-whitespace">#</a></h3>
-<p>Remove trailing white spaces.</p>
-
-<p>Trailing white spaces are unnecessary and can complicate diffs.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Good
-<span class="nt">&lt;p&gt;</span>I'm alright<span class="nt">&lt;/p&gt;</span>
-
-// Bad
-<span class="nt">&lt;p&gt;</span>Diff will cry<span class="nt">&lt;/p&gt;</span>_
 </code></pre></div></div>
 
 <h3 id="quotes">Quotes<a href="#quotes">#</a></h3>
@@ -265,14 +251,6 @@
         <span class="nt">&lt;/tr&gt;</span>
     <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
-</code></pre></div></div>
-
-<h3 id="mark-end-of-large-elements">Mark End of Large Elements<a href="#mark-end-of-large-elements">#</a></h3>
-<p>You should always mark the end of a DOM element with a lots of content by placing a comment after the closing tag.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-<span class="c">&lt;!-- ... --&gt;</span>
-<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- .content --&gt;</span>
 </code></pre></div></div>
 
 <h3 id="attribute-order">Attribute Order<a href="#attribute-order">#</a></h3>

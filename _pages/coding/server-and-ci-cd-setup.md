@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Server & CI/CD Set-up"
-permalink: 'project-workflow/server-and-ci-cd-setup'
+permalink: 'coding/server-and-ci-cd-setup'
 ---
-<small class="owner">Owner: Project Lead</small> _Last revision: 25.11.2020_
+<small class="owner">Owner: Project Lead</small> _Last revision: 12.11.2021_
 
 A guide to installing LEMP Stack (Linux - nginx - MariaDB - PHP) on VPS and setting up a continuous deployment process from a Github repository.
 
@@ -60,9 +60,9 @@ Our preferred DNS provider is Cloudflare.
 - ```$``` ```sudo apt-get install software-properties-common```
 - ```$``` ```sudo add-apt-repository ppa:ondrej/php```
 - ```$``` ```sudo apt-get update```
-- ```$``` ```sudo apt-get install php7.4-fpm php7.4-cli php7.4-common```
-- ```$``` ```sudo apt-get install php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-mysql php7.4-xml```
-- Check status with ```$``` ```service php7.4-fpm status // check status```. If it's not running, then ```$``` ```sudo service php7.4-fpm start```
+- ```$``` ```sudo apt-get install php8.0-fpm php8.0-cli php8.0-common```
+- ```$``` ```sudo apt-get install php8.0-curl php8.0-gd php8.0-json php8.0-mbstring php8.0-mysql php8.0-xml```
+- Check status with ```$``` ```service php8.0-fpm status // check status```. If it's not running, then ```$``` ```sudo service php8.0-fpm start```
 
 ### MariaDB[#](#mariadb)
 - ```$``` ```sudo apt-get install mariadb-client mariadb-server```

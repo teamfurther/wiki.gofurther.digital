@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "CSS"
-permalink: 'code-style/css'
+permalink: 'coding/css'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_
 
 - [Preprocessing](#preprocessing)
 - [BEVM](#bevm)
@@ -23,15 +23,15 @@ We use a CSS naming convention loosely based on [BEM](https://getbem.com){:targe
 We only use classes for styling, with the following ingredients:
 
 ```css
-.component                      /* Component */   
+.component                      /* Component */
 .component__element             /* Child */
 .component__element__element    /* Grandchild */
 
 .items                          /* Use plurals if possible */
-.item                        
+.item 
 
 .has-modifier                   /* Single property modifier, can be chained */
-.is-modifier     
+.is-modifier 
 
 .component--variation           /* Standalone variation of a component */
 .component__element--variation  /* Standalone variation of an element */
@@ -201,6 +201,7 @@ We typically use 4 folders and a main ```app.scss``` or ```site.scss``` file:
 |-- components : less reusable specific components
 |-- elements   : reusable elements
 |-- vendor     : custom files from 3rd party components like fancybox, select2 etc.
+|-- views      : specific Vue (or Blade) view styles
 `-- app.scss   : main file
 ```
 
@@ -265,19 +266,6 @@ color: #E5E5E5;
 
 // Bad
 color: #e5e5e5;
-```
-
-### Trailing Whitespace[#](#trailing-whitespace)
-Remove trailing white spaces.
-
-Trailing white spaces are unnecessary and can complicate diffs.
- 
-```scss
-// Good
-content: 'I am alright';
-
-// Bad
-content: 'Diff will cry';_
 ```
 
 ### Quotes[#](#quotes)
@@ -349,12 +337,11 @@ input[type=value] {
         …
     }
     
-    /* Try to avoid */      
-    h1 {                          /* Avoid unless you have no control over the HTML inside the `.component` */
+    h1 {                          /* Avoid unless you have no control over the HTML inside the `.component`, use `&__element` instead so that generated CSS is flat */
         …
     }
     
-    &__element {                  /* Use `&__element` so that generated CSS is flat */
+    &__element {
         …
     }     
 }

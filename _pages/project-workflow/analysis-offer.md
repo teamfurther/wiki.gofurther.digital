@@ -3,7 +3,7 @@ layout: page
 title: "Analysis & Offer"
 permalink: 'project-workflow/analysis-offer'
 ---
-<small class="owner">Owner: BA</small> _Last revision: 26.06.2020_
+<small class="owner">Owner: BA</small> _Last revision: 12.11.2021_
 
 Even before an offer goes out to a client or a contract is signed, a lot of steps have to be taken to ensure the budgets and deadlines are realistic, and product quality can be assured.
 
@@ -27,13 +27,13 @@ Even before an offer goes out to a client or a contract is signed, a lot of step
     - Manual testing
     - PM
 - Estimated hours for each development subtask should fit in slots of 1, 2, 4, 8 hours
-- Estimate should be transformed into quotations, using our quotations template [HU] [&#x2197;](http://bit.ly/2m6noAS){:target="_blank"} [EN] [&#x2197;](http://bit.ly/2mZakxp){:target="_blank"}
+- Estimate should be transformed into quotations, using our quotations template [HU] [&#x2197;](http://bit.ly/2m6noAS){:target="_blank"} <small class="owner">or [&#x2197;](){:target="_blank"} (@TODO)</small> [EN] [&#x2197;](http://bit.ly/2mZakxp){:target="_blank"} <small class="owner">or [&#x2197;](){:target="_blank"} (@TODO)</small>
 
 <small class="note">When estimating, take into consideration what the team will look like, what their competencies are and if they require extra time to learn a new tech stack.</small>
   
 ### Resources[#](#sending-quotations-resources)
 - Estimates template [&#x2197;](http://bit.ly/2n1bRmu){:target="_blank"}
-- Quotations template  [HU] [&#x2197;](http://bit.ly/2m6noAS){:target="_blank"} [EN] [&#x2197;](http://bit.ly/2mZakxp){:target="_blank"}
+- Quotations template  [HU] [&#x2197;](http://bit.ly/2m6noAS){:target="_blank"} <small class="owner">or [&#x2197;](){:target="_blank"} (@TODO)</small> [EN] [&#x2197;](http://bit.ly/2mZakxp){:target="_blank"} <small class="owner">or [&#x2197;](){:target="_blank"} (@TODO)</small>
 
 ### Greenfield Projects[#](#sending-quotations-greenfield-projects)
 - Create specification (user stories organised into backlog with MoSCoW method)

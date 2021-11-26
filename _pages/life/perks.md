@@ -3,7 +3,7 @@ layout: page
 title: "Perks"
 permalink: 'life/perks'
 ---
-<small class="owner">Owner: Management</small> _Last revision: never_
+<small class="owner">Owner: Management</small> _Last revision: 12.11.2021_
 
 Working at Further does come with a couple of perks. Being a small company we don't offer gym memberships or provided lunch. Instead we try to focus on perks which are in alignment with our company values: personal development, constant learning and work-life balance.
 
@@ -51,6 +51,8 @@ Constant learning and personal development is really important for us. In order 
 Please let us know of your purchases beforehand so we can handle billing. Afterwards, please track your purchases in the allowances spreadsheets.
 
 - Allowances spreadsheet [&#x2197;](http://bit.ly/36BTf0m){:target="_blank"}
+
+If you leave the company within 6 months of the purchase, Further is entitled to a full refund of the costs.
  
 ## Productivity allowance[#](#productivity-allowance) 
 
@@ -63,3 +65,5 @@ If you're not productive, it's not only bad for the company, but it's also frust
 Please let us know of your purchases beforehand so we can handle billing. Afterwards, please track your purchases in the allowances spreadsheets.
 
 - Allowances spreadsheet [&#x2197;](http://bit.ly/36BTf0m){:target="_blank"}
+
+If you leave the company within 6 months of the purchase, Further is entitled to a full refund of the costs.

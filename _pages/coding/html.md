@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "HTML"
-permalink: 'code-style/html'
+permalink: 'coding/html'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 24.04.2020_
+<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_
 
 - [General Rules and Guidelines](#general-rules-and-guidelines)
 - [Formatting](#formatting)
@@ -62,7 +62,7 @@ Strictly keep structure (markup), presentation (styling), and behavior (scriptin
 <strong class="highlighted-text">I'm cool.</strong>
 
 // Bad
-<strong style="background-color: #fff00; font-size: 20px;>I'm frowned upon.</strong>
+<strong style="background-color: #fff00; font-size: 20px;">I'm frowned upon.</strong>
 ```
 
 ### Semantics[#](#semantics)
@@ -78,8 +78,6 @@ Using HTML according to its purpose is important for accessibility, reuse, and c
 <span class="bold">Bad semantics</span>
 ```
 
-### JS Generated Markup[#](#js-generated-markup)
-Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible.
 
 ## Formatting[#](#formatting)
 
@@ -103,19 +101,6 @@ All code has to be lowercase: This applies to HTML element names, attributes and
 
 // Bad
 <IMG SRC="davinci.jpg" ALL="Portrait of Leondardo Da Vinci" />
-```
-
-### Trailing Whitespace[#](#trailing-whitespace)
-Remove trailing white spaces.
-
-Trailing white spaces are unnecessary and can complicate diffs.
- 
-```html
-// Good
-<p>I'm alright</p>
-
-// Bad
-<p>Diff will cry</p>_
 ```
 
 ### Quotes[#](#quotes)
@@ -178,15 +163,6 @@ Also, indent them if they are child elements of a block, list, or table element.
         </tr>
     </tbody>
 </table>
-```
-
-### Mark End of Large Elements[#](#mark-end-of-large-elements)
-You should always mark the end of a DOM element with a lots of content by placing a comment after the closing tag.
-
-```html
-<div class="content">
-<!-- ... -->
-</div> <!-- .content -->
 ```
 
 ### Attribute Order[#](#attribute-order)
