@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Newsletter | Further Wiki</title>
+    <title>Pre-sales | Further Wiki</title>
 
     <link rel="shortcut icon" type="image/png" href="https://wiki.gofurther.digital/dist/img/favicon.png" />
 
@@ -97,74 +97,71 @@
 
     <section class="content">
         <div class="article">
-    <h1 class="article__title">Newsletter</h1>
+    <h1 class="article__title">Pre-sales</h1>
 
-    <p><small class="owner">Owner: Marketing</small> <em>Last revision: 12.11.2021</em></p>
+    <p><small class="owner">Owner: Sales</small> <em>Last revision: 10.12.2021</em></p>
 
-<p>The following page describes how to write and publish our monthly newsletter digest.</p>
+<p>The goal of our pre-sales process is to easy the workload of the technical sales team. This is done by qualifying lead, setting a meeting time and gathering all the documents necessary to prepare for the meeting.</p>
 
 <ul class="toc">
-  <li><a href="#editing-templates">Editing templates</a></li>
-  <li><a href="#editing-newsletter">Editing newsletter</a></li>
-  <li><a href="#testing">Testing</a></li>
-  <li><a href="#scheduling">Scheduling</a></li>
+  <li><a href="#crm">CRM</a></li>
+  <li><a href="#follow-up-strategy">Follow-up strategy</a></li>
+  <li><a href="#newsletter">Newsletter</a></li>
 </ul>
 
-<h2 id="editing-templates">Editing templates<a href="#editing-templates">#</a></h2>
-<p>Start by duplicating one of the older issues. The base issue should be the latest one, unless you have a specific reason to use an older issue as the source.</p>
+<h2 id="crm">CRM<a href="#crm">#</a></h2>
+<p>Each inbound lead shall be added to Productive’s sales module (CRM), initially as a <code class="highlighter-rouge">Suspect</code>.</p>
 
-<ol>
-  <li>Update the fixed sections for both the Hungarian (<code class="highlighter-rouge">src/templates/hu.html</code>) and English (<code class="highlighter-rouge">src/templates/en.html</code>) language templates.
-    <ul>
-      <li>title meta tag</li>
-      <li>issue number and month</li>
-      <li>headline</li>
-      <li>intro image &amp; text</li>
-      <li>blog articles</li>
-      <li>events</li>
-      <li>case study</li>
-      <li>etc.</li>
-    </ul>
-  </li>
-  <li>Compile your templates using <code class="highlighter-rouge">npm start</code> from the issue directory.</li>
-</ol>
+<h3 id="qualification">Qualification<a href="#crm-qualification">#</a></h3>
+<p>Each <code class="highlighter-rouge">Suspect</code> should be qualified. A lead is <code class="highlighter-rouge">Qualified</code> if we are certain the project is of interest to us and is going ahead (and is financed). This can be found out by asking questions in the mould of:</p>
 
-<p>We always send a slightly different version of the newsletter for new subscribers (greenhorns). Edit the two template files (<code class="highlighter-rouge">src/templates/hu_greenhorn.html</code> &amp;&amp; <code class="highlighter-rouge">src/templates/hu_greenhorn.html</code>) by copying the content from the main templates. Change the <strong>intro image &amp; text</strong> to the one from <strong>the very first issue</strong>.</p>
+<ul>
+  <li>What sparked the idea of this project?</li>
+  <li>What steps have been taken until this point (problem framing, idea validation, competittor analysis, specification, etc.)?</li>
+  <li>What are the services they need help with (problem framing, validation, wireframing, UI design, etc.)?</li>
+  <li>Is this project definitely happening or is it contingent an anything (e.g. funding, investment, etc.)?</li>
+</ul>
 
-<h2 id="editing-newsletter">Editing newsletter<a href="#editing-newsletter">#</a></h2>
-<p>We use <a href="https://sendinblue.com" target="_blank">Sendinblue</a> to edit and schedule the newsletters themselves. On the Campaigns tab, duplicate one of the older issues. The base issue should be the latest one, unless you have a specific reason to use an older issue as the source.</p>
+<p>Some clients also request and NDA at this stage. We can provide them with one of our own templates (<a href="https://bit.ly/3EOT4Or" target="_blank">HU</a> or <a href="https://bit.ly/3dFNP7Q" target="_blank">EN</a>), but they are free to send their own template.</p>
 
-<ol>
-  <li>Update the campaign name, subject, preview text and HTML content.</li>
-  <li>Copy the template content from the HTML file (<code class="highlighter-rouge">dist/{lang}.html</code>) to the Sendinblue editor (click Edit the email content on the Design tab).</li>
-  <li>Sendinblue doesn’t process image URL’s, so you’ll need to manually re-map every image using the Picture icon on the Design tab.</li>
-  <li>Since Sendinblue doesn’t allow the mapping if images inlined into CSS, we had to add these to HTML. After mapping images (see step #4), remove these images from the source code.</li>
-  <li>Select the correct newsletter list from the Recipients tab.</li>
-</ol>
+<h3 id="pitched">Pitched<a href="#crm-pitched">#</a></h3>
+<p>The next step with a <code class="highlighter-rouge">Qualified</code> lead is to set up a meeting, so we can pitch our services and work methodology. To prepare for the meeting we should get every pre-existing resource from the client:</p>
 
-<h2 id="testing">Testing<a href="#testing">#</a></h2>
-<ol>
-  <li>Proofread. This email goes out hundreds of trusted, long-time partners.
-    <ul>
-      <li>Copy the text into Google Docs to spell-check</li>
-      <li>or use a service like <a href="https://www.grammarly.com" target="_blank">Grammarly</a>.</li>
-    </ul>
-  </li>
-  <li>Check that all the links point to the right place. It’s easy to miss them when copying!</li>
-  <li>Before scheduling the newsletter…
-    <ul>
-      <li>…make sure you send a test version of all 4 templates to yourself.</li>
-      <li>…make sure you perform a test on <a href="https://www.litmus.com" target="_blank">litmus.com</a>.</li>
-    </ul>
-  </li>
-</ol>
+<ul>
+  <li>Brief / RFP / RFQ;</li>
+  <li>Demo to current;</li>
+  <li>Software specification;</li>
+  <li>Wireframes, mockups, UI designs.</li>
+</ul>
 
-<h2 id="scheduling">Scheduling<a href="#scheduling">#</a></h2>
-<ol>
-  <li>Once the newsletter is set-up and tested, we need to schedule it.</li>
-  <li>Sendinblue has a daily sending limit, so make sure to spread the campaigns through several days.</li>
-  <li>We’re still testing to find the best day and time of week to send newsletters. As a rule of thumb, the best time to send is before 12 AM.</li>
-</ol>
+<p><strong>Always send a meeting memo afterwards.</strong></p>
+
+<h3 id="proposed">Proposed<a href="#crm-pitched">#</a></h3>
+<p>After the lead has been <code class="highlighter-rouge">Pitched</code>, a proposal or offer must be created. Please refer to the <a href="https://wiki.gofurther.digital/workflows/analyis-offer">Analysis &amp; Offer</a> section of this wiki.</p>
+
+<p>When sending out proposals, it’s always a good idea to pre-agree a follow-up meeting to discuss proposal. This prevents leads from ghosting.</p>
+
+<h3 id="wonlost">Won/Lost<a href="#crm-won-lost">#</a></h3>
+<p>If we get a hard yes on a project (basically, the project agreement has been signed) the lead should be marked as won.</p>
+
+<p>If we get a hard no on the project, the lead should be marked as lost, and a lost reason must be selected.</p>
+
+<h3 id="lead-timeline">Lead timeline<a href="#crm-timeline">#</a></h3>
+<p>Every conversation or interaction with the lead, email, message, phone, document sending must be registered in the CRM.</p>
+
+<h2 id="follow-up-strategy">Follow-up strategy<a href="#follow-up-strategy">#</a></h2>
+<p>Whatever status a lead is currently in, they must be always followed up at certain times, unless a specific time has been pre-agreed. A pre-agreed time is always the best way to go, but here’s the default follow-up strategy if needed:</p>
+
+<ul>
+  <li>By email, 3 days after last contact;</li>
+  <li>By email, 7 days after last contact;</li>
+  <li>By email, 15 days after last contact;</li>
+  <li>By email, every month until a hard yes/no;</li>
+  <li>By phone/message, always 1-2 days after email.</li>
+</ul>
+
+<h2 id="newsletter">Newsletter<a href="#newsletter">#</a></h2>
+<p>Each lead must be added to our newsletter list, but only after a resolution (either won or lost) or when going stale for over 1 month.</p>
 
 </div>
 

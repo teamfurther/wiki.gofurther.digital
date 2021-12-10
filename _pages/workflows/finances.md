@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Finances"
-permalink: 'internal-workflows/finances'
+permalink: 'workflows/finances'
 ---
 <small class="owner">Owner: Management</small> _Last revision: 12.11.2021_
 

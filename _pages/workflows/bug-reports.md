@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Bug report"
-permalink: 'project-workflow/bug-reports'
+title: "Bug reports"
+permalink: 'workflows/bug-reports'
 ---
 <small class="owner">Owner: PM</small> _Last revision: 12.11.2021_
 

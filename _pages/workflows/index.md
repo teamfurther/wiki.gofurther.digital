@@ -1,10 +1,14 @@
 ---
 layout: page
-title: "Internal Workflows"
-permalink: 'internal-workflows'
+title: "Workflows"
+permalink: 'workflows'
 ---
 The following pages describe the different business capabilities, roles and internal processes of Further.
 {: .is-text-large}
 
 The following are included:
-- finances
+- Pre-sales workflow
+- Outbound sales workflows
+- Project analysis and offer flow
+- Project management
+- Generating bug reports

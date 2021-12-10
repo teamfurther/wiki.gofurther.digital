@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Project Management"
-permalink: 'project-workflow/project-management'
+permalink: 'workflows/project-management'
 ---
 <small class="owner">Owner: PM</small> _Last revision: 12.11.2021_
 

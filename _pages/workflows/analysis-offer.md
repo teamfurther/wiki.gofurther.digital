@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Analysis & Offer"
-permalink: 'project-workflow/analysis-offer'
+permalink: 'workflows/analysis-offer'
 ---
 <small class="owner">Owner: BA</small> _Last revision: 12.11.2021_
 

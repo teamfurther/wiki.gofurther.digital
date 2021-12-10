@@ -191,14 +191,14 @@ In general, ```else``` should be avoided because it makes code less readable. In
 ```javascript
 // Good
 
-if (!conditionBA) {
-   // conditionB A failed
+if (!conditionA) {
+   // conditionA failed
    
    return;
 }
 
 if (!conditionB) {
-   // conditionB A passed, B failed
+   // conditionA passed, B failed
    
    return;
 }
