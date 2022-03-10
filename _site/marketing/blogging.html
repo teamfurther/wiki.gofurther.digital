@@ -99,7 +99,7 @@
         <div class="article">
     <h1 class="article__title">Blogging</h1>
 
-    <p><small class="owner">Owner: Marketing</small> <em>Last revision: 12.11.2021</em></p>
+    <p><small class="owner">Owner: Marketing</small> <em>Last revision: 10.03.2022</em></p>
 
 <p>The following page describes how to write and publish blog posts.</p>
 
@@ -111,7 +111,7 @@
 </ul>
 
 <h2 id="writing">Writing<a href="#writing">#</a></h2>
-<p>We recommend using Google Docs <strong>with spelling and grammar check enabled</strong> to write posts.</p>
+<p>We recommend using Grammarly or Google Docs <strong>with spelling and grammar check enabled</strong> to write posts.</p>
 
 <p>All blog posts should be written in Hungarian, and English. It’s up to the author to choose which language is the base language.</p>
 
@@ -254,28 +254,71 @@
 <p>Every blog post should be in it’s own feature branch. This branch can then be merged into the <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">master</code> branches.</p>
 
 <h2 id="promoting">Promoting<a href="#promoting">#</a></h2>
-<p>For promoting in social media (Facebook, LinkedIn, Twitter), please refer to the <a href="/marketing/social-media">social media marketing</a> page.</p>
+<p>A blog article has no value if nobody reads it. That’s why promoting it is one of the more important aspects of blogging.</p>
+
+<p>The most typical method of promoting is sharing in Facebook or LinkedIn groups, Reddit subreddits or Quora answers. Keep in mind, that our intention is not to spam, but to share educational content. Make sure to always accompany link with an excerpt of the article or an explanation on why you believe the article is relevant to group. E.g.:</p>
+
+<p><em>💡 We know that most people in this group already know a lot about validation learning and pivoting, but we still encounter lots of clients who come from a traditional industry, where big bang delivery is the norm. This article was meant to help them and we believe it may till be of use to many in this group.</em></p>
+
+<p>or</p>
+
+<p><em>Everyone knows about MVPs. But do you know how many different types there are? And how each can be used in a different stage of validation? 🚀</em></p>
+
+<h3 id="utm-parameters">UTM parameters</h3>
+<p>When sharing links, make sure to include UTM parameters so we can track which sources lead to the most macro conversions.</p>
+
+<p>Append the following to the URL:
+<code class="highlighter-rouge">?utm_source=[SOURCE]&amp;utm_medium=[MEDIUM]&amp;utm_campaign=promoting</code></p>
 
 <h3 id="facebook">Facebook<a href="#promoting-facebook">#</a></h3>
 <ul>
-  <li>Share blog article in thematically related groups.</li>
+  <li>Share blog article in thematically <a href="https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=0" target="_blank">related groups</a>, together with a short excerpt or explanation on why this content is relevant to group.</li>
+</ul>
+
+<p>UTM string: <code class="highlighter-rouge">?utm_source=facebook&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
+
+<ul>
   <li>Consider creating an ad campaign targeting relevant users or including blog article in a remarketing chain campaign.</li>
 </ul>
 
 <h3 id="hackernews">HackerNews<a href="#promoting-hackernews">#</a></h3>
-<p>Paste a link.</p>
+<p>Paste a <a href="https://news.ycombinator.com/submit" target="_blank">link</a>.</p>
+
+<p>UTM string: <code class="highlighter-rouge">?utm_source=hackernews&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
+
+<h3 id="linkedin">LinkedIn<a href="#promoting-linkedin">#</a></h3>
+<p>Share blog article in thematically <a href="https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=1953838922" target="_blank">related groups</a>, together with a short excerpt or explanation on why this content is relevant to group.</p>
+
+<p>UTM string: <code class="highlighter-rouge">?utm_source=linkedin&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
 
 <h3 id="medium">Medium<a href="#promoting-medium">#</a></h3>
-<p>An excerpt of the blog post should be published on our Medium channel, with a link to the full article.</p>
+<p>Blog posts should be also submitted to our Medium channel. Make sure to use the <a href="https://medium.com/p/import" target="_blank">import</a> function to preserve canonical link to original post.</p>
+
+<p><small class="note">You most probably won’t have to make any changes to the imported post, but you’ll have to set image captions as those are not imported by Medium.</small></p>
 
 <h3 id="quora">Quora<a href="#promoting-quora">#</a></h3>
-<p>Find a question for which your article can be an answer. Reply with some short answer and add that more detailed answer can be found in your article (+ link).</p>
+<p>Find questions for which your article can be an answer. Reply with a short answer and state that more detailed answer can be found in your article (+ link).</p>
+
+<p>UTM string: <code class="highlighter-rouge">?utm_source=quora&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
 
 <h3 id="reddit">Reddit<a href="#promoting-reddit">#</a></h3>
-<p>Paste a link in thematically related subreddits.</p>
+<p>Paste a link in thematically related <a href="https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=1408664968" target="_blank">subreddits</a>, together with a short excerpt or explanation on why this content is relevant to subreddit.</p>
+
+<p>UTM string: <code class="highlighter-rouge">?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
+
+<h3 id="relevant-networks">Relevant Networks<a href="#promoting-relevant-networks">#</a></h3>
+<p>We are also part of a number of close or private networks which give us a possibility to share content with fellow members.</p>
+
+<p><strong>Startup themed:</strong></p>
+<ul>
+  <li><a href="https://community.12ronnies.com" target="_blank">12 Ronnies</a>. UTM string: <code class="highlighter-rouge">?utm_source=12ronnies&amp;utm_medium=social&amp;utm_campaign=promoting</code></li>
+  <li><a href="https://www.entnest.com" target="_blank">Entnest</a>. UTM string: <code class="highlighter-rouge">?utm_source=entnest&amp;utm_medium=social&amp;utm_campaign=promoting</code></li>
+</ul>
 
 <h3 id="tumblr">Tumblr<a href="#promoting-tumblr">#</a></h3>
 <p>Post a link to your article. Remember to add some hashtags.</p>
+
+<p>UTM string: <code class="highlighter-rouge">?utm_source=tumblr&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
 
 </div>
 

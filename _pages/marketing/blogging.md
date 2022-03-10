@@ -3,7 +3,7 @@ layout: page
 title: "Blogging"
 permalink: 'marketing/blogging'
 ---
-<small class="owner">Owner: Marketing</small> _Last revision: 12.11.2021_
+<small class="owner">Owner: Marketing</small> _Last revision: 10.03.2022_
 
 
 The following page describes how to write and publish blog posts.
@@ -15,7 +15,7 @@ The following page describes how to write and publish blog posts.
 {: .toc}
 
 ## Writing[#](#writing)
-We recommend using Google Docs __with spelling and grammar check enabled__ to write posts.
+We recommend using Grammarly or Google Docs __with spelling and grammar check enabled__ to write posts.
 
 All blog posts should be written in Hungarian, and English. It's up to the author to choose which language is the base language.
 
@@ -109,23 +109,62 @@ Our website uses Gitflow as the continuous deployment strategy, meaning that eve
 Every blog post should be in it's own feature branch. This branch can then be merged into the `staging` and `master` branches.
 
 ## Promoting[#](#promoting)
-For promoting in social media (Facebook, LinkedIn, Twitter), please refer to the [social media marketing](/marketing/social-media) page.
+A blog article has no value if nobody reads it. That's why promoting it is one of the more important aspects of blogging.
+
+The most typical method of promoting is sharing in Facebook or LinkedIn groups, Reddit subreddits or Quora answers. Keep in mind, that our intention is not to spam, but to share educational content. Make sure to always accompany link with an excerpt of the article or an explanation on why you believe the article is relevant to group. E.g.:
+
+_💡 We know that most people in this group already know a lot about validation learning and pivoting, but we still encounter lots of clients who come from a traditional industry, where big bang delivery is the norm. This article was meant to help them and we believe it may till be of use to many in this group._
+
+or
+
+_Everyone knows about MVPs. But do you know how many different types there are? And how each can be used in a different stage of validation? 🚀_
+
+### UTM parameters
+When sharing links, make sure to include UTM parameters so we can track which sources lead to the most macro conversions.
+
+Append the following to the URL:
+```?utm_source=[SOURCE]&utm_medium=[MEDIUM]&utm_campaign=promoting```
 
 ### Facebook[#](#promoting-facebook)
-- Share blog article in thematically related groups.
+- Share blog article in thematically [related groups](https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=0){:target="_blank"}, together with a short excerpt or explanation on why this content is relevant to group.
+
+UTM string: ```?utm_source=facebook&utm_medium=social&utm_campaign=promoting```
+
 - Consider creating an ad campaign targeting relevant users or including blog article in a remarketing chain campaign. 
 
 ### HackerNews[#](#promoting-hackernews)
-Paste a link.
+Paste a [link](https://news.ycombinator.com/submit){:target="_blank"}.
+
+UTM string: ```?utm_source=hackernews&utm_medium=referral&utm_campaign=promoting```
+
+### LinkedIn[#](#promoting-linkedin)
+Share blog article in thematically [related groups](https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=1953838922){:target="_blank"}, together with a short excerpt or explanation on why this content is relevant to group.
+
+UTM string: ```?utm_source=linkedin&utm_medium=social&utm_campaign=promoting```
 
 ### Medium[#](#promoting-medium)
-An excerpt of the blog post should be published on our Medium channel, with a link to the full article.
+Blog posts should be also submitted to our Medium channel. Make sure to use the [import](https://medium.com/p/import){:target="_blank"} function to preserve canonical link to original post.
+
+<small class="note">You most probably won't have to make any changes to the imported post, but you'll have to set image captions as those are not imported by Medium.</small>
 
 ### Quora[#](#promoting-quora)
-Find a question for which your article can be an answer. Reply with some short answer and add that more detailed answer can be found in your article (+ link).
+Find questions for which your article can be an answer. Reply with a short answer and state that more detailed answer can be found in your article (+ link).
+
+UTM string: ```?utm_source=quora&utm_medium=referral&utm_campaign=promoting```
 
 ### Reddit[#](#promoting-reddit)
-Paste a link in thematically related subreddits.
+Paste a link in thematically related [subreddits](https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=1408664968){:target="_blank"}, together with a short excerpt or explanation on why this content is relevant to subreddit.
+
+UTM string: ```?utm_source=reddit&utm_medium=social&utm_campaign=promoting```
+
+### Relevant Networks[#](#promoting-relevant-networks)
+We are also part of a number of close or private networks which give us a possibility to share content with fellow members.
+
+__Startup themed:__
+- [12 Ronnies](https://community.12ronnies.com){:target="_blank"}. UTM string: ```?utm_source=12ronnies&utm_medium=social&utm_campaign=promoting```
+- [Entnest](https://www.entnest.com){:target="_blank"}. UTM string: ```?utm_source=entnest&utm_medium=social&utm_campaign=promoting```
 
 ### Tumblr[#](#promoting-tumblr)
 Post a link to your article. Remember to add some hashtags.
+
+UTM string: ```?utm_source=tumblr&utm_medium=referral&utm_campaign=promoting```
