@@ -3,7 +3,7 @@ layout: page
 title: "Server & CI/CD Set-up"
 permalink: 'coding/server-and-ci-cd-setup'
 ---
-<small class="owner">Owner: Project Lead</small> _Last revision: 12.11.2021_
+<small class="owner">Owner: Project Lead</small> _Last revision: 22.07.2022_
 
 A guide to installing LEMP Stack (Linux - nginx - MariaDB - PHP) on VPS and setting up a continuous deployment process from a Github repository.
 
@@ -46,11 +46,7 @@ Our preferred DNS provider is Cloudflare.
 - Go to ```{url}```
 
 ### SSL[#](#ssl)
-- ```$``` ```sudo apt-get install software-properties-common```
-- ```$``` ```sudo add-apt-repository universe```
-- ```$``` ```sudo add-apt-repository ppa:certbot/certbot```
-- ```$``` ```sudo apt-get update```
-- ```$``` ```sudo apt-get install certbot python3-certbot-nginx```
+- Install Certbot [&#x2197;](https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal){:target="_blank"}
 - ```$``` ```sudo certbot certonly --nginx```
 - Test automatic renewal with ```$``` ```sudo certbot renew --dry-run```
 - Update nginx configuration in ```/etc/nginx/sites-available/```
@@ -60,9 +56,9 @@ Our preferred DNS provider is Cloudflare.
 - ```$``` ```sudo apt-get install software-properties-common```
 - ```$``` ```sudo add-apt-repository ppa:ondrej/php```
 - ```$``` ```sudo apt-get update```
-- ```$``` ```sudo apt-get install php8.0-fpm php8.0-cli php8.0-common```
-- ```$``` ```sudo apt-get install php8.0-curl php8.0-gd php8.0-json php8.0-mbstring php8.0-mysql php8.0-xml```
-- Check status with ```$``` ```service php8.0-fpm status // check status```. If it's not running, then ```$``` ```sudo service php8.0-fpm start```
+- ```$``` ```sudo apt-get install php8.1-fpm php8.1-cli php8.1-common```
+- ```$``` ```sudo apt-get install php8.1-curl php8.1-gd php8.1-mbstring php8.1-mysql php8.1-xml```
+- Check status with ```$``` ```service php8.1-fpm status // check status```. If it's not running, then ```$``` ```sudo service php8.1-fpm start```
 
 ### MariaDB[#](#mariadb)
 - ```$``` ```sudo apt-get install mariadb-client mariadb-server```
@@ -117,6 +113,7 @@ Our preferred DNS provider is Cloudflare.
 - ```$``` ```sudo npm install --unsafe-perm```
 
 ### Jenkins[#](#jenkins)
+- Create script file on __CI/CD server__ in ```/var/lib/jenkins/scripts```
 - Set up Jenkins pipeline
     - Clone an existing project
     - Change repo
@@ -128,20 +125,26 @@ Our preferred DNS provider is Cloudflare.
     </a>
 </div>
 
-- Create script file on __CI/CD server__ in ```/var/lib/jenkins/scripts```
-- Make sure the __CI/CD server__ ```jenkins``` user has SSH access to __remote server__
 - Add deploy keys to GitHub repo (```Settings / Deploy keys```) for user that handles pull on __remote server__ (usually ```root```, as commands run with ```sudo```)
 - Create push webhook on GitHub repo (```Settings / Webhooks```): ```https://ci.gofurther.digital/github-webhook/```
-- Create ```jenkins``` user on __remote server__ and give ```sudo``` rights
-    - ```$``` ```sudo adduser jenkins```
-    - ```$``` ```sudo adduser jenkins sudo```
-- Add ```jenkins``` public key to ```~/.ssh/authorized_keys``` on __remote server__
-- Add line ```jenkins ALL=(ALL) NOPASSWD: ALL``` to ```/etc/sudoers``` on __remote server__
+- Make sure the __CI/CD server__ ```jenkins``` user has SSH access to __remote server__
+    - Create ```jenkins``` user on __remote server__ and give ```sudo``` rights
+    - Add ```jenkins``` public key to ```~/.ssh/authorized_keys``` on __remote server__
+    - Add line ```jenkins ALL=(ALL) NOPASSWD: ALL``` to ```/etc/sudoers``` on __remote server__ 
+    - Add __remote server__ to ```~/.ssh/known_hosts```
 - Clone GIT repo into ```/var/build``` (and ```/var/www``` if you haven't done o yet)
 
 ### Backups[#](#backups)
 All the following step shall be done on the __CI/CD server__:
 
-- ```$``` ```mkdir /var/remote_backups/{appdomain.com}```
-- ```$``` ```chown jenkins:jenkins /var/remote_backups/{appdomain.com}```
-- Edit ```/var/lib/jenkins/scripts/backups.sh``` and add a new block for the project by copying and adapting an existing project
+- Create script file on __CI/CD server__ in ```/var/lib/jenkins/scripts/backups```
+- Set up Jenkins pipeline
+    - Clone an existing project
+    - Change script file path
+- Make sure the __CI/CD server__ ```jenkins``` user has SSH access to __remote server__
+    - Create ```jenkins``` user on __remote server__
+    - Add ```jenkins``` public key to ```~/.ssh/authorized_keys``` on __remote server__
+    - Add __remote server__ host key to ```~/.ssh/known_hosts```
+- Make sure the __remote server__ ```jenkins``` user has rsync access to __backup server__
+    - Add ```jenkins``` public key to ```/.ssh/authorized_keys``` on __backup server__ 
+    - Add __backup server__ host key to ```~/.ssh/known_hosts```
