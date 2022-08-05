@@ -127,25 +127,25 @@
 <p>Only add a description when it provides more context than the method signature itself. Use full sentences for descriptions, including a period at the end.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">class</span> <span class="nc">Url</span>
+<span class="kd">class</span> <span class="nc">Url</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromString</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$url</span><span class="p">)</span><span class="o">:</span> <span class="nx">Url</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">fromString</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$url</span><span class="p">):</span> <span class="kt">Url</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad: The description is redundant, and the method is fully type-hinted.</span>
-<span class="k">class</span> <span class="nc">Url</span>
+<span class="kd">class</span> <span class="nc">Url</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Create a url from a string.
      *
      * @param string $url
      *
      * @return \Further\Url\Url
      */</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromString</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$url</span><span class="p">)</span><span class="o">:</span> <span class="nx">Url</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">fromString</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$url</span><span class="p">):</span> <span class="kt">Url</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
@@ -155,14 +155,14 @@
 <p>Always use fully qualified class names in Docblocks.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="sd">/**
+<span class="cd">/**
  * @param string $url
  *
  * @return \Further\Url\Url
  */</span>
 
 <span class="c1">// Bad</span>
-<span class="sd">/**
+<span class="cd">/**
  * @param string $foo
  *
  * @return Url
@@ -172,17 +172,17 @@
 <p>Docblocks for class properties are required, as there’s currently no other way to to typehint these.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">class</span> <span class="nc">Foo</span>
+<span class="kd">class</span> <span class="nc">Foo</span>
 <span class="p">{</span>
-    <span class="sd">/** @var \Further\Url\Url */</span>
+    <span class="cd">/** @var \Further\Url\Url */</span>
     <span class="k">protected</span> <span class="nv">$url</span><span class="p">;</span>
 
-    <span class="sd">/** @var string */</span>
+    <span class="cd">/** @var string */</span>
     <span class="k">protected</span> <span class="nv">$name</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
-<span class="k">class</span> <span class="nc">Foo</span>
+<span class="kd">class</span> <span class="nc">Foo</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$url</span><span class="p">;</span>
     <span class="k">protected</span> <span class="nv">$name</span><span class="p">;</span>
@@ -192,11 +192,11 @@
 <p>When possible, docblocks should be written on one line.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="sd">/** @var string */</span>
-<span class="sd">/** @test */</span>
+<span class="cd">/** @var string */</span>
+<span class="cd">/** @test */</span>
 
 <span class="c1">// Bad</span>
-<span class="sd">/**
+<span class="cd">/**
  * @test
  */</span>
 </code></pre></div></div>
@@ -204,10 +204,10 @@
 <p>If a variable has multiple types, the most common occurring type should be first.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="sd">/** @var \Further\Goo\Bar|null */</span>
+<span class="cd">/** @var \Further\Goo\Bar|null */</span>
 
 <span class="c1">// Bad</span>
-<span class="sd">/** @var null|\Further\Goo\Bar */</span>
+<span class="cd">/** @var null|\Further\Goo\Bar */</span>
 </code></pre></div></div>
 
 <h3 id="comments">Comments<a href="#comments">#</a></h3>
@@ -226,15 +226,15 @@
 <p>Statements should have to breathe. In general always add blank lines between statements, unless they’re a sequence of single-line equivalent operations. This isn’t something enforceable, it’s a matter of what looks best in its context.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">getPage</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">getPage</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pages</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">,</span> <span class="nv">$url</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+    <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">pages</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">where</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">,</span> <span class="nv">$url</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">first</span><span class="p">();</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$page</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nc">Auth</span><span class="o">::</span><span class="nf">check</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
 
@@ -242,13 +242,13 @@
 <span class="p">}</span>
 
 <span class="c1">// Bad: Everything's cramped together.</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">getPage</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">getPage</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pages</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">,</span> <span class="nv">$url</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+    <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">pages</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">where</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">,</span> <span class="nv">$url</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">first</span><span class="p">();</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$page</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="p">[</span><span class="s1">'private'</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nc">Auth</span><span class="o">::</span><span class="nf">check</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$page</span><span class="p">;</span>
@@ -256,15 +256,15 @@
 </code></pre></div></div>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good: A sequence of single-line equivalent operations.</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">up</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="nx">Schema</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
-        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">'name'</span><span class="p">);</span>
-        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">'email'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">unique</span><span class="p">();</span>
-        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">'password'</span><span class="p">);</span>
-        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">rememberToken</span><span class="p">();</span>
-        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
+    <span class="nc">Schema</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">increments</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
+        <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">string</span><span class="p">(</span><span class="s1">'name'</span><span class="p">);</span>
+        <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">string</span><span class="p">(</span><span class="s1">'email'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">unique</span><span class="p">();</span>
+        <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">string</span><span class="p">(</span><span class="s1">'password'</span><span class="p">);</span>
+        <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">rememberToken</span><span class="p">();</span>
+        <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">timestamps</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -273,13 +273,13 @@
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">foo</span> <span class="o">=</span> <span class="nv">$foo</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">foo</span> <span class="o">=</span> <span class="nv">$foo</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">foo</span> <span class="o">=</span> <span class="nv">$foo</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">foo</span> <span class="o">=</span> <span class="nv">$foo</span><span class="p">;</span>
 
 <span class="p">}</span>
 </code></pre></div></div>
@@ -289,11 +289,11 @@
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'someValue'</span><span class="p">,</span> <span class="s1">'someOtherValue'</span><span class="p">];</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">someValue</span><span class="p">;</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">someValue</span><span class="p">;</span>
 
 <span class="c1">// Bad</span>
 <span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'some_value'</span><span class="p">,</span> <span class="s1">'some_other_value'</span><span class="p">];</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">some_value</span><span class="p">;</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">some_value</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Exceptions are configuration variables and language string keys, which should be snake_case.</p>
@@ -317,7 +317,7 @@
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$condition</span><span class="p">)</span> <span class="p">{</span>
-   <span class="o">...</span>
+   <span class="mf">...</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
@@ -328,9 +328,9 @@
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nv">$condition</span><span class="p">)</span> <span class="p">{</span>
     <span class="cm">/* What happens in if */</span>
-    <span class="o">...</span>
+    <span class="mf">...</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="o">...</span>
+    <span class="mf">...</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -338,15 +338,15 @@
 <p>Every portion of a ternary expression should be on its own line unless it’s a really short expression.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$object</span> <span class="nx">instanceof</span> <span class="nx">Model</span>
-    <span class="o">?</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">name</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$object</span> <span class="k">instanceof</span> <span class="nc">Model</span>
+    <span class="o">?</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="n">name</span>
     <span class="o">:</span> <span class="s1">'A default value'</span><span class="p">;</span>
 
 <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$isFoo</span> <span class="o">?</span> <span class="s1">'foo'</span> <span class="o">:</span> <span class="s1">'bar'</span><span class="p">;</span>
 
 <span class="c1">// Bad</span>
-<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$object</span> <span class="nx">instanceof</span> <span class="nx">Model</span> <span class="o">?</span>
-    <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">:</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$object</span> <span class="k">instanceof</span> <span class="nc">Model</span> <span class="o">?</span>
+    <span class="nv">$object</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">:</span>
    <span class="s1">'A default value'</span><span class="p">;</span>
 </code></pre></div></div>
 
@@ -359,7 +359,7 @@
 <span class="c1">// Bad</span>
 <span class="nv">$username</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">?:</span> <span class="s1">'nobody'</span><span class="p">;</span>
 
-<span class="nv">$username</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">:</span> <span class="s1">'nobody'</span><span class="p">;</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="k">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">:</span> <span class="s1">'nobody'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h3 id="happy-path">Happy Path<a href="#happy-path">#</a></h3>
@@ -368,7 +368,7 @@
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$goodCondition</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">;</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// do work</span>
@@ -380,7 +380,7 @@
     <span class="c1">// do work</span>
 <span class="p">}</span>
 
-<span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">;</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h3 id="avoid-else">Avoid Else<a href="#avoid-else">#</a></h3>
@@ -442,47 +442,47 @@
 <p>All properties and methods in a class should be ordered alphabetically. Constants should preceed variables. The constructor should always be the first method.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">class</span> <span class="nc">Person</span>
+<span class="kd">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="nx">const</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">const</span> <span class="nv">$id</span><span class="p">;</span>
 
     <span class="k">private</span> <span class="nv">$address</span><span class="p">;</span>
     <span class="k">private</span> <span class="nv">$age</span><span class="p">;</span>
     <span class="k">private</span> <span class="nv">$name</span><span class="p">;</span>
     <span class="k">private</span> <span class="nv">$title</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
     
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">changeAddress</span><span class="p">(</span><span class="nv">$newAddress</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">changeAddress</span><span class="p">(</span><span class="nv">$newAddress</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ...    </span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">incrementAge</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">incrementAge</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...    </span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
-<span class="k">class</span> <span class="nc">Person</span>
+<span class="kd">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$name</span><span class="p">;</span>
     <span class="k">private</span> <span class="nv">$title</span><span class="p">;</span>
     <span class="k">private</span> <span class="nv">$address</span><span class="p">;</span>
     <span class="k">private</span> <span class="nv">$age</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="nx">const</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">const</span> <span class="nv">$id</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">incrementAge</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">incrementAge</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...    </span>
     <span class="p">}</span>
     
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">changeAddress</span><span class="p">(</span><span class="nv">$newAddress</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">changeAddress</span><span class="p">(</span><span class="nv">$newAddress</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ...    </span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -492,19 +492,19 @@
 <p>Traits should always come first in the class definition.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">class</span> <span class="nc">Person</span>
+<span class="kd">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
-    <span class="k">use</span> <span class="nx">IsMammal</span><span class="p">;</span>
+    <span class="kn">use</span> <span class="nc">IsMammal</span><span class="p">;</span>
     
     <span class="c1">// ...</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
-<span class="k">class</span> <span class="nc">Person</span>
+<span class="kd">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
 
-    <span class="k">use</span> <span class="nx">IsMammal</span><span class="p">;</span>
+    <span class="kn">use</span> <span class="nc">IsMammal</span><span class="p">;</span>
     
     <span class="c1">// ...</span>
 <span class="p">}</span>

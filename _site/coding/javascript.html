@@ -175,60 +175,60 @@
 <p>Arrays that contain an object or another array mustn’t have a space between the brackets. Multiline arrays require trailing commas.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">];</span>
 
 <span class="c1">// Bad, no extra spaces required</span>
-<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span> <span class="p">];</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span> <span class="p">];</span>
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'Adrian'</span><span class="p">,</span>
-    <span class="s1">'Sebastian'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Adrian</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">];</span>
 
 <span class="c1">// Bad, no trailing comma.</span>
 <span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'Adrian'</span><span class="p">,</span>
-    <span class="s1">'Sebastian'</span>
+    <span class="dl">'</span><span class="s1">Adrian</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span>
 <span class="p">];</span>
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]];</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">]];</span>
 
 <span class="c1">// Bad, no extra spaces if the array contains arrays or objects.</span>
-<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]</span> <span class="p">];</span>
+<span class="kd">const</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">]</span> <span class="p">];</span>
 </code></pre></div></div>
 
 <h3 id="objects">Objects<a href="#objects">#</a></h3>
 <p>Objects require spaces between their braces. Multiline objects require trailing commas.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span> <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span><span class="p">,</span> <span class="na">job</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Developer</span><span class="dl">'</span> <span class="p">};</span>
 
 <span class="c1">// Bad, no spaces between parentheses.</span>
-<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span> <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span><span class="p">};</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span><span class="p">,</span> <span class="na">job</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Developer</span><span class="dl">'</span><span class="p">};</span>
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span>
-    <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">job</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Developer</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">};</span>
 
 <span class="c1">// Bad, no trailing comma.</span>
 <span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span><span class="p">,</span>
-    <span class="na">job</span><span class="p">:</span> <span class="s1">'Developer'</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">job</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Developer</span><span class="dl">'</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="kd">const</span> <span class="nx">people</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Willem'</span> <span class="p">}];</span>
+<span class="kd">const</span> <span class="nx">people</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Willem</span><span class="dl">'</span> <span class="p">}];</span>
 
 <span class="c1">// Bad, no extra spaces if the array contains arrays or objects.</span>
-<span class="kd">const</span> <span class="nx">people</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Sebastian'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Willem'</span> <span class="p">}</span> <span class="p">];</span>
+<span class="kd">const</span> <span class="nx">people</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sebastian</span><span class="dl">'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Willem</span><span class="dl">'</span> <span class="p">}</span> <span class="p">];</span>
 </code></pre></div></div>
 
 <h2 id="line-length">Line Length<a href="#line-length">#</a></h2>
@@ -293,15 +293,15 @@
 <p>In general, separate <code class="highlighter-rouge">if</code> statements should be preferred over a compound condition. This makes debugging code easier.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionA</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">conditionA</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionB</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">conditionB</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">conditionC</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">conditionC</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -309,7 +309,7 @@
 </code></pre></div></div>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// bad</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">conditionA</span> <span class="o">&amp;&amp;</span> <span class="nx">conditionB</span> <span class="o">&amp;&amp;</span> <span class="nx">conditionC</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">conditionA</span> <span class="o">&amp;&amp;</span> <span class="n">conditionB</span> <span class="o">&amp;&amp;</span> <span class="n">conditionC</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// do stuff</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -318,14 +318,14 @@
 <p>Use single quotes if possible. If you need multiline strings or interpolation, use template strings.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">company</span> <span class="o">=</span> <span class="s1">'Further'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">company</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Further</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// Bad, single quotes can be used here.</span>
-<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s2">"vue"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">company</span> <span class="o">=</span> <span class="s2">"Further"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">company</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Further</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="c1">// Bad, single quotes can be used here.</span>
 <span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s2">`vue`</span><span class="p">;</span>
@@ -340,7 +340,7 @@
 
 <span class="c1">// Bad, template strings are preferred.</span>
 <span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s1">'Hello '</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s1">'!'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">!</span><span class="dl">'</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -364,16 +364,16 @@
 <h3 id="assigning">Assigning<a href="#assigning-variables">#</a></h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="kd">const</span> <span class="nx">willNotChange</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">willChange</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">willNotChange</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">willChange</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">change</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">willChange</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad</span>
-<span class="kd">var</span> <span class="nx">willNotChange</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">willChange</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">willNotChange</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">willChange</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">change</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">willChange</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
@@ -384,23 +384,23 @@
 <p>Variable names should always be camelCase.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="kd">const</span> <span class="nx">myConstant</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">myConstant</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// Bad</span>
-<span class="kd">const</span> <span class="nx">my_constant</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">MyOtherConstant</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">my_constant</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">MyOtherConstant</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Variable names generally shouldn’t be abbreviated.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="kd">function</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">localStorage</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// Bad, it's hard to reason about abbreviations in blocks as they grow.</span>
 <span class="kd">function</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">localStorage</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nx">u</span><span class="p">);</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="nx">u</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -422,7 +422,7 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="kd">const</span> <span class="nx">one</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">another</span> <span class="o">=</span> <span class="s2">"1"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">another</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">one</span> <span class="o">===</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">another</span><span class="p">))</span> <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -430,7 +430,7 @@
 
 <span class="c1">// Bad</span>
 <span class="kd">const</span> <span class="nx">one</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">another</span> <span class="o">=</span> <span class="s2">"1"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">another</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">one</span> <span class="o">==</span> <span class="nx">another</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -516,7 +516,7 @@
 
 <p>Anonymous functions should use arrow functions.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
 </code></pre></div></div>
 
 <p>Object methods must use the shorthand method syntax.</p>
@@ -544,10 +544,10 @@
 <p>An arrow function’s parameter brackets must not be omitted if the function is a one-liner.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
-<span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
 
 <span class="c1">// Bad</span>
-<span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
 </code></pre></div></div>
 
 <h2 id="code-clean-up">Code Clean-up<a href="#code-clean-up">#</a></h2>

@@ -111,12 +111,12 @@
 <p>It’s generally a good idea to separate frontend logic from the HTTP service. This allows us to easily switch the underlying HTTP client, e.g. from <code class="highlighter-rouge">axios</code> to <code class="highlighter-rouge">vue-resource</code>.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// services/HttpService.ts</span>
-<span class="k">import</span> <span class="nx">axios</span><span class="p">,</span> <span class="p">{</span> <span class="nx">AxiosResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'axios'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">axios</span><span class="p">,</span> <span class="p">{</span> <span class="nx">AxiosResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">HttpService</span> <span class="p">{</span>
-    <span class="kr">private</span> <span class="kr">static</span> <span class="nx">instance</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">static</span> <span class="nx">instance</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
-    <span class="kr">public</span> <span class="kr">static</span> <span class="nx">getInstance</span><span class="p">():</span> <span class="nx">HttpService</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">getInstance</span><span class="p">():</span> <span class="nx">HttpService</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">instance</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HttpService</span><span class="p">();</span>
         <span class="p">}</span>
@@ -124,9 +124,9 @@
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kr">public</span> <span class="kd">get</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/api/'</span> <span class="o">+</span> <span class="nx">endpoint</span><span class="p">)</span>
+    <span class="k">public</span> <span class="kd">get</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">endpoint</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
                 <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
                     <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
@@ -137,15 +137,15 @@
 <span class="p">}</span>
 
 <span class="c1">// repositories/Repository.ts</span>
-<span class="k">import</span> <span class="nx">HttpService</span> <span class="k">from</span> <span class="s1">'../services/HttpService'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">ExampleType</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"../types/ExampleType"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">HttpService</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../services/HttpService</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ExampleType</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../types/ExampleType</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">ExampleRepository</span> <span class="p">{</span>
-    <span class="kr">private</span> <span class="na">httpService</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">=</span> <span class="nx">HttpService</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+    <span class="k">private</span> <span class="nx">httpService</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">=</span> <span class="nx">HttpService</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
     
-    <span class="kr">public</span> <span class="nx">getExample</span><span class="p">(</span><span class="na">project</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="nx">getExample</span><span class="p">(</span><span class="nx">project</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'example'</span><span class="p">)</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">example</span><span class="dl">'</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
                     <span class="p">...</span>
                 <span class="p">})</span>
@@ -160,15 +160,15 @@
 <h2 id="repositories">Repositories<a href="#repositories">#</a></h2>
 <p>Use the repository pattern to abstract any interaction with an external API or database.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">HttpService</span> <span class="k">from</span> <span class="s1">'../services/HttpService'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">ExampleType</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"../types/ExampleType"</span><span class="p">;</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">HttpService</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../services/HttpService</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ExampleType</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../types/ExampleType</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">ExampleRepository</span> <span class="p">{</span>
-    <span class="kr">private</span> <span class="nx">httpService</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">=</span> <span class="nx">HttpService</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+    <span class="k">private</span> <span class="nx">httpService</span><span class="p">:</span> <span class="nx">HttpService</span> <span class="o">=</span> <span class="nx">HttpService</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
     
-    <span class="kr">public</span> <span class="nx">getExample</span><span class="p">(</span><span class="nx">project</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="nx">getExample</span><span class="p">(</span><span class="nx">project</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'example/1'</span><span class="p">)</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">example/1</span><span class="dl">'</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
                     <span class="p">...</span>
                 <span class="p">})</span>
@@ -178,9 +178,9 @@
         <span class="p">}</span>
     <span class="p">}</span>
     
-    <span class="kr">public</span> <span class="nx">deleteExample</span><span class="p">(</span><span class="na">project</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="nx">deleteExample</span><span class="p">(</span><span class="nx">project</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ExampleType</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">'example/1'</span><span class="p">)</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">httpService</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">example/1</span><span class="dl">'</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
                     <span class="p">...</span>
                 <span class="p">})</span>
@@ -195,11 +195,11 @@
 <h2 id="types">Types<a href="#types">#</a></h2>
 <p>Use types wherever possible to improve code structure and allow better type hinting. Types are preferred to interfaces or model classes.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">OtherType</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./OtherType'</span><span class="p">;</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">OtherType</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./OtherType</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="nx">type</span> <span class="nx">ExampleType</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
-    <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">ExampleType</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
     <span class="nl">others</span><span class="p">:</span> <span class="nx">OtherType</span><span class="p">[];</span>
 <span class="p">}</span>
 
