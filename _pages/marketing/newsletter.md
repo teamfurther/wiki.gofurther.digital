@@ -3,7 +3,7 @@ layout: page
 title: "Newsletter"
 permalink: 'marketing/newsletter'
 ---
-<small class="owner">Owner: Marketing</small> _Last revision: 12.11.2021_
+<small class="owner">Owner: Marketing</small> _Last revision: 29.08.2022_
 
 
 The following page describes how to write and publish our monthly newsletter digest.
@@ -24,6 +24,7 @@ Start by duplicating one of the older issues. The base issue should be the lates
     - intro image & text
     - blog articles
     - events
+    - meet the team
     - case study
     - etc.
 2. Compile your templates using ```npm start``` from the issue directory.
