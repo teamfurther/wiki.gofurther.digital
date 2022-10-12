@@ -3,7 +3,7 @@ layout: page
 title: "Laravel Best Practices"
 permalink: 'coding/laravel-best-practices'
 ---
-<small class="owner">Owner: Development</small> _Last revision: 12.11.2021_
+<small class="owner">Owner: Development</small> _Last revision: 12.10.2022_
 
 - [Naming Conventions](#naming-conventions)
 - [Commands](#commands)
@@ -45,7 +45,7 @@ return [
 ];
 ```
 
-Avoid using the ```env``` helper outside of configuration files. Create a configuration value from the ```env``` variable like above.
+Avoid using the ```env``` helper outside of configuration files. Create a configuration value from the ```env``` variable like above. For more info check the [link](https://andy-carter.com/blog/env-gotcha-in-laravel-when-caching-configuration).
 
 ### Controllers[#](#naming-controllers) {#naming-controllers}
 Generally controllers are named by the plural form of their corresponding resource and a Controller suffix. This is to avoid naming collisions with models that are often equally named.
