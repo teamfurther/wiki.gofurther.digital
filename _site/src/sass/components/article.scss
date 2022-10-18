@@ -19,6 +19,11 @@
         font-family: monospace;
         font-weight: 700;
         padding: 0.25em 0.5em 0.25em;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+        }
     }
 
     .owner {

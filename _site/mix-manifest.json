@@ -1,4 +1,25 @@
 {
     "/dist/js/site.js": "/dist/js/site.js",
-    "/dist/css/site.css": "/dist/css/site.css"
+    "/dist/css/site.css": "/dist/css/site.css",
+    "/dist/img/favicon.png": "/dist/img/favicon.png",
+    "/dist/img/logo.svg": "/dist/img/logo.svg",
+    "/dist/img/sidebar-bg.jpg": "/dist/img/sidebar-bg.jpg",
+    "/dist/media/blogging-editing-detail.png": "/dist/media/blogging-editing-detail.png",
+    "/dist/media/blogging-editing-index.png": "/dist/media/blogging-editing-index.png",
+    "/dist/media/ci-cd-setup-jenkins.png": "/dist/media/ci-cd-setup-jenkins.png",
+    "/dist/media/social-media-marketing-ptfb1.png": "/dist/media/social-media-marketing-ptfb1.png",
+    "/dist/media/social-media-marketing-ptfb2_1_1a.png": "/dist/media/social-media-marketing-ptfb2_1_1a.png",
+    "/dist/media/social-media-marketing-ptfb2_1_1b.png": "/dist/media/social-media-marketing-ptfb2_1_1b.png",
+    "/dist/media/social-media-marketing-ptfb2_1_2a.png": "/dist/media/social-media-marketing-ptfb2_1_2a.png",
+    "/dist/media/social-media-marketing-ptfb2_1_2b.png": "/dist/media/social-media-marketing-ptfb2_1_2b.png",
+    "/dist/media/social-media-marketing-ptfb2_2.png": "/dist/media/social-media-marketing-ptfb2_2.png",
+    "/dist/media/social-media-marketing-ptfb3a.png": "/dist/media/social-media-marketing-ptfb3a.png",
+    "/dist/media/social-media-marketing-ptfb3b.png": "/dist/media/social-media-marketing-ptfb3b.png",
+    "/dist/media/social-media-marketing-topics-friday.png": "/dist/media/social-media-marketing-topics-friday.png",
+    "/dist/media/social-media-marketing-topics-monday.png": "/dist/media/social-media-marketing-topics-monday.png",
+    "/dist/media/social-media-marketing-topics-sunday.png": "/dist/media/social-media-marketing-topics-sunday.png",
+    "/dist/media/social-media-marketing-topics-tuesday1.png": "/dist/media/social-media-marketing-topics-tuesday1.png",
+    "/dist/media/social-media-marketing-topics-tuesday2.png": "/dist/media/social-media-marketing-topics-tuesday2.png",
+    "/dist/media/social-media-marketing-topics-tuesday3.png": "/dist/media/social-media-marketing-topics-tuesday3.png",
+    "/dist/media/social-media-marketing-topics-tuesday4.png": "/dist/media/social-media-marketing-topics-tuesday4.png"
 }

@@ -459,7 +459,6 @@ table th {
   .is-pulled-left-tablet {
     float: left;
   }
-
   .is-pulled-right-tablet {
     float: right;
   }
@@ -565,6 +564,10 @@ table th {
   font-weight: 700;
   padding: 0.25em 0.5em 0.25em;
 }
+.article .note a {
+  color: #ffffff;
+  text-decoration: underline;
+}
 .article .owner {
   background-color: #f7086e;
   -webkit-box-decoration-break: clone;
@@ -656,7 +659,7 @@ table th {
 }
 .article ul li:before {
   color: #c4c3c9;
-  content: "\2022";
+  content: "•";
   left: -1em;
   position: absolute;
   top: 1px;
@@ -683,7 +686,7 @@ table th {
 }
 .back-to-top:before {
   color: #ffffff;
-  content: "\203A";
+  content: "›";
   display: block;
   font-family: "Kanit", Helvetica, sans-serif;
   font-size: 38px;
@@ -994,7 +997,7 @@ table th {
   padding: 2px 5px;
 }
 .nav__subnav > a:hover:before {
-  content: "\203A";
+  content: "›";
   font-size: 16px;
   line-height: 14px;
   margin-right: 3px;
