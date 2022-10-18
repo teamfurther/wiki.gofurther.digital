@@ -114,7 +114,7 @@
 <p>Code style must follow <a href="http://www.php-fig.org/psr/psr-1/">PSR-1</a> and <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>. In some cases we might introduce even stricter rules. Generally speaking, everything string-like that’s not public-facing should use camelCase.</p>
 
 <h3 id="php-tags">PHP Tags<a href="#php-tags">#</a></h3>
-<p>PHP code MUST use the long <code class="highlighter-rouge"><span class="cp">&lt;?php</span> <span class="cp">?&gt;</span></code> tags; it MUST NOT use the other tag variations, including the short echo <code class="highlighter-rouge"><span class="cp">&lt;?=</span> <span class="cp">?&gt;</span></code> tags.</p>
+<p>PHP code MUST use the long <code class="language-plaintext highlighter-rouge">&lt;?php ?&gt;</code> tags; it MUST NOT use the other tag variations, including the short echo <code class="language-plaintext highlighter-rouge">&lt;?= ?&gt;</code> tags.</p>
 
 <h3 id="use-declarations">Use Declarations<a href="#use-declarations">#</a></h3>
 <p>Unutilised use declarations should not be left in place.</p>
@@ -324,7 +324,7 @@
 <span class="k">if</span> <span class="p">(</span><span class="nv">$condition</span><span class="p">)</span> <span class="err">…</span>
 </code></pre></div></div>
 
-<p>Since according to <code class="highlighter-rouge">PSR-2</code>, the opening brace should be separated from the <code class="highlighter-rouge">if()</code> condition by a space character, and the <code class="highlighter-rouge">else</code> should be on the same line and next to the preceding closing brace, comments for the entire <code class="highlighter-rouge">if</code> or <code class="highlighter-rouge">else</code> statement should be at the top of the body and formatted as a block comment, like so:</p>
+<p>Since according to <code class="language-plaintext highlighter-rouge">PSR-2</code>, the opening brace should be separated from the <code class="language-plaintext highlighter-rouge">if()</code> condition by a space character, and the <code class="language-plaintext highlighter-rouge">else</code> should be on the same line and next to the preceding closing brace, comments for the entire <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">else</code> statement should be at the top of the body and formatted as a block comment, like so:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nv">$condition</span><span class="p">)</span> <span class="p">{</span>
     <span class="cm">/* What happens in if */</span>
@@ -384,7 +384,7 @@
 </code></pre></div></div>
 
 <h3 id="avoid-else">Avoid Else<a href="#avoid-else">#</a></h3>
-<p>In general, <code class="highlighter-rouge">else</code> should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.</p>
+<p>In general, <code class="language-plaintext highlighter-rouge">else</code> should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 
@@ -404,7 +404,7 @@
 </code></pre></div></div>
 
 <h3 id="compound-ifs">Compound Ifs<a href="#compound-ifs">#</a></h3>
-<p>In general, separate <code class="highlighter-rouge">if</code> statements should be preferred over a compound condition. This makes debugging code easier.</p>
+<p>In general, separate <code class="language-plaintext highlighter-rouge">if</code> statements should be preferred over a compound condition. This makes debugging code easier.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conditionA</span><span class="p">)</span> <span class="p">{</span>
@@ -432,8 +432,8 @@
 <p>Always use spaces before and after infix operators in expressions.</p>
 
 <ul>
-  <li>Bad: <code class="highlighter-rouge">$i&lt;10</code>, <code class="highlighter-rouge">$a+$b</code>, <code class="highlighter-rouge">$a!=$b</code>, <code class="highlighter-rouge">$a=[]</code>, <code class="highlighter-rouge">$key=&gt;$value</code></li>
-  <li>Good: <code class="highlighter-rouge">$i &lt; 10</code>, <code class="highlighter-rouge">$a + $b</code>, <code class="highlighter-rouge">$a != $b</code>, <code class="highlighter-rouge">$a = []</code>, <code class="highlighter-rouge">$key =&gt; $value</code></li>
+  <li>Bad: <code class="language-plaintext highlighter-rouge">$i&lt;10</code>, <code class="language-plaintext highlighter-rouge">$a+$b</code>, <code class="language-plaintext highlighter-rouge">$a!=$b</code>, <code class="language-plaintext highlighter-rouge">$a=[]</code>, <code class="language-plaintext highlighter-rouge">$key=&gt;$value</code></li>
+  <li>Good: <code class="language-plaintext highlighter-rouge">$i &lt; 10</code>, <code class="language-plaintext highlighter-rouge">$a + $b</code>, <code class="language-plaintext highlighter-rouge">$a != $b</code>, <code class="language-plaintext highlighter-rouge">$a = []</code>, <code class="language-plaintext highlighter-rouge">$key =&gt; $value</code></li>
 </ul>
 
 <h2 id="organizing-classes">Organizing Classes<a href="#organizing-classes">#</a></h2>
@@ -511,7 +511,7 @@
 </code></pre></div></div>
 
 <h2 id="code-clean-up">Code Clean-up<a href="#code-clean-up">#</a></h2>
-<p>No debugging code can be left in place, i.e. <code class="highlighter-rouge">dd()</code>, <code class="highlighter-rouge">var_dump()</code>, <code class="highlighter-rouge">print_r()</code>, <code class="highlighter-rouge">die()</code>.</p>
+<p>No debugging code can be left in place, i.e. <code class="language-plaintext highlighter-rouge">dd()</code>, <code class="language-plaintext highlighter-rouge">var_dump()</code>, <code class="language-plaintext highlighter-rouge">print_r()</code>, <code class="language-plaintext highlighter-rouge">die()</code>.</p>
 
 
 </div>

@@ -128,7 +128,7 @@
 <p>Editing is easiest to do in code. Some development knowledge is required, though following the below step-by-step guide should allow anyone to edit posts.</p>
 
 <h3 id="blog-list-page">Blog List Page<a href="#editing-blog-list">#</a></h3>
-<p>The view for the blog list page can be found at <code class="highlighter-rouge">/resources/views/[en or hu]/blog/index.blade.php</code>. You need to create a new block for the new blog post.</p>
+<p>The view for the blog list page can be found at <code class="language-plaintext highlighter-rouge">/resources/views/[en or hu]/blog/index.blade.php</code>. You need to create a new block for the new blog post.</p>
 
 <div class="thumb">
     <a href="/dist/media/blogging-editing-index.png" target="_blank">
@@ -152,9 +152,9 @@
 </ol>
 
 <h3 id="blog-detail-page">Blog Detail Page<a href="#editing-blog-detail">#</a></h3>
-<p>The view for the blog detail page can be found at <code class="highlighter-rouge">/resources/views/[en or hu]/blog/view.blade.php</code>. This view includes a subview for each post.</p>
+<p>The view for the blog detail page can be found at <code class="language-plaintext highlighter-rouge">/resources/views/[en or hu]/blog/view.blade.php</code>. This view includes a subview for each post.</p>
 
-<p>These subviews must be named as [slug].blade.php and located in <code class="highlighter-rouge">/resources/views/[en or hu]/blog/posts/</code>.</p>
+<p>These subviews must be named as [slug].blade.php and located in <code class="language-plaintext highlighter-rouge">/resources/views/[en or hu]/blog/posts/</code>.</p>
 
 <div class="thumb">
     <a href="/dist/media/blogging-editing-detail.png" target="_blank">
@@ -198,7 +198,7 @@
   </li>
   <li>Use headings and images to break up long sections of text
     <ul>
-      <li><small>Images should always have an <code class="highlighter-rouge">alt</code> text. Captions should be used most of the time.</small></li>
+      <li><small>Images should always have an <code class="language-plaintext highlighter-rouge">alt</code> text. Captions should be used most of the time.</small></li>
     </ul>
   </li>
   <li>Change the post author</li>
@@ -216,20 +216,20 @@
   <li>make sure to include keywords in the names</li>
   <li>cover images
     <ul>
-      <li>should be prefixed with <code class="highlighter-rouge">cover</code></li>
+      <li>should be prefixed with <code class="language-plaintext highlighter-rouge">cover</code></li>
       <li>should be suffixed with language code where necessary</li>
     </ul>
   </li>
   <li>featured images
     <ul>
-      <li>should be prefixed with <code class="highlighter-rouge">featured</code></li>
-      <li>desktop versions should be suffixed with <code class="highlighter-rouge">769w</code></li>
+      <li>should be prefixed with <code class="language-plaintext highlighter-rouge">featured</code></li>
+      <li>desktop versions should be suffixed with <code class="language-plaintext highlighter-rouge">769w</code></li>
       <li>should be suffixed with language code where necessary</li>
     </ul>
   </li>
   <li>thumbnails
     <ul>
-      <li>should be prefixed with <code class="highlighter-rouge">thumb</code></li>
+      <li>should be prefixed with <code class="language-plaintext highlighter-rouge">thumb</code></li>
       <li>should be suffixed with language code where necessary</li>
     </ul>
   </li>
@@ -249,9 +249,9 @@
 </ul>
 
 <h3 id="branching">Branching<a href="#publishing-branching">#</a></h3>
-<p>Our website uses Gitflow as the continuous deployment strategy, meaning that every push to the <code class="highlighter-rouge">staging</code> branch is automatically deployed to the staging website, while pushes to the <code class="highlighter-rouge">master</code> branch need to go through a pull request.</p>
+<p>Our website uses Gitflow as the continuous deployment strategy, meaning that every push to the <code class="language-plaintext highlighter-rouge">staging</code> branch is automatically deployed to the staging website, while pushes to the <code class="language-plaintext highlighter-rouge">master</code> branch need to go through a pull request.</p>
 
-<p>Every blog post should be in it’s own feature branch. This branch can then be merged into the <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">master</code> branches.</p>
+<p>Every blog post should be in it’s own feature branch. This branch can then be merged into the <code class="language-plaintext highlighter-rouge">staging</code> and <code class="language-plaintext highlighter-rouge">master</code> branches.</p>
 
 <h2 id="promoting">Promoting<a href="#promoting">#</a></h2>
 <p>A blog article has no value if nobody reads it. That’s why promoting it is one of the more important aspects of blogging.</p>
@@ -268,14 +268,14 @@
 <p>When sharing links, make sure to include UTM parameters so we can track which sources lead to the most macro conversions.</p>
 
 <p>Append the following to the URL:
-<code class="highlighter-rouge">?utm_source=[SOURCE]&amp;utm_medium=[MEDIUM]&amp;utm_campaign=promoting</code></p>
+<code class="language-plaintext highlighter-rouge">?utm_source=[SOURCE]&amp;utm_medium=[MEDIUM]&amp;utm_campaign=promoting</code></p>
 
 <h3 id="facebook">Facebook<a href="#promoting-facebook">#</a></h3>
 <ul>
   <li>Share blog article in thematically <a href="https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=0" target="_blank">related groups</a>, together with a short excerpt or explanation on why this content is relevant to group.</li>
 </ul>
 
-<p>UTM string: <code class="highlighter-rouge">?utm_source=facebook&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
+<p>UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=facebook&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
 
 <ul>
   <li>Consider creating an ad campaign targeting relevant users or including blog article in a remarketing chain campaign.</li>
@@ -284,12 +284,12 @@
 <h3 id="hackernews">HackerNews<a href="#promoting-hackernews">#</a></h3>
 <p>Paste a <a href="https://news.ycombinator.com/submit" target="_blank">link</a>.</p>
 
-<p>UTM string: <code class="highlighter-rouge">?utm_source=hackernews&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
+<p>UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=hackernews&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
 
 <h3 id="linkedin">LinkedIn<a href="#promoting-linkedin">#</a></h3>
 <p>Share blog article in thematically <a href="https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=1953838922" target="_blank">related groups</a>, together with a short excerpt or explanation on why this content is relevant to group.</p>
 
-<p>UTM string: <code class="highlighter-rouge">?utm_source=linkedin&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
+<p>UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=linkedin&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
 
 <h3 id="medium">Medium<a href="#promoting-medium">#</a></h3>
 <p>Blog posts should be also submitted to our Medium channel. Make sure to use the <a href="https://medium.com/p/import" target="_blank">import</a> function to preserve canonical link to original post.</p>
@@ -299,26 +299,26 @@
 <h3 id="quora">Quora<a href="#promoting-quora">#</a></h3>
 <p>Find questions for which your article can be an answer. Reply with a short answer and state that more detailed answer can be found in your article (+ link).</p>
 
-<p>UTM string: <code class="highlighter-rouge">?utm_source=quora&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
+<p>UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=quora&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
 
 <h3 id="reddit">Reddit<a href="#promoting-reddit">#</a></h3>
 <p>Paste a link in thematically related <a href="https://docs.google.com/spreadsheets/d/129GyvwWAFFOCUo8_2Ao6mtQ5FXhfgVT4qfqP4p_BmV4/edit#gid=1408664968" target="_blank">subreddits</a>, together with a short excerpt or explanation on why this content is relevant to subreddit.</p>
 
-<p>UTM string: <code class="highlighter-rouge">?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
+<p>UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=promoting</code></p>
 
 <h3 id="relevant-networks">Relevant Networks<a href="#promoting-relevant-networks">#</a></h3>
 <p>We are also part of a number of close or private networks which give us a possibility to share content with fellow members.</p>
 
 <p><strong>Startup themed:</strong></p>
 <ul>
-  <li><a href="https://community.12ronnies.com" target="_blank">12 Ronnies</a>. UTM string: <code class="highlighter-rouge">?utm_source=12ronnies&amp;utm_medium=social&amp;utm_campaign=promoting</code></li>
-  <li><a href="https://www.entnest.com" target="_blank">Entnest</a>. UTM string: <code class="highlighter-rouge">?utm_source=entnest&amp;utm_medium=social&amp;utm_campaign=promoting</code></li>
+  <li><a href="https://community.12ronnies.com" target="_blank">12 Ronnies</a>. UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=12ronnies&amp;utm_medium=social&amp;utm_campaign=promoting</code></li>
+  <li><a href="https://www.entnest.com" target="_blank">Entnest</a>. UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=entnest&amp;utm_medium=social&amp;utm_campaign=promoting</code></li>
 </ul>
 
 <h3 id="tumblr">Tumblr<a href="#promoting-tumblr">#</a></h3>
 <p>Post a link to your article. Remember to add some hashtags.</p>
 
-<p>UTM string: <code class="highlighter-rouge">?utm_source=tumblr&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
+<p>UTM string: <code class="language-plaintext highlighter-rouge">?utm_source=tumblr&amp;utm_medium=referral&amp;utm_campaign=promoting</code></p>
 
 </div>
 

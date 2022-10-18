@@ -270,7 +270,7 @@
 </code></pre></div></div>
 
 <h3 id="avoid-else">Avoid Else<a href="#avoid-else">#</a></h3>
-<p>In general, <code class="highlighter-rouge">else</code> should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.</p>
+<p>In general, <code class="language-plaintext highlighter-rouge">else</code> should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 
@@ -290,7 +290,7 @@
 </code></pre></div></div>
 
 <h3 id="compound-ifs">Compound Ifs<a href="#compound-ifs">#</a></h3>
-<p>In general, separate <code class="highlighter-rouge">if</code> statements should be preferred over a compound condition. This makes debugging code easier.</p>
+<p>In general, separate <code class="language-plaintext highlighter-rouge">if</code> statements should be preferred over a compound condition. This makes debugging code easier.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">conditionA</span><span class="p">)</span> <span class="p">{</span>
@@ -359,7 +359,7 @@
 <p>Always.</p>
 
 <h2 id="variables">Variables<a href="#variables">#</a></h2>
-<p>When assigning variables, prefer <code class="highlighter-rouge">const</code> over <code class="highlighter-rouge">let</code>. Only use <code class="highlighter-rouge">let</code> to indicate that a variable will be reassigned. Never use <code class="highlighter-rouge">var</code>.</p>
+<p>When assigning variables, prefer <code class="language-plaintext highlighter-rouge">const</code> over <code class="language-plaintext highlighter-rouge">let</code>. Only use <code class="language-plaintext highlighter-rouge">let</code> to indicate that a variable will be reassigned. Never use <code class="language-plaintext highlighter-rouge">var</code>.</p>
 
 <h3 id="assigning">Assigning<a href="#assigning-variables">#</a></h3>
 
@@ -404,7 +404,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>In single-line arrow functions, abbreviations are allowed to reduce noise if the context is clear enough. For example, if you’re calling <code class="highlighter-rouge">map</code> or <code class="highlighter-rouge">forEach</code> on a collection of items, it’s clear that the parameter is an item of a certain type, which can be derived from the collection’s substantive variable name.</p>
+<p>In single-line arrow functions, abbreviations are allowed to reduce noise if the context is clear enough. For example, if you’re calling <code class="language-plaintext highlighter-rouge">map</code> or <code class="language-plaintext highlighter-rouge">forEach</code> on a collection of items, it’s clear that the parameter is an item of a certain type, which can be derived from the collection’s substantive variable name.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="kd">function</span> <span class="nx">saveUserSessions</span><span class="p">(</span><span class="nx">userSessions</span><span class="p">)</span> <span class="p">{</span>

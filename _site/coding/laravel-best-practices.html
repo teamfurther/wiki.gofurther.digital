@@ -116,7 +116,7 @@
 <h3 id="naming-commands">Commands<a href="#naming-commands">#</a></h3>
 <p>The names given to artisan commands should all be kebab-cased.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Good
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Good
 php artisan delete-old-records
 
 # Bad
@@ -126,7 +126,7 @@ php artisan deleteOldRecords
 <h3 id="naming-configuration-files">Configuration files<a href="#naming-configuration-files">#</a></h3>
 <p>Configuration files must use kebab-case.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config/
   pdf-generator.php
 </code></pre></div></div>
 
@@ -138,16 +138,16 @@ php artisan deleteOldRecords
 <span class="p">];</span>
 </code></pre></div></div>
 
-<p><small class="note">Avoid using the <code class="highlighter-rouge">env()</code> helper outside of configuration files. Create a configuration value from the environment variable like above. For more info check the <a href="https://andy-carter.com/blog/env-gotcha-in-laravel-when-caching-configuration">link</a>.</small></p>
+<p><small class="note">Avoid using the <code class="language-plaintext highlighter-rouge">env()</code> helper outside of configuration files. Create a configuration value from the environment variable like above. For more info check the <a href="https://andy-carter.com/blog/env-gotcha-in-laravel-when-caching-configuration">link</a>.</small></p>
 
 <h3 id="naming-controllers">Controllers<a href="#naming-controllers">#</a></h3>
 <p>Generally controllers are named by the plural form of their corresponding resource and a Controller suffix. This is to avoid naming collisions with models that are often equally named.</p>
 
-<p>e.g. <code class="highlighter-rouge">UsersController</code> or <code class="highlighter-rouge">PostsController</code></p>
+<p>e.g. <code class="language-plaintext highlighter-rouge">UsersController</code> or <code class="language-plaintext highlighter-rouge">PostsController</code></p>
 
 <p>Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy). Extract a new controller if you need other actions.</p>
 
-<p>In the following example, we could have <code class="highlighter-rouge">PostsController@favorite</code>, and <code class="highlighter-rouge">PostsController@unfavorite</code>, or we could extract it to a separate <code class="highlighter-rouge">FavoritePostsController</code>.</p>
+<p>In the following example, we could have <code class="language-plaintext highlighter-rouge">PostsController@favorite</code>, and <code class="language-plaintext highlighter-rouge">PostsController@unfavorite</code>, or we could extract it to a separate <code class="language-plaintext highlighter-rouge">FavoritePostsController</code>.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">PostsController</span>
 <span class="p">{</span>
@@ -198,51 +198,51 @@ php artisan deleteOldRecords
 
 <p>When writing non-resourceful controllers you might come across invokable controllers that perform a single action. These can be named by the action they perform again suffixed by Controller.</p>
 
-<p>e.g. <code class="highlighter-rouge">PerformCleanupController</code></p>
+<p>e.g. <code class="language-plaintext highlighter-rouge">PerformCleanupController</code></p>
 
 <h3 id="naming-events">Events<a href="#naming-events">#</a></h3>
 <p>Events will often be fired before or after the actual event. This should be very clear by the tense used in their name.</p>
 
-<p>E.g. <code class="highlighter-rouge">ApprovingLoan</code> before the action is completed and <code class="highlighter-rouge">LoanApproved</code> after the action is completed.</p>
+<p>E.g. <code class="language-plaintext highlighter-rouge">ApprovingLoan</code> before the action is completed and <code class="language-plaintext highlighter-rouge">LoanApproved</code> after the action is completed.</p>
 
 <h3 id="naming-form-requests">Form Requests<a href="#naming-form-requests">#</a></h3>
-<p>Always name your form requests by the singular name of your resource, suffixed with <code class="highlighter-rouge">Request</code>.</p>
+<p>Always name your form requests by the singular name of your resource, suffixed with <code class="language-plaintext highlighter-rouge">Request</code>.</p>
 
-<p>e.g. <code class="highlighter-rouge">PostRequest</code></p>
+<p>e.g. <code class="language-plaintext highlighter-rouge">PostRequest</code></p>
 
-<p>In some cases, you need separate form requests for the <code class="highlighter-rouge">create()</code> and <code class="highlighter-rouge">update()</code> controller methods. In these cases put the method name between the name of your resource and the <code class="highlighter-rouge">Request</code> suffix.</p>
+<p>In some cases, you need separate form requests for the <code class="language-plaintext highlighter-rouge">create()</code> and <code class="language-plaintext highlighter-rouge">update()</code> controller methods. In these cases put the method name between the name of your resource and the <code class="language-plaintext highlighter-rouge">Request</code> suffix.</p>
 
-<p>e.g. <code class="highlighter-rouge">PostCreateRequest</code> or <code class="highlighter-rouge">PostUpdateRequest</code></p>
+<p>e.g. <code class="language-plaintext highlighter-rouge">PostCreateRequest</code> or <code class="language-plaintext highlighter-rouge">PostUpdateRequest</code></p>
 
 <h3 id="naming-jobs">Jobs<a href="#naming-jobs">#</a></h3>
 <p>A job’s name should describe its action.</p>
 
-<p>E.g. <code class="highlighter-rouge">CreateUser</code> or <code class="highlighter-rouge">PerformDatabaseCleanup</code></p>
+<p>E.g. <code class="language-plaintext highlighter-rouge">CreateUser</code> or <code class="language-plaintext highlighter-rouge">PerformDatabaseCleanup</code></p>
 
 <h3 id="naming-listeners">Listeners<a href="#naming-listeners">#</a></h3>
-<p>Listeners will perform an action based on an incoming event. Their name should reflect that action with a <code class="highlighter-rouge">Listener</code> suffix. This might seem strange at first but will avoid naming collisions with jobs.</p>
+<p>Listeners will perform an action based on an incoming event. Their name should reflect that action with a <code class="language-plaintext highlighter-rouge">Listener</code> suffix. This might seem strange at first but will avoid naming collisions with jobs.</p>
 
-<p>E.g. <code class="highlighter-rouge">SendInvitationMailListener</code></p>
+<p>E.g. <code class="language-plaintext highlighter-rouge">SendInvitationMailListener</code></p>
 
 <h3 id="naming-mailables">Mailables<a href="#naming-mailables">#</a></h3>
-<p>Again to avoid naming collisions we’ll suffix mailables with <code class="highlighter-rouge">Mail</code>, as they’re often used to convey an event, action or question.</p>
+<p>Again to avoid naming collisions we’ll suffix mailables with <code class="language-plaintext highlighter-rouge">Mail</code>, as they’re often used to convey an event, action or question.</p>
 
-<p>e.g. <code class="highlighter-rouge">AccountActivatedMail</code> or <code class="highlighter-rouge">NewEventMail</code></p>
+<p>e.g. <code class="language-plaintext highlighter-rouge">AccountActivatedMail</code> or <code class="language-plaintext highlighter-rouge">NewEventMail</code></p>
 
 <h3 id="naming-models">Models<a href="#naming-models">#</a></h3>
 <p>Always name your models by the singular name of your resource.</p>
 
-<p>e.g. <code class="highlighter-rouge">User</code> or <code class="highlighter-rouge">Post</code></p>
+<p>e.g. <code class="language-plaintext highlighter-rouge">User</code> or <code class="language-plaintext highlighter-rouge">Post</code></p>
 
 <h3 id="naming-notifications">Notifications<a href="#naming-notifications">#</a></h3>
-<p>Again to avoid naming collisions we’ll suffix notifications with <code class="highlighter-rouge">Notification</code>, as they’re often used to convey an event, action or question.</p>
+<p>Again to avoid naming collisions we’ll suffix notifications with <code class="language-plaintext highlighter-rouge">Notification</code>, as they’re often used to convey an event, action or question.</p>
 
-<p>e.g. <code class="highlighter-rouge">AccountActivatedNotification</code> or <code class="highlighter-rouge">NewEventNotication</code></p>
+<p>e.g. <code class="language-plaintext highlighter-rouge">AccountActivatedNotification</code> or <code class="language-plaintext highlighter-rouge">NewEventNotication</code></p>
 
 <h3 id="naming-tests">Tests<a href="#naming-tests">#</a></h3>
-<p>Function names of tests cases should always begin with <code class="highlighter-rouge">test</code>.</p>
+<p>Function names of tests cases should always begin with <code class="language-plaintext highlighter-rouge">test</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public function testIfPageReturns200(): void
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public function testIfPageReturns200(): void
 {
         $response = $this-&gt;json('POST', 'page', [
             'somedata' =&gt; 'Data',
@@ -255,14 +255,14 @@ php artisan deleteOldRecords
 <h3 id="naming-views">Views<a href="#naming-views">#</a></h3>
 <p>View files must use kebab-case.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resources/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resources/
     views/
         pages/
             cookies-policy.blade.php
 </code></pre></div></div>
 
 <h2 id="commands">Commands<a href="#commands">#</a></h2>
-<p>A command should always give some feedback on what the result is. Minimally you should let the <code class="highlighter-rouge">handle</code> method spit out a comment at the end indicating that all went well.</p>
+<p>A command should always give some feedback on what the result is. Minimally you should let the <code class="language-plaintext highlighter-rouge">handle</code> method spit out a comment at the end indicating that all went well.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in a Command</span>
 <span class="k">public</span> <span class="k">function</span> <span class="n">handle</span><span class="p">()</span>
@@ -273,7 +273,7 @@ php artisan deleteOldRecords
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>If possible use a descriptive success message eg. <code class="highlighter-rouge">Old records deleted</code>.</p>
+<p>If possible use a descriptive success message eg. <code class="language-plaintext highlighter-rouge">Old records deleted</code>.</p>
 
 <h2 id="facades">Facades<a href="#facades">#</a></h2>
 <p>Whenever possible, avoid using facades in controllers, models or actions.</p>
@@ -318,7 +318,7 @@ php artisan deleteOldRecords
 <h2 id="routing">Routing<a href="#routing">#</a></h2>
 <p>Public-facing urls must use kebab-case.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://gofurther.digital/en/custom-software-development
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://gofurther.digital/en/custom-software-development
 https://gofurther.digital/en/blog/posts/digital-transformation-pt1-introduction
 </code></pre></div></div>
 
@@ -368,7 +368,7 @@ https://gofurther.digital/en/blog/posts/digital-transformation-pt1-introduction
 <span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'blog/posts/{blog_path}'</span><span class="p">,</span> <span class="s1">'BlogController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">name</span><span class="p">(</span><span class="s1">'blog.show'</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>A route url should not start with <code class="highlighter-rouge">/</code> unless the url would be an empty string.</p>
+<p>A route url should not start with <code class="language-plaintext highlighter-rouge">/</code> unless the url would be an empty string.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">'HomeController@show'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">name</span><span class="p">(</span><span class="s1">'home'</span><span class="p">);</span>
@@ -381,7 +381,7 @@ https://gofurther.digital/en/blog/posts/digital-transformation-pt1-introduction
     <span class="o">-&gt;</span><span class="nf">name</span><span class="p">(</span><span class="s1">'custom-software-development'</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>If your route only needs to return a view, you may use the <code class="highlighter-rouge">Route::view</code> method.</p>
+<p>If your route only needs to return a view, you may use the <code class="language-plaintext highlighter-rouge">Route::view</code> method.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="nc">Route</span><span class="o">::</span><span class="nf">view</span><span class="p">(</span><span class="s1">'privacy-policy'</span><span class="p">,</span> <span class="s1">'pages.privacy'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">name</span><span class="p">(</span><span class="s1">'privacy'</span><span class="p">);</span>
@@ -457,7 +457,7 @@ https://gofurther.digital/en/blog/posts/digital-transformation-pt1-introduction
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>When using multiple rules for one field in a form request, avoid using <code class="highlighter-rouge">|</code>, always use array notation. Using an array notation will make it easier to apply custom rule classes to a field.</p>
+<p>When using multiple rules for one field in a form request, avoid using <code class="language-plaintext highlighter-rouge">|</code>, always use array notation. Using an array notation will make it easier to apply custom rule classes to a field.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
 <span class="k">public</span> <span class="k">function</span> <span class="n">rules</span><span class="p">()</span>
@@ -476,7 +476,7 @@ https://gofurther.digital/en/blog/posts/digital-transformation-pt1-introduction
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Custom validation rules should be always defined using a rule object instead of closures or extending the <code class="highlighter-rouge">Validator</code> facade.</p>
+<p>Custom validation rules should be always defined using a rule object instead of closures or extending the <code class="language-plaintext highlighter-rouge">Validator</code> facade.</p>
 
 </div>
 

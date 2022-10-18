@@ -116,28 +116,28 @@
   <li>By default every project should have a Productive project attached with a Backlog and at least a Kanban board</li>
   <li>In most cases the Backlog board should have the following columns:
     <ul>
-      <li><code class="highlighter-rouge">Backlog</code></li>
-      <li><code class="highlighter-rouge">To be estimated</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Backlog</code></li>
+      <li><code class="language-plaintext highlighter-rouge">To be estimated</code></li>
     </ul>
   </li>
   <li>For greenfield projects, a Kanban board should have the following columns:
     <ul>
-      <li><code class="highlighter-rouge">Selected for development / To do</code> - tasks/user stories on which work can start will be dragged here by PM</li>
-      <li><code class="highlighter-rouge">In progress</code></li>
-      <li><code class="highlighter-rouge">QA (internal)</code></li>
-      <li><code class="highlighter-rouge">QA (external)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Selected for development / To do</code> - tasks/user stories on which work can start will be dragged here by PM</li>
+      <li><code class="language-plaintext highlighter-rouge">In progress</code></li>
+      <li><code class="language-plaintext highlighter-rouge">QA (internal)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">QA (external)</code></li>
     </ul>
   </li>
   <li>For support projects, a Kanban board should have the following columns:
     <ul>
-      <li><code class="highlighter-rouge">Selected for development / To do</code> - tasks/user stories on which work can start will be dragged here by PM</li>
-      <li><code class="highlighter-rouge">In progress</code></li>
-      <li><code class="highlighter-rouge">QA</code> - may be separated into <code class="highlighter-rouge">QA (internal)</code> &amp; <code class="highlighter-rouge">QA (external)</code></li>
-      <li><code class="highlighter-rouge">Ready for deployment</code></li>
-      <li><code class="highlighter-rouge">Deployed</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Selected for development / To do</code> - tasks/user stories on which work can start will be dragged here by PM</li>
+      <li><code class="language-plaintext highlighter-rouge">In progress</code></li>
+      <li><code class="language-plaintext highlighter-rouge">QA</code> - may be separated into <code class="language-plaintext highlighter-rouge">QA (internal)</code> &amp; <code class="language-plaintext highlighter-rouge">QA (external)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Ready for deployment</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Deployed</code></li>
     </ul>
   </li>
-  <li>All tasks on the boards, should have an assignee (except in when in <code class="highlighter-rouge">Backlog</code> column)</li>
+  <li>All tasks on the boards, should have an assignee (except in when in <code class="language-plaintext highlighter-rouge">Backlog</code> column)</li>
 </ul>
 
 <h3 id="kanban-pull-system">Kanban Pull System<a href="#kanban-pull-system">#</a></h3>
@@ -154,25 +154,25 @@
 <h3 id="qa">QA<a href="#kanban-qa">#</a></h3>
 
 <ul>
-  <li>if you finished working on an task, move the task to <code class="highlighter-rouge">QA</code> column, and re-assign it to the person responsible for QA;</li>
-  <li>if you finished QA, and found issues, leave a comment, move task back to <code class="highlighter-rouge">In progress</code> column and re-assign it;</li>
-  <li>if you finished QA, and found no issues, move task to <code class="highlighter-rouge">Ready for deployment</code> column and re-assign to person responsible for deployment.</li>
+  <li>if you finished working on an task, move the task to <code class="language-plaintext highlighter-rouge">QA</code> column, and re-assign it to the person responsible for QA;</li>
+  <li>if you finished QA, and found issues, leave a comment, move task back to <code class="language-plaintext highlighter-rouge">In progress</code> column and re-assign it;</li>
+  <li>if you finished QA, and found no issues, move task to <code class="language-plaintext highlighter-rouge">Ready for deployment</code> column and re-assign to person responsible for deployment.</li>
 </ul>
 
 <h3 id="deployment">Deployment<a href="#kanban-deployment">#</a></h3>
 
 <ul>
-  <li>whenever deploying tasks from <code class="highlighter-rouge">Ready for deployment</code>, task should be moved to <code class="highlighter-rouge">Deployed</code>.</li>
+  <li>whenever deploying tasks from <code class="language-plaintext highlighter-rouge">Ready for deployment</code>, task should be moved to <code class="language-plaintext highlighter-rouge">Deployed</code>.</li>
   <li><small class="owner">PM</small> will mark task as completed at the next grooming session.</li>
-  <li>if there is no <code class="highlighter-rouge">Ready for deployment</code> column, tasks can be marked as completed after client approval from <code class="highlighter-rouge">QA (external)</code>.</li>
+  <li>if there is no <code class="language-plaintext highlighter-rouge">Ready for deployment</code> column, tasks can be marked as completed after client approval from <code class="language-plaintext highlighter-rouge">QA (external)</code>.</li>
 </ul>
 
 <h2 id="definition-of-done">Definition of Done<a href="#definition-of-done">#</a></h2>
 
 <p>A task is considered done, when:</p>
 <ul>
-  <li>changes are pushed to version control (<code class="highlighter-rouge">staging</code> branch)</li>
-  <li>changes are tested on <code class="highlighter-rouge">staging</code> server</li>
+  <li>changes are pushed to version control (<code class="language-plaintext highlighter-rouge">staging</code> branch)</li>
+  <li>changes are tested on <code class="language-plaintext highlighter-rouge">staging</code> server</li>
 </ul>
 
 <h2 id="time-tracking">Time Tracking<a href="#time-tracking">#</a></h2>
@@ -191,7 +191,7 @@
 
 <h3 id="non-project-tasks">Non-project tasks<a href="#time-tracking-non-project-tasks">#</a></h3>
 
-<p>For non-project tasks, use the <code class="highlighter-rouge">Internal</code> project.</p>
+<p>For non-project tasks, use the <code class="language-plaintext highlighter-rouge">Internal</code> project.</p>
 
 <h2 id="checklists">Checklists<a href="#checklists">#</a></h2>
 

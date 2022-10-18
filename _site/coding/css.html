@@ -144,12 +144,12 @@
 
 <ul>
   <li>a single reusable component or pattern;</li>
-  <li>children are separated with <code class="highlighter-rouge">__</code>;</li>
-  <li>all lowercase, can contain <code class="highlighter-rouge">-</code> in name;</li>
+  <li>children are separated with <code class="language-plaintext highlighter-rouge">__</code>;</li>
+  <li>all lowercase, can contain <code class="language-plaintext highlighter-rouge">-</code> in name;</li>
   <li>avoid more than 3 levels deep.</li>
 </ul>
 
-<p>Be descriptive with component elements. Consider <code class="highlighter-rouge">class="team__member"</code> instead of <code class="highlighter-rouge">class="team__item"</code>.</p>
+<p>Be descriptive with component elements. Consider <code class="language-plaintext highlighter-rouge">class="team__member"</code> instead of <code class="language-plaintext highlighter-rouge">class="team__item"</code>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"team"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"team__member"</span><span class="nt">&gt;</span>
@@ -158,7 +158,7 @@
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<p>You can use plurals &amp; singulars for readability. Consider <code class="highlighter-rouge">class="member"</code> instead of <code class="highlighter-rouge">class="members__member"</code>.</p>
+<p>You can use plurals &amp; singulars for readability. Consider <code class="language-plaintext highlighter-rouge">class="member"</code> instead of <code class="language-plaintext highlighter-rouge">class="members__member"</code>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"members"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"member"</span><span class="nt">&gt;</span>
@@ -184,7 +184,7 @@
 
 <ul>
   <li>a modifier changes only simple properties of a component, or adds a property;</li>
-  <li>multiple modifiers are possible. Each modifier is responsible for a property: <code class="highlighter-rouge">class="alert is-large is-rounded is-success"</code>. If you keep using these modifiers together, consider a <strong>variation</strong> (see below);</li>
+  <li>multiple modifiers are possible. Each modifier is responsible for a property: <code class="language-plaintext highlighter-rouge">class="alert is-large is-rounded is-success"</code>. If you keep using these modifiers together, consider a <strong>variation</strong> (see below);</li>
   <li>since modifiers have a single responsibility, the order in HTML or CSS shouldn’t matter. Consider using ordering the alphabetically.</li>
 </ul>
 
@@ -216,7 +216,7 @@
 
 <ul>
   <li>a variation adds more than one properties at once to a class, and acts as a shorthand for multiple modifiers often used together;</li>
-  <li>even variations should be generic and reusable if possible: <code class="highlighter-rouge">class="team team--large"</code> is better than <code class="highlighter-rouge">class="team team--management"</code>.</li>
+  <li>even variations should be generic and reusable if possible: <code class="language-plaintext highlighter-rouge">class="team team--large"</code> is better than <code class="language-plaintext highlighter-rouge">class="team team--management"</code>.</li>
 </ul>
 
 <h3 id="js-hook">.js-hook<a href="#js-hook">#</a></h3>
@@ -229,7 +229,7 @@
 
 <ul>
   <li>all styling is done by classes (except for HTML that is out of our control);</li>
-  <li>avoid <code class="highlighter-rouge">#id</code> ‘s for styling;</li>
+  <li>avoid <code class="language-plaintext highlighter-rouge">#id</code> ‘s for styling;</li>
   <li>make elements easily reusable, moveable in a project, or between projects;</li>
   <li>avoid multiple components on 1 DOM-element. Break them up.</li>
 </ul>
@@ -279,15 +279,15 @@
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"component__element has-modifier js-hook"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<p>Visual class grouping can be done with <code class="highlighter-rouge">|</code>:</p>
+<p>Visual class grouping can be done with <code class="language-plaintext highlighter-rouge">|</code>:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"news__item is-active is-blue is-small | js-modal-trigger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
 <h2 id="file-structure">File Structure<a href="#file-structure">#</a></h2>
-<p>We typically use 4 folders and a main <code class="highlighter-rouge">app.scss</code> or <code class="highlighter-rouge">site.scss</code> file:</p>
+<p>We typically use 4 folders and a main <code class="language-plaintext highlighter-rouge">app.scss</code> or <code class="language-plaintext highlighter-rouge">site.scss</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- base       : reset, basic html elements, global modifiers, mixins, variables
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|-- base       : reset, basic html elements, global modifiers, mixins, variables
 |-- components : less reusable specific components
 |-- elements   : reusable elements
 |-- vendor     : custom files from 3rd party components like fancybox, select2 etc.

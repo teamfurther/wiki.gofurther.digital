@@ -129,127 +129,127 @@
 
 <h3 id="firewall">Firewall<a href="#firewall">#</a></h3>
 <ul>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw enable</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw allow ssh</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw allow http</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ufw allow https</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo ufw enable</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo ufw allow ssh</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo ufw allow http</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo ufw allow https</code></li>
 </ul>
 
 <h3 id="nginx">nginx<a href="#nginx">#</a></h3>
 <ul>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install nginx</code></li>
-  <li>Go to <code class="highlighter-rouge">{ip}</code> in your browser, you should see Welcome to nginx! page. If it’s not running, then: <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo service nginx start</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install nginx</code></li>
+  <li>Go to <code class="language-plaintext highlighter-rouge">{ip}</code> in your browser, you should see Welcome to nginx! page. If it’s not running, then: <code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo service nginx start</code></li>
 </ul>
 
 <h3 id="dns">DNS<a href="#dns">#</a></h3>
 <p>Our preferred DNS provider is Cloudflare.</p>
 
 <ul>
-  <li>Create an <code class="highlighter-rouge">A</code> record pointing to <code class="highlighter-rouge">{ip}</code></li>
-  <li>Configure production and staging websites in <code class="highlighter-rouge">/etc/nginx/sites-available/</code></li>
-  <li>Go to <code class="highlighter-rouge">{url}</code></li>
+  <li>Create an <code class="language-plaintext highlighter-rouge">A</code> record pointing to <code class="language-plaintext highlighter-rouge">{ip}</code></li>
+  <li>Configure production and staging websites in <code class="language-plaintext highlighter-rouge">/etc/nginx/sites-available/</code></li>
+  <li>Go to <code class="language-plaintext highlighter-rouge">{url}</code></li>
 </ul>
 
 <h3 id="ssl">SSL<a href="#ssl">#</a></h3>
 <ul>
   <li>Install Certbot <a href="https://certbot.eff.org/instructions?ws=nginx&amp;os=ubuntufocal" target="_blank">↗</a></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo certbot certonly --nginx</code></li>
-  <li>Test automatic renewal with <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo certbot renew --dry-run</code></li>
-  <li>Update nginx configuration in <code class="highlighter-rouge">/etc/nginx/sites-available/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo certbot certonly --nginx</code></li>
+  <li>Test automatic renewal with <code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo certbot renew --dry-run</code></li>
+  <li>Update nginx configuration in <code class="language-plaintext highlighter-rouge">/etc/nginx/sites-available/</code></li>
   <li>Check if SSL certificate is working</li>
 </ul>
 
 <h3 id="php">PHP<a href="#php">#</a></h3>
 <ul>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install software-properties-common</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo add-apt-repository ppa:ondrej/php</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get update</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php8.1-fpm php8.1-cli php8.1-common</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install php8.1-curl php8.1-gd php8.1-mbstring php8.1-mysql php8.1-xml</code></li>
-  <li>Check status with <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">service php8.1-fpm status // check status</code>. If it’s not running, then <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo service php8.1-fpm start</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install software-properties-common</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo add-apt-repository ppa:ondrej/php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get update</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install php8.1-fpm php8.1-cli php8.1-common</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install php8.1-curl php8.1-gd php8.1-mbstring php8.1-mysql php8.1-xml</code></li>
+  <li>Check status with <code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">service php8.1-fpm status // check status</code>. If it’s not running, then <code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo service php8.1-fpm start</code></li>
 </ul>
 
 <h3 id="mariadb">MariaDB<a href="#mariadb">#</a></h3>
 <ul>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install mariadb-client mariadb-server</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo mysql_secure_installation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install mariadb-client mariadb-server</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo mysql_secure_installation</code></li>
   <li>If you can’t connect to mysql with root user:
     <ul>
-      <li><code class="highlighter-rouge">sudo mysql</code></li>
-      <li><code class="highlighter-rouge">UPDATE mysql.user SET plugin = 'mysql_native_password';</code></li>
-      <li><code class="highlighter-rouge">FLUSH PRIVILEGES;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sudo mysql</code></li>
+      <li><code class="language-plaintext highlighter-rouge">UPDATE mysql.user SET plugin = 'mysql_native_password';</code></li>
+      <li><code class="language-plaintext highlighter-rouge">FLUSH PRIVILEGES;</code></li>
     </ul>
   </li>
   <li>Create database and user
     <ul>
-      <li><code class="highlighter-rouge">mysql -u root -p</code></li>
-      <li><code class="highlighter-rouge">CREATE DATABASE {database};</code></li>
-      <li><code class="highlighter-rouge">CREATE USER '{username}'@'localhost' IDENTIFIED BY '{password}';</code></li>
-      <li><code class="highlighter-rouge">GRANT ALL ON {database}.* TO {username}@`localhost`;</code></li>
-      <li><code class="highlighter-rouge">FLUSH PRIVILEGES;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mysql -u root -p</code></li>
+      <li><code class="language-plaintext highlighter-rouge">CREATE DATABASE {database};</code></li>
+      <li><code class="language-plaintext highlighter-rouge">CREATE USER '{username}'@'localhost' IDENTIFIED BY '{password}';</code></li>
+      <li><code class="language-plaintext highlighter-rouge">GRANT ALL ON {database}.* TO {username}@`localhost`;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">FLUSH PRIVILEGES;</code></li>
     </ul>
   </li>
 </ul>
 
 <h3 id="phpmyadmin">PhpMyAdmin<a href="#phpmyadmin">#</a></h3>
 <ul>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install phpmyadmin</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo ln -s /usr/share/phpmyadmin /path/to/project/public/folder</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install phpmyadmin</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo ln -s /usr/share/phpmyadmin /path/to/project/public/folder</code></li>
 </ul>
 
 <p><small class="note">Never leave it installed for projects in production!</small></p>
 
 <h3 id="composer">Composer<a href="#composer">#</a></h3>
 <ul>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">curl -sS https://getcomposer.org/installer -o composer-setup.php</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer</code></li>
-  <li>Check of correctly installed <code class="highlighter-rouge">$</code> <code class="highlighter-rouge">composer</code></li>
-  <li>Install <code class="highlighter-rouge">unzip</code>, which is necessary for <code class="highlighter-rouge">composer install</code>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer -o composer-setup.php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer</code></li>
+  <li>Check of correctly installed <code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">composer</code></li>
+  <li>Install <code class="language-plaintext highlighter-rouge">unzip</code>, which is necessary for <code class="language-plaintext highlighter-rouge">composer install</code>
     <ul>
-      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install unzip</code></li>
+      <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install unzip</code></li>
     </ul>
   </li>
 </ul>
 
 <h3 id="git">GIT<a href="#git">#</a></h3>
 <ul>
-  <li>Generate SSH key (for <code class="highlighter-rouge">root</code> user)
+  <li>Generate SSH key (for <code class="language-plaintext highlighter-rouge">root</code> user)
     <ul>
-      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">ssh-keygen -t rsa</code></li>
+      <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">ssh-keygen -t rsa</code></li>
     </ul>
   </li>
   <li>Set up SSH key in Github
     <ul>
-      <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cat ~/.ssh/id_rsa.pub</code></li>
+      <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">cat ~/.ssh/id_rsa.pub</code></li>
       <li>Copy key to clipboard</li>
-      <li>Go to <code class="highlighter-rouge">Github repository -&gt; Settings -&gt; Deploy keys</code> and add your key</li>
+      <li>Go to <code class="language-plaintext highlighter-rouge">Github repository -&gt; Settings -&gt; Deploy keys</code> and add your key</li>
     </ul>
   </li>
   <li>
-    <p><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install git</code></p>
+    <p><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install git</code></p>
   </li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">mkdir /var/www/{appdomain.com}</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo chown -R www-data:www-data /var/www/{appdomain.com}</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cd /var/www/{appdomain.com}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">mkdir /var/www/{appdomain.com}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo chown -R www-data:www-data /var/www/{appdomain.com}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">cd /var/www/{appdomain.com}</code></li>
   <li>
-    <p><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git clone git@github.com:{repo_url}.git .</code></p>
+    <p><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">git clone git@github.com:{repo_url}.git .</code></p>
   </li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">mkdir /var/www/{staging.appdomain.com}</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo chown -R www-data:www-data /var/www/{staging.appdomain.com}</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">cd /var/www/{staging.appdomain.com}</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git clone git@github.com:{repo_url}.git .</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">git checkout staging // or develop</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">mkdir /var/www/{staging.appdomain.com}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo chown -R www-data:www-data /var/www/{staging.appdomain.com}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">cd /var/www/{staging.appdomain.com}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">git clone git@github.com:{repo_url}.git .</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">git checkout staging // or develop</code></li>
 </ul>
 
 <h3 id="npm">NPM<a href="#npm">#</a></h3>
 <ul>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo apt-get install npm</code></li>
-  <li><code class="highlighter-rouge">$</code> <code class="highlighter-rouge">sudo npm install --unsafe-perm</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo apt-get install npm</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">sudo npm install --unsafe-perm</code></li>
 </ul>
 
 <h3 id="jenkins">Jenkins<a href="#jenkins">#</a></h3>
 <ul>
-  <li>Create script file on <strong>CI/CD server</strong> in <code class="highlighter-rouge">/var/lib/jenkins/scripts</code></li>
+  <li>Create script file on <strong>CI/CD server</strong> in <code class="language-plaintext highlighter-rouge">/var/lib/jenkins/scripts</code></li>
   <li>Set up Jenkins pipeline
     <ul>
       <li>Clone an existing project</li>
@@ -266,41 +266,41 @@
 </div>
 
 <ul>
-  <li>Add deploy keys to GitHub repo (<code class="highlighter-rouge">Settings / Deploy keys</code>) for user that handles pull on <strong>remote server</strong> (usually <code class="highlighter-rouge">root</code>, as commands run with <code class="highlighter-rouge">sudo</code>)</li>
-  <li>Create push webhook on GitHub repo (<code class="highlighter-rouge">Settings / Webhooks</code>): <code class="highlighter-rouge">https://ci.gofurther.digital/github-webhook/</code></li>
-  <li>Make sure the <strong>CI/CD server</strong> <code class="highlighter-rouge">jenkins</code> user has SSH access to <strong>remote server</strong>
+  <li>Add deploy keys to GitHub repo (<code class="language-plaintext highlighter-rouge">Settings / Deploy keys</code>) for user that handles pull on <strong>remote server</strong> (usually <code class="language-plaintext highlighter-rouge">root</code>, as commands run with <code class="language-plaintext highlighter-rouge">sudo</code>)</li>
+  <li>Create push webhook on GitHub repo (<code class="language-plaintext highlighter-rouge">Settings / Webhooks</code>): <code class="language-plaintext highlighter-rouge">https://ci.gofurther.digital/github-webhook/</code></li>
+  <li>Make sure the <strong>CI/CD server</strong> <code class="language-plaintext highlighter-rouge">jenkins</code> user has SSH access to <strong>remote server</strong>
     <ul>
-      <li>Create <code class="highlighter-rouge">jenkins</code> user on <strong>remote server</strong> and give <code class="highlighter-rouge">sudo</code> rights</li>
-      <li>Add <code class="highlighter-rouge">jenkins</code> public key to <code class="highlighter-rouge">~/.ssh/authorized_keys</code> on <strong>remote server</strong></li>
-      <li>Add line <code class="highlighter-rouge">jenkins ALL=(ALL) NOPASSWD: ALL</code> to <code class="highlighter-rouge">/etc/sudoers</code> on <strong>remote server</strong></li>
-      <li>Add <strong>remote server</strong> to <code class="highlighter-rouge">~/.ssh/known_hosts</code></li>
+      <li>Create <code class="language-plaintext highlighter-rouge">jenkins</code> user on <strong>remote server</strong> and give <code class="language-plaintext highlighter-rouge">sudo</code> rights</li>
+      <li>Add <code class="language-plaintext highlighter-rouge">jenkins</code> public key to <code class="language-plaintext highlighter-rouge">~/.ssh/authorized_keys</code> on <strong>remote server</strong></li>
+      <li>Add line <code class="language-plaintext highlighter-rouge">jenkins ALL=(ALL) NOPASSWD: ALL</code> to <code class="language-plaintext highlighter-rouge">/etc/sudoers</code> on <strong>remote server</strong></li>
+      <li>Add <strong>remote server</strong> to <code class="language-plaintext highlighter-rouge">~/.ssh/known_hosts</code></li>
     </ul>
   </li>
-  <li>Clone GIT repo into <code class="highlighter-rouge">/var/build</code> (and <code class="highlighter-rouge">/var/www</code> if you haven’t done o yet)</li>
+  <li>Clone GIT repo into <code class="language-plaintext highlighter-rouge">/var/build</code> (and <code class="language-plaintext highlighter-rouge">/var/www</code> if you haven’t done o yet)</li>
 </ul>
 
 <h3 id="backups">Backups<a href="#backups">#</a></h3>
 <p>All the following step shall be done on the <strong>CI/CD server</strong>:</p>
 
 <ul>
-  <li>Create script file on <strong>CI/CD server</strong> in <code class="highlighter-rouge">/var/lib/jenkins/scripts/backups</code></li>
+  <li>Create script file on <strong>CI/CD server</strong> in <code class="language-plaintext highlighter-rouge">/var/lib/jenkins/scripts/backups</code></li>
   <li>Set up Jenkins pipeline
     <ul>
       <li>Clone an existing project</li>
       <li>Change script file path</li>
     </ul>
   </li>
-  <li>Make sure the <strong>CI/CD server</strong> <code class="highlighter-rouge">jenkins</code> user has SSH access to <strong>remote server</strong>
+  <li>Make sure the <strong>CI/CD server</strong> <code class="language-plaintext highlighter-rouge">jenkins</code> user has SSH access to <strong>remote server</strong>
     <ul>
-      <li>Create <code class="highlighter-rouge">jenkins</code> user on <strong>remote server</strong></li>
-      <li>Add <code class="highlighter-rouge">jenkins</code> public key to <code class="highlighter-rouge">~/.ssh/authorized_keys</code> on <strong>remote server</strong></li>
-      <li>Add <strong>remote server</strong> host key to <code class="highlighter-rouge">~/.ssh/known_hosts</code></li>
+      <li>Create <code class="language-plaintext highlighter-rouge">jenkins</code> user on <strong>remote server</strong></li>
+      <li>Add <code class="language-plaintext highlighter-rouge">jenkins</code> public key to <code class="language-plaintext highlighter-rouge">~/.ssh/authorized_keys</code> on <strong>remote server</strong></li>
+      <li>Add <strong>remote server</strong> host key to <code class="language-plaintext highlighter-rouge">~/.ssh/known_hosts</code></li>
     </ul>
   </li>
-  <li>Make sure the <strong>remote server</strong> <code class="highlighter-rouge">jenkins</code> user has rsync access to <strong>backup server</strong>
+  <li>Make sure the <strong>remote server</strong> <code class="language-plaintext highlighter-rouge">jenkins</code> user has rsync access to <strong>backup server</strong>
     <ul>
-      <li>Add <code class="highlighter-rouge">jenkins</code> public key to <code class="highlighter-rouge">/.ssh/authorized_keys</code> on <strong>backup server</strong></li>
-      <li>Add <strong>backup server</strong> host key to <code class="highlighter-rouge">~/.ssh/known_hosts</code></li>
+      <li>Add <code class="language-plaintext highlighter-rouge">jenkins</code> public key to <code class="language-plaintext highlighter-rouge">/.ssh/authorized_keys</code> on <strong>backup server</strong></li>
+      <li>Add <strong>backup server</strong> host key to <code class="language-plaintext highlighter-rouge">~/.ssh/known_hosts</code></li>
     </ul>
   </li>
 </ul>

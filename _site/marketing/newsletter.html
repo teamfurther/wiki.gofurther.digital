@@ -114,7 +114,7 @@
 <p>Start by duplicating one of the older issues. The base issue should be the latest one, unless you have a specific reason to use an older issue as the source.</p>
 
 <ol>
-  <li>Update the fixed sections for both the Hungarian (<code class="highlighter-rouge">src/templates/hu.html</code>) and English (<code class="highlighter-rouge">src/templates/en.html</code>) language templates.
+  <li>Update the fixed sections for both the Hungarian (<code class="language-plaintext highlighter-rouge">src/templates/hu.html</code>) and English (<code class="language-plaintext highlighter-rouge">src/templates/en.html</code>) language templates.
     <ul>
       <li>title meta tag</li>
       <li>issue number and month</li>
@@ -127,17 +127,17 @@
       <li>etc.</li>
     </ul>
   </li>
-  <li>Compile your templates using <code class="highlighter-rouge">npm start</code> from the issue directory.</li>
+  <li>Compile your templates using <code class="language-plaintext highlighter-rouge">npm start</code> from the issue directory.</li>
 </ol>
 
-<p>We always send a slightly different version of the newsletter for new subscribers (greenhorns). Edit the two template files (<code class="highlighter-rouge">src/templates/hu_greenhorn.html</code> &amp;&amp; <code class="highlighter-rouge">src/templates/hu_greenhorn.html</code>) by copying the content from the main templates. Change the <strong>intro image &amp; text</strong> to the one from <strong>the very first issue</strong>.</p>
+<p>We always send a slightly different version of the newsletter for new subscribers (greenhorns). Edit the two template files (<code class="language-plaintext highlighter-rouge">src/templates/hu_greenhorn.html</code> &amp;&amp; <code class="language-plaintext highlighter-rouge">src/templates/hu_greenhorn.html</code>) by copying the content from the main templates. Change the <strong>intro image &amp; text</strong> to the one from <strong>the very first issue</strong>.</p>
 
 <h2 id="editing-newsletter">Editing newsletter<a href="#editing-newsletter">#</a></h2>
 <p>We use <a href="https://sendinblue.com" target="_blank">Sendinblue</a> to edit and schedule the newsletters themselves. On the Campaigns tab, duplicate one of the older issues. The base issue should be the latest one, unless you have a specific reason to use an older issue as the source.</p>
 
 <ol>
   <li>Update the campaign name, subject, preview text and HTML content.</li>
-  <li>Copy the template content from the HTML file (<code class="highlighter-rouge">dist/{lang}.html</code>) to the Sendinblue editor (click Edit the email content on the Design tab).</li>
+  <li>Copy the template content from the HTML file (<code class="language-plaintext highlighter-rouge">dist/{lang}.html</code>) to the Sendinblue editor (click Edit the email content on the Design tab).</li>
   <li>Sendinblue doesn’t process image URL’s, so you’ll need to manually re-map every image using the Picture icon on the Design tab.</li>
   <li>Since Sendinblue doesn’t allow the mapping if images inlined into CSS, we had to add these to HTML. After mapping images (see step #4), remove these images from the source code.</li>
   <li>Select the correct newsletter list from the Recipients tab.</li>
